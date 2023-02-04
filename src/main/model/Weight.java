@@ -1,5 +1,10 @@
 package model;
 
+// A set of weights decided by the user.
+// Includes:
+// compactWeight: decides how close the classes are to each other
+// balanceWeight:
+
 public class Weight {
     private int compactWeight;
     private int balanceWeight;

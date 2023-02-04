@@ -1,17 +1,25 @@
 package model.util;
 
 import model.Section;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class CourseTestDataTest {
+    CourseTestData courseTestData;
+
+    @BeforeEach
+    void setup() {
+        courseTestData = new CourseTestData();
+    }
 
     @Test
     void getRootSectionsTest() {
-        CourseTestData courseTestData = new CourseTestData();
         List<Section> cpsc110Sections = courseTestData.getRootSections("CPSC 110");
         assertEquals(2, cpsc110Sections.size());
         assertEquals("CPSC 110", cpsc110Sections.get(0).getCourseID());
@@ -20,7 +28,16 @@ class CourseTestDataTest {
 
     @Test
     void getSectionTest() {
-        CourseTestData courseTestData = new CourseTestData();
         assertEquals("CPSC 110 101", courseTestData.getSection("CPSC 110 101").getSectionID());
+    }
+
+
+    @Test
+    void getSectionsTest() {
+        assertEquals(new ArrayList<>(), courseTestData.getSections(new ArrayList<>()));
+
+        List<Section> expectedSections = Arrays.asList(courseTestData.getSection("CPSC 110 101"),
+                courseTestData.getSection("CPSC 110 102"));
+        assertEquals(expectedSections, courseTestData.getSections(Arrays.asList("CPSC 110 101", "CPSC 110 102")));
     }
 }

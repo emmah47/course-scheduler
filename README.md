@@ -30,7 +30,7 @@ optimize the courses, which would be difficult to do by hand.
     - select courses that must be included in the schedule
     - set time intervals that must remain empty
 - As a user, I want to be able to choose how many schedules are displayed
-- As a user, I want to be able to view the schedule as a calendar 
+- As a user, I want to be able to view the schedule 
 - As a user, I want to be able to save my schedules
 - As a user, I want to be able to save the chosen courses and preferences
 

@@ -4,7 +4,8 @@ import java.util.List;
 
 public class HelperUtil {
 
-    // given a Section's start or end time, converts it to minutes.
+    // REQUIRES: string is in the format of hrs:min. For example: 3:00, 21:30, etc
+    // EFFECTS: given a time that is in the form of a string, converts it to minutes and returns the value.
     public static int calculateMinutes(String timeString) {
         String[] timeArr = timeString.split(":");
         int hour = Integer.parseInt(timeArr[0]);
@@ -12,7 +13,8 @@ public class HelperUtil {
         return hour * 60 + minute;
     }
 
-    // returns true if two lists of strings has same member
+
+    // EFFECTS: returns true if two lists of strings contains duplicates
     public static boolean hasSameMember(List<String> stringList1, List<String> stringList2) {
         for (String string : stringList2) {
             if (stringList1.contains(string)) {

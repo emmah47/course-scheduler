@@ -1,5 +1,6 @@
 package model;
 
+import model.util.CourseTestData;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -19,7 +20,7 @@ class ScheduleTest {
         Weight weight1 = new Weight(1, 1, 1, 1);
         List<String> courseIDs1 = new ArrayList<>(Arrays.asList("CPSC 110", "CPSC 121"));
         List<String> sectionIDs1 =  new ArrayList<>();
-        defaultSchedule = new Schedule("s1", courseIDs1, sectionIDs1, weight1, null);
+        defaultSchedule = new Schedule("s1", courseIDs1, sectionIDs1, weight1, new CourseTestData());
 
         section1 = new Section("Test Section 1", "Test Course", SectionType.LECTURE,
                 "1:00", "3:00", Arrays.asList("Mon, Wed, Fri"), 1, new ArrayList<>());
@@ -30,7 +31,7 @@ class ScheduleTest {
     @Test
     void testCloneSameValue() {
         defaultSchedule.setScore(4);
-        Schedule s1Clone = defaultSchedule.clone();
+        Schedule s1Clone = defaultSchedule.makeCopy();
         assertEquals(defaultSchedule.getName(), s1Clone.getName());
         assertEquals(defaultSchedule.getCourseIDs(), s1Clone.getCourseIDs());
         assertEquals(defaultSchedule.getSectionIDs(), s1Clone.getSectionIDs());
@@ -44,7 +45,7 @@ class ScheduleTest {
     @Test
     void testCloneDifferentObject() {
         defaultSchedule.setScore(10);
-        Schedule s1Clone = defaultSchedule.clone();
+        Schedule s1Clone = defaultSchedule.makeCopy();
         assertNotEquals(defaultSchedule, s1Clone);
 
         s1Clone.getCourseIDs().add("200");
@@ -61,6 +62,22 @@ class ScheduleTest {
 
     @Test
     void tryAddSection() {
-        defaultSchedule.setSectionIDs();
+        Section testS1 = defaultSchedule.getCourseData().getSection("Test Section 1");
+        Section testS2 = defaultSchedule.getCourseData().getSection("Test Section 2");
+        Section testS3 = defaultSchedule.getCourseData().getSection("Test Section 3");
+        ArrayList<String> startingSectionIDs = new ArrayList<>();
+        startingSectionIDs.add("Test Section 1");
+        defaultSchedule.setSectionIDs(startingSectionIDs);
+        assertTrue(defaultSchedule.tryAddSection(testS2));
+        assertEquals("Test Section 2", defaultSchedule.getSectionIDs().get(1));
+        defaultSchedule.getSectionIDs().remove(1);
+        assertFalse(defaultSchedule.tryAddSection(testS3));
+        assertEquals(1, defaultSchedule.getSectionIDs().size());
+    }
+
+    @Test
+    void testToString() {
+        defaultSchedule.setSectionIDs(Arrays.asList("CPSC 110", "CPSC 121"));
+        assertEquals("Schedule{sectionIDs=[CPSC 110, CPSC 121]}", defaultSchedule.toString());
     }
 }

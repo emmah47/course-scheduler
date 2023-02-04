@@ -31,7 +31,7 @@ public class Schedule {
 
 
     // creates a clone of the current schedule
-    public Schedule clone() {
+    public Schedule makeCopy() {
         Schedule newSchedule = new Schedule(
                 this.name,
                 new ArrayList<>(this.courseIDs),
@@ -91,9 +91,6 @@ public class Schedule {
         return courseData;
     }
 
-    public void setCourseData(CourseData courseData) {
-        this.courseData = courseData;
-    }
 
     // tries to add section to schedule if possible, return true if added and false if not
     public boolean tryAddSection(Section section) {
@@ -119,9 +116,18 @@ public class Schedule {
     }
 
     @Override
+    // returns the scheduled sections of a schedule as a string
     public String toString() {
         return "Schedule{"
                 + "sectionIDs=" + sectionIDs
                 + '}';
+    }
+
+    public List<List<String>> getAllAntirequisits() {
+        List<List<String>> results = new ArrayList<>();
+        for (String sectionID : this.getSectionIDs()) {
+            results.addAll(courseData.getSection(sectionID).getAntiRequisiteIDs());
+        }
+        return results;
     }
 }

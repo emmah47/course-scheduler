@@ -19,7 +19,7 @@ public class Main {
                 new Weight(1,2,3,4),
                 new CourseTestData());
 
-        List<Schedule> result = Scheduler.scheduleRootCourses(mySchedule);
+        List<Schedule> result = Scheduler.scheduleCourses(mySchedule);
         for (Schedule s : result) {
             System.out.println(s.toString());
         }

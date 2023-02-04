@@ -7,14 +7,14 @@ import java.util.List;
 // Array of methods to load sections from data
 public interface CourseData {
 
-// given a course ID, load all root sections
+    // given a course ID, load all root sections
     List<Section> getRootSections(String courseID);
 
     // given a section ID, load the section
     Section getSection(String sectionID);
 
     // given list of section IDs, get sections
-    List<Section> getSectionIDs(List<String> sectionsIDs);
+    List<Section> getSections(List<String> sectionsIDs);
 }
 
 

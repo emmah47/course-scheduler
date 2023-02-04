@@ -16,7 +16,7 @@ public class CourseDemoData implements CourseData {
     }
 
     @Override
-    public List<Section> getSectionIDs(List<String> sectionsIDs) {
+    public List<Section> getSections(List<String> sectionsIDs) {
         return null;
     }
 }
