@@ -1,10 +1,9 @@
 package model;
 
-// The type of a section
+// represents the section's type
 public enum SectionType {
     LECTURE,
-    LAB,
+    LABORATORY,
     TUTORIAL,
     DISCUSSION,
-    SEMINAR
 }

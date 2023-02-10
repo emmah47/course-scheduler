@@ -2,6 +2,7 @@ package model.util;
 
 import java.util.List;
 
+// Utility class for common utility
 public class HelperUtil {
 
     // REQUIRES: string is in the format of hrs:min. For example: 3:00, 21:30, etc

@@ -1,11 +1,11 @@
 package model;
 
-
+// represents a UBC course. Each course has a course ID (ex. "CPSC 210") and a description.
 public class Course {
     private String courseID;
     private String description;
 
-    // Constructor for Course
+    // EFFECTS: Constructs a new course with a courseID and description
     public Course(String courseID, String description) {
         this.courseID = courseID;
         this.description = description;

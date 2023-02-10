@@ -5,10 +5,12 @@ import model.SectionType;
 
 import java.util.*;
 
-// Test data for testing functions as well as unit tests. Contains Sections as well as Courses.
+// Test data for unit tests.
 public class CourseTestData implements CourseData {
-    private Map<String, Section> data = new LinkedHashMap<>();
+    private Map<String, Section> data = new LinkedHashMap<>(); // a hashmap of Sections, with the value being a
+    // section, and the key being the corresponding course ID.
 
+    // EFFECTS: Creates a new CourseTestData with a populated data field.
     @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings"})
     public CourseTestData() {
         // LECTURES
@@ -30,26 +32,26 @@ public class CourseTestData implements CourseData {
 
 
         // LABS
-        data.put("CPSC 110 L10", new Section("CPSC 110 L10", "CPSC 110", SectionType.LAB,
+        data.put("CPSC 110 L10", new Section("CPSC 110 L10", "CPSC 110", SectionType.LABORATORY,
                 "18:00", "21:00",
                 Arrays.asList("Wed"), 1, Arrays.asList()));
-        data.put("CPSC 110 L11", new Section("CPSC 110 L11", "CPSC 110", SectionType.LAB,
+        data.put("CPSC 110 L11", new Section("CPSC 110 L11", "CPSC 110", SectionType.LABORATORY,
                 "8:00", "11:00",
                 Arrays.asList("Thu"), 1, Arrays.asList()));
-        data.put("CPSC 110 L12", new Section("CPSC 110 L12", "CPSC 110", SectionType.LAB,
+        data.put("CPSC 110 L12", new Section("CPSC 110 L12", "CPSC 110", SectionType.LABORATORY,
                 "1:00", "3:00",
                 Arrays.asList("Fri"), 1, Arrays.asList()));
-        data.put("CPSC 110 L13", new Section("CPSC 110 L13", "CPSC 110", SectionType.LAB,
+        data.put("CPSC 110 L13", new Section("CPSC 110 L13", "CPSC 110", SectionType.LABORATORY,
                 "18:00", "21:00",
                 Arrays.asList("Mon"), 1, Arrays.asList()));
 
-        data.put("CPSC 121 L1A", new Section("CPSC 121 L1A", "CPSC 121", SectionType.LAB,
+        data.put("CPSC 121 L1A", new Section("CPSC 121 L1A", "CPSC 121", SectionType.LABORATORY,
                 "15:00", "17:00",
                 Arrays.asList("Wed"), 1, Arrays.asList()));
-        data.put("CPSC 121 L1B", new Section("CPSC 121 L1B", "CPSC 121", SectionType.LAB,
+        data.put("CPSC 121 L1B", new Section("CPSC 121 L1B", "CPSC 121", SectionType.LABORATORY,
                 "13:00", "15:00",
                 Arrays.asList("Tue"), 1, Arrays.asList()));
-        data.put("CPSC 121 L1C", new Section("CPSC 121 L1C", "CPSC 121", SectionType.LAB,
+        data.put("CPSC 121 L1C", new Section("CPSC 121 L1C", "CPSC 121", SectionType.LABORATORY,
                 "15:00", "17:00",
                 Arrays.asList("Tue"), 1, Arrays.asList()));
 
@@ -75,28 +77,44 @@ public class CourseTestData implements CourseData {
         data.put("Test Section 2", new Section("Test Section 2", "Test Course", SectionType.LECTURE,
                 "1:00", "4:00", Arrays.asList("Tues, Thurs"), 1, new ArrayList<>()));
         data.put("Test Section 3", new Section("Test Section 3", "Test Course", SectionType.LECTURE,
-                "1:00", "3:00", Arrays.asList("Mon, Wed, Fri"), 1, new ArrayList<>()));
+                "12:00", "2:00", Arrays.asList("Mon, Wed, Fri"), 1, new ArrayList<>()));
 
+
+        // test weights
+        data.put("weightTest1", new Section("weightTest1", "test course", SectionType.LECTURE,
+                "13:00", "14:00", Arrays.asList("Mon", "Tue", "Wed", "Thu", "Fri"), 2,
+                new ArrayList<>()));
+        data.put("weightTest2", new Section("weightTest2", "test course", SectionType.LECTURE,
+                "14:00", "15:00", Arrays.asList("Mon", "Tue", "Wed", "Thu", "Fri"), 2,
+                new ArrayList<>()));
 
     }
 
     // REQUIRES: given String is a valid course ID
-    // EFFECTS: gets root sections given a course ID. It will get all sections of a course that has antirequisits,
-    // but if there are none, it returns all the sections of the course
+    // EFFECTS: returns root sections given a course ID. It returns all sections of a course that has antirequisits,
+    //          but if there are none, it returns all the sections of the course that have the SectionType LECTURE
     @Override
-    public List<Section> getRootSections(String courseID) {
+    public List<Section> getRootSections(String courseID, int term) {
         List<Section> result = new ArrayList<>();
         for (Section section : data.values()) {
-            if (courseID.equals(section.getCourseID()) && !section.getAntiRequisiteIDs().isEmpty()) {
+            if (courseID.equals(section.getCourseID()) && !section.getAntiRequisiteIDs().isEmpty()
+                    && section.getTerm() == term) {
                 result.add(section);
+            }
+        }
+        if (result.isEmpty()) {
+            for (Section section : data.values()) {
+                if (courseID.equals(section.getCourseID()) && section.getSectionType() == SectionType.LECTURE) {
+                    result.add(section);
+                }
             }
         }
         return result;
     }
 
 
-    // REQUIRES: given string is a valid course ID.
-    // EFFECTS: returns a course corresponding to the given course ID.
+    // REQUIRES: given string is a valid Section ID.
+    // EFFECTS: returns a Section corresponding to the given Section ID.
     @Override
     public Section getSection(String sectionID) {
         Section result = data.get(sectionID);
@@ -104,8 +122,8 @@ public class CourseTestData implements CourseData {
     }
 
 
-    // REQUIRES: given list of strings are all valid course IDs.
-    // EFFECTS: returns
+    // REQUIRES: given list of strings are all valid Section IDs.
+    // EFFECTS: returns a list of Sections corresponding to the given section IDs.
     @Override
     public List<Section> getSections(List<String> sectionsIDs) {
         List<Section> result = new ArrayList<>();

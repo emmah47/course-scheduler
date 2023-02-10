@@ -20,7 +20,7 @@ class CourseTestDataTest {
 
     @Test
     void getRootSectionsTest() {
-        List<Section> cpsc110Sections = courseTestData.getRootSections("CPSC 110");
+        List<Section> cpsc110Sections = courseTestData.getRootSections("CPSC 110", 1);
         assertEquals(2, cpsc110Sections.size());
         assertEquals("CPSC 110", cpsc110Sections.get(0).getCourseID());
         assertEquals("CPSC 110", cpsc110Sections.get(1).getCourseID());

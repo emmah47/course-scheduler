@@ -25,10 +25,10 @@ optimize the courses, which would be difficult to do by hand.
 - As a user, I want to be able to search for available courses
 - As a user, I want to be able to add courses to my schedule
 - As a user, I want to be able to set schedule preferences such as:
-    - limiting courses to a certain time interval
-    - limit the amount of spacing between individual courses
-    - select courses that must be included in the schedule
-    - set time intervals that must remain empty
+    - choosing the earliest start time and latest end time
+    - limiting the difference of total hours of class per day between each day
+    - limiting the amount of spacing between individual courses
+    - selecting course sections that must be included in the schedule
 - As a user, I want to be able to choose how many schedules are displayed
 - As a user, I want to be able to view the schedule 
 - As a user, I want to be able to save my schedules
