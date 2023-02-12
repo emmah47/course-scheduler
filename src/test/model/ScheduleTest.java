@@ -44,6 +44,27 @@ class ScheduleTest {
     }
 
     @Test
+    void testSetters() {
+        Schedule schedule = new Schedule(
+                "testSchedule",
+                new ArrayList<>(),
+                new ArrayList<>(),
+                1,
+                new Weight(1, 1,"9:00","15:00" ),
+                null);
+        String newName = "new name";
+        List<String> newCourseIdList = Arrays.asList("courseId1", "courseId2");
+        int newTerm = 2;
+        schedule.setName(newName);
+        schedule.setCourseIDs(newCourseIdList);
+        schedule.setTerm(newTerm);
+        assertEquals(newName, schedule.getName());
+        assertEquals(newCourseIdList, schedule.getCourseIDs());
+        assertEquals(newTerm, schedule.getTerm());
+
+    }
+
+    @Test
     void testCloneDifferentObject() {
         defaultSchedule.setScore(10);
         Schedule s1Clone = defaultSchedule.makeCopy();
@@ -113,4 +134,5 @@ class ScheduleTest {
         testSchedule.calculateScore();
         assertEquals(0, testSchedule.getScore());
     }
+
 }

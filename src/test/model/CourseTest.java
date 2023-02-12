@@ -10,6 +10,12 @@ class CourseTest {
         Course testCourse = new Course("test course", "this is a test course");
         assertEquals("test course", testCourse.getCourseID());
         assertEquals("this is a test course", testCourse.getDescription());
+        String newId = "new ID";
+        testCourse.setCourseID(newId);
+        String newDescription = "new description";
+        testCourse.setDescription(newDescription);
+        assertEquals(newId, testCourse.getCourseID());
+        assertEquals(newDescription, testCourse.getDescription());
     }
 
 }

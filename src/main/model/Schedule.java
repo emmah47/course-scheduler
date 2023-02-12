@@ -1,6 +1,7 @@
 package model;
 
 import model.util.CourseData;
+import model.util.Scheduler;
 
 import java.util.*;
 
@@ -93,6 +94,13 @@ public class Schedule {
         return term;
     }
 
+    public void setTerm(int term) {
+        this.term = term;
+    }
+
+    public Map<String, List<Section>> getSortedSections() {
+        return sortedSections;
+    }
 
     // MODIFIES: this
     // EFFECTS: returns a copy of the given schedule
@@ -148,6 +156,8 @@ public class Schedule {
         }
         return results;
     }
+
+
 
 
     // SCORE CALCULATION METHODS BELOW HERE

@@ -23,4 +23,17 @@ class WeightTest {
         assertEquals(120, weight1.getPreferredEndTime());
     }
 
+    @Test
+    void testGetterSetter() {
+        Weight weight = new Weight( 1,1,1,1);
+        weight.setBalanceWeight(2);
+        weight.setCompactWeight(3);
+        weight.setPreferredEndTime(4);
+        weight.setPreferredStartTime(5);
+        assertEquals(2, weight.getBalanceWeight());
+        assertEquals(3, weight.getCompactWeight());
+        assertEquals(4, weight.getPreferredEndTime());
+        assertEquals(5, weight.getPreferredStartTime());
+    }
+
 }

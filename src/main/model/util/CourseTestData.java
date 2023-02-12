@@ -1,5 +1,6 @@
 package model.util;
 
+import model.Course;
 import model.Section;
 import model.SectionType;
 
@@ -9,10 +10,16 @@ import java.util.*;
 public class CourseTestData implements CourseData {
     private Map<String, Section> data = new LinkedHashMap<>(); // a hashmap of Sections, with the value being a
     // section, and the key being the corresponding course ID.
+    private Map<String, Course> courses = new LinkedHashMap<>(); // Some course IDs and their description
 
     // EFFECTS: Creates a new CourseTestData with a populated data field.
     @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings"})
     public CourseTestData() {
+        // COURSES:
+        courses.put("CPSC 110", new Course("CPSC 110", "UBC's introductory cs programming course"));
+        courses.put("CPSC 210", new Course("CPSC 210", "UBC's other cs programming course"));
+
+
         // LECTURES
         data.put("CPSC 110 101",  new Section("CPSC 110 101", "CPSC 110", SectionType.LECTURE,
                 "9:00", "10:30", Arrays.asList("Mon", "Wed", "Fri"), 1,
@@ -131,5 +138,20 @@ public class CourseTestData implements CourseData {
             result.add(getSection(sectionID));
         }
         return result;
+    }
+
+    // EFFECTS: returns a list of all course IDs
+    public List<String> getAllCourseIDs() {
+        ArrayList<String> courseIDs = new ArrayList<>();
+        for (String courseID : courses.keySet()) {
+            courseIDs.add(courseID);
+        }
+        return courseIDs;
+    }
+
+    // REQUIRES: given course ID is a valid course ID
+    // EFFECTS: given a course ID, gets the course description
+    public String getCourseDescription(String courseID) {
+        return courses.get(courseID).getDescription();
     }
 }

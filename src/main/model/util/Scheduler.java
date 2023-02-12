@@ -8,13 +8,34 @@ import java.util.*;
 // Contains methods for course scheduling.
 public class Scheduler {
 
+    // REQUIRES: schedule is either empty (not yet finished and given a score) or contains only root sections.
+    // MODIFIES: this
+    // EFFECTS: makes a list of all possible schedules from a starting schedule, calculates their scores, and then
+    //          returns a list of schedules sorted byt their score from high to low
+    public static List<Schedule> scheduleAndCalculateScore(Schedule schedule) {
+        List<Schedule> result = scheduleCourses(schedule);
+        for (Schedule s: result) {
+            s.calculateScore();
+        }
+
+        Collections.sort(result, new Comparator<Schedule>() {
+            @Override
+            public int compare(Schedule o1, Schedule o2) {
+                return Float.compare(o2.getScore(), o1.getScore());
+            }
+        });
+        return result;
+    }
+
     // EFFECTS: Given an empty schedule, returns a list of all possible finished schedules. A finished schedule is a
     //          schedule that has one root section ID in its sectionIDs field corresponding to each courseID, as well
     //          as one sectionID from every corresponding antirequisite. If the resulting list is empty, it means that
     //          it was not possible to schedule the given courses
-    public static List<Schedule> scheduleCourses(Schedule schedule0) {
+    private static List<Schedule> scheduleCourses(Schedule schedule0) {
         List<Schedule> result0 = new ArrayList<>();
-        scheduleRootSections(schedule0, new LinkedList<>(), schedule0.getCourseIDs(), new LinkedList<>(), result0);
+        int requiredSectionsNum = schedule0.getSectionIDs().size();
+        scheduleRootSections(schedule0, requiredSectionsNum, new LinkedList<>(), schedule0.getCourseIDs(),
+                new LinkedList<>(), result0);
 
         List<Schedule> result = new ArrayList<>();
         for (Schedule schedule : result0) {
@@ -34,12 +55,13 @@ public class Scheduler {
     //          for each schedule has been scheduled into resultSoFar
     private static void scheduleRootSections(
             Schedule schedule,
+            int requiredSectionsNum,
             LinkedList<Schedule> scheduleWorkList,
             List<String> courseIDs, // get course IDs from schedule.
             LinkedList<List<String>> courseIDsWorkList, // tandem worklist for courseIDs
             List<Schedule> resultSoFar) {
 
-        if (schedule.getSectionIDs().size() == schedule.getCourseIDs().size()) {
+        if (schedule.getSectionIDs().size() == schedule.getCourseIDs().size() + requiredSectionsNum) {
             resultSoFar.add(schedule);
         } else {
             List<Schedule> nextSchedules = Scheduler.makeNextSchedules(schedule, courseIDs.get(0));
@@ -49,6 +71,7 @@ public class Scheduler {
         if (!scheduleWorkList.isEmpty()) {
             scheduleRootSections(
                     scheduleWorkList.pollFirst(),
+                    requiredSectionsNum,
                     scheduleWorkList,
                     courseIDsWorkList.pollFirst(),
                     courseIDsWorkList,

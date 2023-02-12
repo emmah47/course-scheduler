@@ -1,5 +1,6 @@
 package model.util;
 
+import model.Course;
 import model.Section;
 import model.SectionType;
 
@@ -10,10 +11,36 @@ import java.util.*;
 public class CourseRealData implements CourseData {
     private Map<String, Section> data = new LinkedHashMap<>(); // a hashmap of Sections, with the value being a
     // section, and the key being the corresponding course ID.
+    private Map<String, Course> courses = new LinkedHashMap<>(); // Some course IDs and their description
 
     // EFFECTS: Creates a new CourseRealData with a populated data field.
     @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings"})
     public CourseRealData() {
+
+        // COURSES:
+        courses.put("CPSC 110", new Course("CPSC 110",
+                "Fundamental program and computation structures. Introductory programming skills."));
+        courses.put("CPSC 121", new Course("CPSC 121",
+                "Physical and mathematical structures of computation."));
+        courses.put("CPSC 210", new Course("CPSC 210",
+                "Design, development, and analysis of robust software components. "));
+        courses.put("PHYS 117", new Course("PHYS 117",
+                "Dynamics and Waves. Kinematics including curvilinear motion."));
+        courses.put("ENGL 110", new Course("ENGL 110",
+                "Study of selected examples of literary and cultural expression."));
+        courses.put("ENGL 111", new Course("ENGL 111",
+                "Study of selected communication genres from a language-based perspective"));
+        courses.put("MATH 180", new Course("MATH 180",
+                "Topics as for Math 100; intended for students with no previous knowledge of Calculus."));
+        courses.put("MATH 101", new Course("MATH 101",
+                "The definite integral, integration techniques, applications, modelling, infinite series."));
+        courses.put("ASTR 102", new Course("ASTR 102",
+                "Modern stellar and extragalactic astronomy."));
+        courses.put("BIOL 111", new Course("BIOL 111",
+                "Concepts fundamental to biological issues"));
+
+
+
         data.put("PHYS 117 101",  new Section("PHYS 117 101", "PHYS 117", SectionType.LECTURE,
                 "11:00", "12:00", Arrays.asList("Mon","Wed","Fri"), 1,
                 Arrays.asList(Arrays.asList("PHYS 117 T1A","PHYS 117 T1B","PHYS 117 T1C","PHYS 117 T1D","PHYS 117 T1E",
@@ -1237,5 +1264,20 @@ public class CourseRealData implements CourseData {
             result.add(getSection(sectionID));
         }
         return result;
+    }
+
+    // EFFECTS: returns a list of all course IDs
+    public List<String> getAllCourseIDs() {
+        ArrayList<String> courseIDs = new ArrayList<>();
+        for (String courseID : courses.keySet()) {
+            courseIDs.add(courseID);
+        }
+        return courseIDs;
+    }
+
+    // REQUIRES: given course ID is a valid course ID
+    // EFFECTS: given a course ID, gets the course description
+    public String getCourseDescription(String courseID) {
+        return courses.get(courseID).getDescription();
     }
 }

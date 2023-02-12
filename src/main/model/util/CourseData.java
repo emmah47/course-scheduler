@@ -15,6 +15,13 @@ public interface CourseData {
 
     // given list of section IDs, gets sections
     List<Section> getSections(List<String> sectionsIDs);
+
+    // returns a list of all course IDs
+    List<String> getAllCourseIDs();
+
+    // given a course ID, gets the course description
+    String getCourseDescription(String courseID);
+
 }
 
 
