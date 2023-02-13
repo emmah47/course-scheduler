@@ -41,4 +41,15 @@ class CourseRealDataTest {
                 courseRealData.getSection("CPSC 110 102"));
         assertEquals(expectedSections, courseRealData.getSections(Arrays.asList("CPSC 110 101", "CPSC 110 102")));
     }
+
+
+    @Test
+    void getAllCourse() {
+        assertTrue(courseRealData.getAllCourse().size()>0);
+    }
+
+    @Test
+    void getAllCourseIDs() {
+        assertTrue(courseRealData.getAllCourseIDs().size()>0);
+    }
 }

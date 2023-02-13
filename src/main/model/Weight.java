@@ -26,7 +26,8 @@ public class Weight {
         this.preferredEndTime = HelperUtil.calculateMinutes(preferredEndTime);
     }
 
-    // EFFECTS: constructs a Weight that has a compact weight, a balance weight, takes in integers (ex. 600)
+    // REQUIRES: 0 <= preferredStartTime < 1440, AND 0 <= preferredEndTime < 1440
+    // EFFECTS: constructs a Weight that has a compact weight, a balance weight, takes in integers in mins (ex. 600)
     //          for the times
     public Weight(int compactWeight, int balanceWeight,
                   int preferredStartTime, int preferredEndTime) {

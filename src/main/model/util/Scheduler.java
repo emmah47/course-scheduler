@@ -8,8 +8,7 @@ import java.util.*;
 // Contains methods for course scheduling.
 public class Scheduler {
 
-    // REQUIRES: schedule is either empty (not yet finished and given a score) or contains only root sections.
-    // MODIFIES: this
+    // REQUIRES: schedule is either empty (not yet finished nor given a score) or contains only root sections.
     // EFFECTS: makes a list of all possible schedules from a starting schedule, calculates their scores, and then
     //          returns a list of schedules sorted byt their score from high to low
     public static List<Schedule> scheduleAndCalculateScore(Schedule schedule) {
@@ -33,8 +32,7 @@ public class Scheduler {
     //          it was not possible to schedule the given courses
     private static List<Schedule> scheduleCourses(Schedule schedule0) {
         List<Schedule> result0 = new ArrayList<>();
-        int requiredSectionsNum = schedule0.getSectionIDs().size();
-        scheduleRootSections(schedule0, requiredSectionsNum, new LinkedList<>(), schedule0.getCourseIDs(),
+        scheduleRootSections(schedule0, new LinkedList<>(), schedule0.getCourseIDs(),
                 new LinkedList<>(), result0);
 
         List<Schedule> result = new ArrayList<>();
@@ -55,13 +53,12 @@ public class Scheduler {
     //          for each schedule has been scheduled into resultSoFar
     private static void scheduleRootSections(
             Schedule schedule,
-            int requiredSectionsNum,
             LinkedList<Schedule> scheduleWorkList,
             List<String> courseIDs, // get course IDs from schedule.
             LinkedList<List<String>> courseIDsWorkList, // tandem worklist for courseIDs
             List<Schedule> resultSoFar) {
 
-        if (schedule.getSectionIDs().size() == schedule.getCourseIDs().size() + requiredSectionsNum) {
+        if (schedule.getSectionIDs().size() == schedule.getCourseIDs().size()) {
             resultSoFar.add(schedule);
         } else {
             List<Schedule> nextSchedules = Scheduler.makeNextSchedules(schedule, courseIDs.get(0));
@@ -71,7 +68,6 @@ public class Scheduler {
         if (!scheduleWorkList.isEmpty()) {
             scheduleRootSections(
                     scheduleWorkList.pollFirst(),
-                    requiredSectionsNum,
                     scheduleWorkList,
                     courseIDsWorkList.pollFirst(),
                     courseIDsWorkList,
@@ -100,6 +96,7 @@ public class Scheduler {
             sectionIDsWorkList.addAll(Collections.nCopies(nextSchedules.size(),
                     sectionIDsSet.subList(1, sectionIDsSet.size())));
         }
+
         if (!scheduleWorkList.isEmpty()) {
             scheduleSecondSections(
                     scheduleWorkList.pollFirst(),
@@ -112,7 +109,6 @@ public class Scheduler {
     }
 
 
-    // MODIFIES: result
     // EFFECTS: makes the next schedules (next layer of search tree) by using each section from the section
     // ids and making one copy of the new schedule for every section.
     private static List<Schedule> makeNextSchedules(Schedule schedule0, String courseID) {
@@ -128,7 +124,6 @@ public class Scheduler {
     }
 
 
-    // MODIFIES: result
     // EFFECTS: makes the next schedules (next layer of search tree) by using each section from the section
     // ids and making one copy of the new schedule for every section. This method has the same functionality as the
     // method above, but accepts different parameters.

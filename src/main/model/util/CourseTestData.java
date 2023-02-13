@@ -76,8 +76,6 @@ public class CourseTestData implements CourseData {
 
 
 
-
-        // Data used for unit tests only
         // test time conflict
         data.put("Test Section 1", new Section("Test Section 1", "Test Course", SectionType.LECTURE,
                 "1:00", "3:00", Arrays.asList("Mon, Wed, Fri"), 1, new ArrayList<>()));
@@ -87,7 +85,7 @@ public class CourseTestData implements CourseData {
                 "12:00", "2:00", Arrays.asList("Mon, Wed, Fri"), 1, new ArrayList<>()));
 
 
-        // test weights
+        // Weight Test data:
         data.put("weightTest1", new Section("weightTest1", "test course", SectionType.LECTURE,
                 "13:00", "14:00", Arrays.asList("Mon", "Tue", "Wed", "Thu", "Fri"), 2,
                 new ArrayList<>()));
@@ -98,8 +96,7 @@ public class CourseTestData implements CourseData {
     }
 
     // REQUIRES: given String is a valid course ID
-    // EFFECTS: returns root sections given a course ID. It returns all sections of a course that has antirequisits,
-    //          but if there are none, it returns all the sections of the course that have the SectionType LECTURE
+    // EFFECTS: returns root sections given a course ID. It returns all sections of a course that has antirequisits
     @Override
     public List<Section> getRootSections(String courseID, int term) {
         List<Section> result = new ArrayList<>();
@@ -107,13 +104,6 @@ public class CourseTestData implements CourseData {
             if (courseID.equals(section.getCourseID()) && !section.getAntiRequisiteIDs().isEmpty()
                     && section.getTerm() == term) {
                 result.add(section);
-            }
-        }
-        if (result.isEmpty()) {
-            for (Section section : data.values()) {
-                if (courseID.equals(section.getCourseID()) && section.getSectionType() == SectionType.LECTURE) {
-                    result.add(section);
-                }
             }
         }
         return result;
@@ -140,18 +130,15 @@ public class CourseTestData implements CourseData {
         return result;
     }
 
-    // EFFECTS: returns a list of all course IDs
-    public List<String> getAllCourseIDs() {
-        ArrayList<String> courseIDs = new ArrayList<>();
-        for (String courseID : courses.keySet()) {
-            courseIDs.add(courseID);
-        }
-        return courseIDs;
+    // EFFECTS: returns a list of all courses
+    @Override
+    public List<Course> getAllCourse() {
+        return new ArrayList<>(courses.values());
     }
 
-    // REQUIRES: given course ID is a valid course ID
-    // EFFECTS: given a course ID, gets the course description
-    public String getCourseDescription(String courseID) {
-        return courses.get(courseID).getDescription();
+    // EFFECTS: returns a list of all course IDs
+    @Override
+    public List<String> getAllCourseIDs() {
+        return new ArrayList<>(courses.keySet());
     }
 }

@@ -9,9 +9,9 @@ import java.util.*;
 // Data used for demo purposes. Contains 8 courses with a few sections from each course. Include methods for loading
 // the data.
 public class CourseRealData implements CourseData {
-    private Map<String, Section> data = new LinkedHashMap<>(); // a hashmap of Sections, with the value being a
+    private Map<String, Section> data = new LinkedHashMap<>(); // A hashmap of Sections, with the value being a
     // section, and the key being the corresponding course ID.
-    private Map<String, Course> courses = new LinkedHashMap<>(); // Some course IDs and their description
+    private Map<String, Course> courses = new LinkedHashMap<>(); // A hashmap of course IDs and their description
 
     // EFFECTS: Creates a new CourseRealData with a populated data field.
     @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings"})
@@ -40,7 +40,7 @@ public class CourseRealData implements CourseData {
                 "Concepts fundamental to biological issues"));
 
 
-
+        // SECTIONS:
         data.put("PHYS 117 101",  new Section("PHYS 117 101", "PHYS 117", SectionType.LECTURE,
                 "11:00", "12:00", Arrays.asList("Mon","Wed","Fri"), 1,
                 Arrays.asList(Arrays.asList("PHYS 117 T1A","PHYS 117 T1B","PHYS 117 T1C","PHYS 117 T1D","PHYS 117 T1E",
@@ -1224,8 +1224,7 @@ public class CourseRealData implements CourseData {
     }
 
     // REQUIRES: given String is a valid course ID
-    // EFFECTS: returns root sections given a course ID. It returns all sections of a course that has antirequisits,
-    //          but if there are none, it returns all the sections of the course that have the SectionType LECTURE
+    // EFFECTS: returns root sections given a course ID. It returns all sections of a course that has antirequisits
     @Override
     public List<Section> getRootSections(String courseID, int term) {
         List<Section> result = new ArrayList<>();
@@ -1233,13 +1232,6 @@ public class CourseRealData implements CourseData {
             if (courseID.equals(section.getCourseID()) && !section.getAntiRequisiteIDs().isEmpty()
                     && section.getTerm() == term) {
                 result.add(section);
-            }
-        }
-        if (result.isEmpty()) {
-            for (Section section : data.values()) {
-                if (courseID.equals(section.getCourseID()) && section.getSectionType() == SectionType.LECTURE) {
-                    result.add(section);
-                }
             }
         }
         return result;
@@ -1266,18 +1258,17 @@ public class CourseRealData implements CourseData {
         return result;
     }
 
-    // EFFECTS: returns a list of all course IDs
-    public List<String> getAllCourseIDs() {
-        ArrayList<String> courseIDs = new ArrayList<>();
-        for (String courseID : courses.keySet()) {
-            courseIDs.add(courseID);
-        }
-        return courseIDs;
+    // EFFECTS: returns a list of all courses
+    @Override
+    public List<Course> getAllCourse() {
+        return new ArrayList<>(courses.values());
     }
 
-    // REQUIRES: given course ID is a valid course ID
-    // EFFECTS: given a course ID, gets the course description
-    public String getCourseDescription(String courseID) {
-        return courses.get(courseID).getDescription();
+    // EFFECTS: returns a list of all course IDs
+    @Override
+    public List<String> getAllCourseIDs() {
+        return new ArrayList<>(courses.keySet());
     }
+
+
 }

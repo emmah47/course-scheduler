@@ -1,7 +1,6 @@
 package model;
 
 import model.util.CourseData;
-import model.util.Scheduler;
 
 import java.util.*;
 
@@ -21,8 +20,8 @@ public class Schedule {
     //           1 or 2
     // EFFECTS: Schedule name is set to name, list of courses to be scheduled is set to courseIDs, list of scheduled
     //          sections is set to sectionIDs, the term of the schedule is set to term, the weights are set to weight,
-    //          the score is initialized as 0, the data used for this schedule is set to courseData, the sorted
-    //          sections is initialized to a hashmap of empty arrays.
+    //          the score is initialized as 0, the data used for this schedule is set to courseData, sortedSections is
+    //          initialized to a hashmap of empty arrays.
     public Schedule(String name,
                     List<String> courseIDs,
                     List<String> sectionIDs,
@@ -102,7 +101,6 @@ public class Schedule {
         return sortedSections;
     }
 
-    // MODIFIES: this
     // EFFECTS: returns a copy of the given schedule
     public Schedule makeCopy() {
         Schedule newSchedule = new Schedule(
@@ -191,7 +189,7 @@ public class Schedule {
     // EFFECTS: calculates a score for how close together the sections are. For example, two back to back courses will
     //          receive a higher score than two courses with a three-hour gap in between.
     private float calculateCompactScore() {
-        int maxScore = 60 * 10 * 5; // 60min/hr, 10hrs a day worst case scenario, 5 days
+        int maxScore = 60 * 10 * 5; // 60min/hr, * 10hrs a day worst case scenario, * 5 days
         int result = maxScore;
         for (List<Section> sections : sortedSections.values()) {
             for (int i = 0; i < sections.size() - 1; i++) {

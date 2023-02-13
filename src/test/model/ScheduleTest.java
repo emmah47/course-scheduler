@@ -61,6 +61,7 @@ class ScheduleTest {
         assertEquals(newName, schedule.getName());
         assertEquals(newCourseIdList, schedule.getCourseIDs());
         assertEquals(newTerm, schedule.getTerm());
+        assertEquals(0, schedule.getAllAntirequisits().size());
 
     }
 

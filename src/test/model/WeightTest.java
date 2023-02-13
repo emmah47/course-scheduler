@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class WeightTest {
+
     @Test
     void weightConstructorTestString() {
         Weight weight1 = new Weight(1, 2, "3:00", "4:00");

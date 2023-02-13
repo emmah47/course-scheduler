@@ -40,4 +40,14 @@ class CourseTestDataTest {
                 courseTestData.getSection("CPSC 110 102"));
         assertEquals(expectedSections, courseTestData.getSections(Arrays.asList("CPSC 110 101", "CPSC 110 102")));
     }
+
+    @Test
+    void getAllCourse() {
+        assertTrue(courseTestData.getAllCourse().size()>0);
+    }
+
+    @Test
+    void getAllCourseIDs() {
+        assertTrue(courseTestData.getAllCourseIDs().size()>0);
+    }
 }

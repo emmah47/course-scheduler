@@ -5,9 +5,9 @@ import model.util.HelperUtil;
 
 import java.util.List;
 
-// Represents a single UBC course section, modeled after sections on UBC's browse courses webpage. An example would be
-// CPSC 210 101. The section contains a course ID, a section ID, a SectionType, a start time, an end time, the days
-// of the week that the section is held on, the term, and a list of antirequisites.
+// Represents a single UBC course section, modeled after sections on UBC's browse courses webpage. An example of a
+// section would be CPSC 210 101. The section contains a course ID, a section ID, a SectionType, a start time,
+// an end time, the days of the week that the section is held on, the term, and a list of antirequisites.
 //
 // Antirequisits are the sections that depend on this section. For example, if for CPSC 110 101 lecture you have to
 // choose one lab from L01, L02, and L03, and for CPSC 110 102 lecture you have to choose one lab from L03 and L04, then
@@ -29,7 +29,7 @@ public class Section {
 
 
     // REQUIRES: sectionID is a valid section id, courseID is a valid course id, startTime and endTime are in the form
-    // of "hr:mins" (ex. "12:30) and are in 24hr time, the week days inside weekDays are the first three letters of
+    // of "hr:mins" (ex. "12:30") and are in 24hr time, the week days inside weekDays are the first three letters of
     // the weekday with the first letter capitalized (ex "Wed"), term is either 1 or 2, antirequisite IDs contain valid
     // section ids.
     // EFFECTS: creates a Section that has a unique sectionID, a course ID, the type of the section, a start and end
@@ -127,7 +127,7 @@ public class Section {
         this.antiRequisiteIDs = antiRequisiteIDs;
     }
 
-    // EFFECTS: checks if two sections has conflict, so if their times overlap each other
+    // EFFECTS: checks if two sections has conflict, (if their times overlap each other or not)
     public boolean hasConflictWith(Section section) {
         if (HelperUtil.hasSameMember(this.weekDays, section.getWeekDays())) {
             return ((this.getStartTimeInMinutes() <= section.getStartTimeInMinutes()

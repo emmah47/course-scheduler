@@ -4,9 +4,8 @@
 
 This course scheduler will schedule UBC courses according to user preferences, 
 using a rule-based scoring system to generate optimized schedules. Users will be 
-able to search for and select courses, read course descriptions, set time 
-preferences, and choose preferred course sections. The scheduler will visualize 
-the result in a calendar.
+able to view and select courses, read course descriptions, and set time 
+preferences. The scheduler will visualize the result in a calendar.
 
 All UBC students who don't need STT courses can use this scheduler to make their
 course registration experience slightly less stressful.
@@ -22,17 +21,18 @@ optimize the courses, which would be difficult to do by hand.
 
 ### User Stories:
 
-- As a user, I want to be able to search for available courses
+- As a user, I want to be able to browse available courses and their descriptions
 - As a user, I want to be able to add courses to my schedule
 - As a user, I want to be able to set schedule preferences such as:
     - choosing the earliest start time and latest end time
     - limiting the difference of total hours of class per day between each day
     - limiting the amount of spacing between individual courses
-    - selecting course sections that must be included in the schedule
 - As a user, I want to be able to choose how many schedules are displayed
 - As a user, I want to be able to view the schedule 
 - As a user, I want to be able to save my schedules
 - As a user, I want to be able to save the chosen courses and preferences
+
+
 
 
 

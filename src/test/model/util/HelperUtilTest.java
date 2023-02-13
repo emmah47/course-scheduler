@@ -27,4 +27,11 @@ class HelperUtilTest {
         assertFalse(HelperUtil.hasSameMember(Arrays.asList("a", "b"), Arrays.asList("c")));
         assertFalse(HelperUtil.hasSameMember(Arrays.asList("b"), Arrays.asList("a", "c")));
     }
+
+    @Test
+    void minutesToHHMM() {
+        assertEquals("09:30", HelperUtil.minutesToTime( 9 * 60 + 30));
+        assertEquals("15:30", HelperUtil.minutesToTime( 15 * 60 + 30));
+
+    }
 }
