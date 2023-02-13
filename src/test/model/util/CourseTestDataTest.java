@@ -31,6 +31,8 @@ class CourseTestDataTest {
         List<Section> testSections = courseTestData.getRootSections("testEmptyAntiReq", 2);
         assertEquals(1, testSections.size());
         assertEquals("testEmptyAntiReq", testSections.get(0).getCourseID());
+        List<Section> testSectionsLab = courseTestData.getRootSections("testEmptyAntiReqLab", 1);
+        assertEquals(0, testSectionsLab.size());
     }
 
     @Test

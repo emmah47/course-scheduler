@@ -1221,6 +1221,11 @@ public class CourseRealData implements CourseData {
                         "CPSC 210 L2N","CPSC 210 L2P","CPSC 210 L2R","CPSC 210 L2T","CPSC 210 L2U","CPSC 210 L2X",
                         "CPSC 210 L2Y","CPSC 210 L2Z"))));
 
+        // FOR UNIT TEST
+        data.put("testEmptyAntiReqLab", new Section("testEmptyAntiReqLab", "testEmptyAntiReqLab",
+                SectionType.LABORATORY, "11:00", "12:30", Arrays.asList("Mon", "Wed", "Fri"), 1,
+                Arrays.asList()));
+
     }
 
     // REQUIRES: given String is a valid course ID

@@ -45,6 +45,9 @@ public class CourseTestData implements CourseData {
                 SectionType.LECTURE, "11:00", "12:30", Arrays.asList("Mon", "Wed", "Fri"), 2,
                 Arrays.asList()));
 
+        data.put("testEmptyAntiReqLab", new Section("testEmptyAntiReqLab", "testEmptyAntiReqLab",
+                SectionType.LABORATORY, "11:00", "12:30", Arrays.asList("Mon", "Wed", "Fri"), 1,
+                Arrays.asList()));
 
 
         // LABS
