@@ -8,6 +8,9 @@ import java.util.*;
 // Contains methods for course scheduling.
 public class Scheduler {
 
+    private Scheduler() {
+    }
+
     // REQUIRES: schedule is either empty (not yet finished nor given a score) or contains only root sections.
     // EFFECTS: makes a list of all possible schedules from a starting schedule, calculates their scores, and then
     //          returns a list of schedules sorted byt their score from high to low
@@ -32,15 +35,26 @@ public class Scheduler {
     //          it was not possible to schedule the given courses
     private static List<Schedule> scheduleCourses(Schedule schedule0) {
         List<Schedule> result0 = new ArrayList<>();
-        scheduleRootSections(schedule0, new LinkedList<>(), schedule0.getCourseIDs(),
-                new LinkedList<>(), result0);
+        scheduleRootSections(schedule0, new LinkedList<>(), schedule0.getCourseIDs(), new LinkedList<>(), result0);
 
         List<Schedule> result = new ArrayList<>();
         for (Schedule schedule : result0) {
             List<Schedule> tempResult = new ArrayList<>();
             List<List<String>> sectionIDsSet = schedule.getAllAntirequisits();
-            scheduleSecondSections(schedule, new LinkedList<>(),
-                    sectionIDsSet, new LinkedList<>(), sectionIDsSet.size(), tempResult);
+            LinkedList<Schedule> scheduleWorkList = new LinkedList<>();
+            LinkedList<List<List<String>>> sectionIDsWorkList = new LinkedList<>();
+            int sectionIdsSize = sectionIDsSet.size();
+            scheduleSecondSections(schedule, scheduleWorkList,
+                    sectionIDsSet, sectionIDsWorkList, sectionIdsSize, tempResult);
+            while (!scheduleWorkList.isEmpty()) {
+                scheduleSecondSections(
+                        scheduleWorkList.pollFirst(),
+                        scheduleWorkList,
+                        sectionIDsWorkList.pollFirst(),
+                        sectionIDsWorkList,
+                        sectionIdsSize,
+                        tempResult);
+            }
             result.addAll(tempResult);
         }
         return result;
@@ -97,15 +111,6 @@ public class Scheduler {
                     sectionIDsSet.subList(1, sectionIDsSet.size())));
         }
 
-        if (!scheduleWorkList.isEmpty()) {
-            scheduleSecondSections(
-                    scheduleWorkList.pollFirst(),
-                    scheduleWorkList,
-                    sectionIDsWorkList.pollFirst(),
-                    sectionIDsWorkList,
-                    sectionIDsSize,
-                    resultSoFar);
-        }
     }
 
 
@@ -113,11 +118,11 @@ public class Scheduler {
     // ids and making one copy of the new schedule for every section.
     private static List<Schedule> makeNextSchedules(Schedule schedule0, String courseID) {
         List<Schedule> result = new ArrayList<>();
-        List<Section> sections = schedule0.getCourseData().getRootSections(courseID, schedule0.getTerm());
+        List<Section> sections = schedule0.getCourseData().getRootSections(courseID, schedule0.getTerm()); // contains
+        // no sections when BIOL 111 term 2 is used
         for (Section section : sections) {
             Schedule clonedSchedule = schedule0.makeCopy();
-            boolean r = clonedSchedule.tryAddSection(section);
-            if (r) {
+            if (clonedSchedule.tryAddSection(section)) {
                 result.add(clonedSchedule);
             }
         }

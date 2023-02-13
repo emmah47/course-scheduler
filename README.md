@@ -33,11 +33,6 @@ optimize the courses, which would be difficult to do by hand.
 - As a user, I want to be able to save the chosen courses and preferences
 
 
-### How to Run:
-Due to Java not having tail recursion optimization, it may be necessary to manually
-increase stack size if the program run into stack overflow problems.
-
-Java -Xss8m
 
 
 

@@ -4,6 +4,8 @@ import java.util.List;
 
 // Utility class for common utility
 public class HelperUtil {
+    private HelperUtil() {
+    }
 
     // REQUIRES: string is in the format of hrs:mins, in 24hr time. For example: 3:00, 21:30, etc
     // EFFECTS: given a time that is in the form of a string, converts it to minutes and returns the value.

@@ -28,8 +28,16 @@ class CourseRealDataTest {
     }
 
     @Test
+    void getRootSectionsNoAntirequisiteTest() {
+        List<Section> biol111Sections = courseRealData.getRootSections("BIOL 111", 2);
+        assertEquals(1, biol111Sections.size());
+        assertEquals("BIOL 111 201", biol111Sections.get(0).getSectionID());
+    }
+
+    @Test
     void getSectionTest() {
-        assertEquals("CPSC 110 101", courseRealData.getSection("CPSC 110 101").getSectionID());
+        assertEquals("CPSC 110 101",
+                courseRealData.getSection("CPSC 110 101").getSectionID());
     }
 
 

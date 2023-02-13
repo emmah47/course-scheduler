@@ -31,10 +31,10 @@ public class CourseSchedulerApp {
     // MODIFIES: schedule
     // EFFECTS: initializes a demo schedule
     private void initDemoSchedule(Schedule schedule) {
-        List<String> courseIDs = Arrays.asList("CPSC 110", "CPSC 121", "ENGL 110", "CPSC 210");
+        List<String> courseIDs = Arrays.asList("CPSC 110", "CPSC 121", "CPSC 210", "BIOL 111");
         schedule.setName("Demo Schedule");
         schedule.setCourseIDs(courseIDs);
-        schedule.setTerm(1);
+        schedule.setTerm(2);
         schedule.setWeight(new Weight(1, 1, "8:00", "16:00"));
     }
 
@@ -80,12 +80,13 @@ public class CourseSchedulerApp {
     // EFFECTS: prints out the course IDs and their corresponding descriptions of all courses in the course data
     private void displayCourseSelection(Schedule schedule) {
         System.out.println("Step1: "
-                + "Please select a course from the following:(Or enter \"demo\" to show the demo schedule)");
+                + "Please select a course from the following:");
         for (Course course : schedule.getCourseData().getAllCourse()) {
             System.out.println("\t" + course.getCourseID()
                     + ": " + course.getDescription());
         }
         System.out.println("Enter your courses one at a time by course id, pressing enter each time.");
+        System.out.println("Or enter \"demo\" to show the demo schedule.");
         System.out.println("Enter \"done\" when done.");
     }
 

@@ -27,6 +27,13 @@ class CourseTestDataTest {
     }
 
     @Test
+    void getRootSectionsNoAntirequisitesTest() {
+        List<Section> testSections = courseTestData.getRootSections("testEmptyAntiReq", 2);
+        assertEquals(1, testSections.size());
+        assertEquals("testEmptyAntiReq", testSections.get(0).getCourseID());
+    }
+
+    @Test
     void getSectionTest() {
         assertEquals("CPSC 110 101", courseTestData.getSection("CPSC 110 101").getSectionID());
     }

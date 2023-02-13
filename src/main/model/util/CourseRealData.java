@@ -1224,7 +1224,8 @@ public class CourseRealData implements CourseData {
     }
 
     // REQUIRES: given String is a valid course ID
-    // EFFECTS: returns root sections given a course ID. It returns all sections of a course that has antirequisits
+    // EFFECTS: returns root sections given a course ID. It returns all sections of a course that has antirequisits.
+    //          If there are none, it will return all lectures of the section.
     @Override
     public List<Section> getRootSections(String courseID, int term) {
         List<Section> result = new ArrayList<>();
@@ -1233,7 +1234,12 @@ public class CourseRealData implements CourseData {
                     && section.getTerm() == term) {
                 result.add(section);
             }
+            if (result.isEmpty() && courseID.equals(section.getCourseID()) && section.getSectionType()
+                    == SectionType.LECTURE && section.getTerm() == term) {
+                result.add(section);
+            }
         }
+
         return result;
     }
 
