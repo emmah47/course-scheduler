@@ -31,7 +31,7 @@ public class CourseSchedulerApp {
     // MODIFIES: schedule
     // EFFECTS: initializes a demo schedule
     private void initDemoSchedule(Schedule schedule) {
-        List<String> courseIDs = Arrays.asList("CPSC 110", "CPSC 121", "CPSC 210");
+        List<String> courseIDs = Arrays.asList("CPSC 110", "CPSC 121", "ENGL 110", "CPSC 210");
         schedule.setName("Demo Schedule");
         schedule.setCourseIDs(courseIDs);
         schedule.setTerm(1);

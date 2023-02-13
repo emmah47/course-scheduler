@@ -22,20 +22,25 @@ public class CourseTestData implements CourseData {
 
         // LECTURES
         data.put("CPSC 110 101",  new Section("CPSC 110 101", "CPSC 110", SectionType.LECTURE,
-                "9:00", "10:30", Arrays.asList("Mon", "Wed", "Fri"), 1,
+                "9:00", "10:30", Arrays.asList("Tue", "Thu"), 1,
                 Arrays.asList(Arrays.asList("CPSC 110 L10", "CPSC 110 L11"))));
         data.put("CPSC 110 102", new Section("CPSC 110 102", "CPSC 110", SectionType.LECTURE,
                 "11:00", "12:30", Arrays.asList("Mon", "Wed", "Fri"), 1,
                 Arrays.asList(Arrays.asList("CPSC 110 L12", "CPSC 110 L13"))));
+        data.put("CPSC 110 103", new Section("CPSC 110 103", "CPSC 110", SectionType.LECTURE,
+                "11:00", "12:30", Arrays.asList("Mon", "Wed", "Fri"), 2,
+                Arrays.asList(Arrays.asList("CPSC 110 L12", "CPSC 110 L13"))));
+
 
         data.put("CPSC 121 101",  new Section("CPSC 121 101", "CPSC 121", SectionType.LECTURE,
-                "13:00", "15:00", Arrays.asList("Tue", "Thu"), 1,
+                "10:00", "15:00", Arrays.asList("Tue", "Thu"), 1,
                 Arrays.asList(Arrays.asList("CPSC 121 L1A", "CPSC 121 L1B"),
                               Arrays.asList("CPSC 121 T1A", "CPSC 121 T1B"))));
         data.put("CPSC 121 102", new Section("CPSC 121 102", "CPSC 121", SectionType.LECTURE,
                 "15:00", "17:00", Arrays.asList("Tue", "Fri"), 1,
                 Arrays.asList(Arrays.asList("CPSC 121 L1A", "CPSC 121 L1B"),
                 Arrays.asList("CPSC 121 T1A", "CPSC 121 T1C"))));
+
 
 
         // LABS

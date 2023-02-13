@@ -57,6 +57,13 @@ class SectionTest {
         s2.setEndTime("02:59");
         assertTrue(s1.hasConflictWith(s2));
 
+        s2.setStartTime("01:30");
+        s2.setEndTime("02:00");
+        assertTrue(s1.hasConflictWith(s2));
+
+        s2.setStartTime("01:30");
+        s2.setEndTime("02:01");
+        assertTrue(s1.hasConflictWith(s2));
     }
 
     @Test

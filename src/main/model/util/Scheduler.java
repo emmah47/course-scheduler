@@ -116,7 +116,8 @@ public class Scheduler {
         List<Section> sections = schedule0.getCourseData().getRootSections(courseID, schedule0.getTerm());
         for (Section section : sections) {
             Schedule clonedSchedule = schedule0.makeCopy();
-            if (clonedSchedule.tryAddSection(section)) {
+            boolean r = clonedSchedule.tryAddSection(section);
+            if (r) {
                 result.add(clonedSchedule);
             }
         }

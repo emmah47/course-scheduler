@@ -24,7 +24,8 @@ class SchedulerTest {
                 weight,
                 new CourseTestData());
         List<Schedule> result = Scheduler.scheduleAndCalculateScore(schedule);
-        assertEquals(18, result.size());
+        assertEquals(16, result.size());
         assertTrue(result.get(0).getSortedSections().get("Mon").size() > 0);
     }
+
 }
