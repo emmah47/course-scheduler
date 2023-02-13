@@ -136,9 +136,7 @@ public class Section {
                     && section.getEndTimeInMinutes() <= this.getEndTimeInMinutes())
 
                     || (section.getStartTimeInMinutes() <= this.getStartTimeInMinutes()
-                    && this.getStartTimeInMinutes() < section.getEndTimeInMinutes())
-                    || (section.getStartTimeInMinutes() < this.getEndTimeInMinutes()
-                    && this.getEndTimeInMinutes() <= section.getEndTimeInMinutes()));
+                    && this.getStartTimeInMinutes() < section.getEndTimeInMinutes()));
         } else {
             return false;
         }
