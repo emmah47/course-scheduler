@@ -10,11 +10,13 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+// A testing class for Schedule
 class ScheduleTest {
     private Schedule defaultSchedule;
     private Section section1;
     private Section section2;
 
+    // EFFECTS: Makes a new weight, schedule, and two different sections before each test
     @BeforeEach
     public void setup() {
         Weight weight1 = new Weight(1,1, "8:00",
@@ -30,7 +32,7 @@ class ScheduleTest {
     }
 
     @Test
-    void testCloneSameValue() {
+    void CloneSameValueTest() {
         defaultSchedule.setScore(4);
         Schedule s1Clone = defaultSchedule.makeCopy();
         assertEquals(defaultSchedule.getName(), s1Clone.getName());
@@ -44,7 +46,7 @@ class ScheduleTest {
     }
 
     @Test
-    void testSetters() {
+    void SettersTest() {
         Schedule schedule = new Schedule(
                 "testSchedule",
                 new ArrayList<>(),
@@ -66,7 +68,7 @@ class ScheduleTest {
     }
 
     @Test
-    void testCloneDifferentObject() {
+    void CloneDifferentObjectTest() {
         defaultSchedule.setScore(10);
         Schedule s1Clone = defaultSchedule.makeCopy();
         assertNotEquals(defaultSchedule, s1Clone);
@@ -85,7 +87,7 @@ class ScheduleTest {
     }
 
     @Test
-    void tryAddSection() {
+    void tryAddSectionTest() {
         Section testS1 = defaultSchedule.getCourseData().getSection("Test Section 1");
         Section testS2 = defaultSchedule.getCourseData().getSection("Test Section 2");
         Section testS3 = defaultSchedule.getCourseData().getSection("Test Section 3");
@@ -101,7 +103,7 @@ class ScheduleTest {
 
 
     @Test
-    void calculateScoreNoOvertime() {
+    void calculateScoreNoOvertimeTest() {
         Weight weight1 = new Weight(1,2, "8:00", "16:00");
         Schedule testSchedule = new Schedule("testSchedule", new ArrayList<>(),
                 Arrays.asList("weightTest1", "weightTest2"), 2, weight1, new CourseTestData());
@@ -110,7 +112,7 @@ class ScheduleTest {
     }
 
     @Test
-    void calculateScoreWithOvertimeStart() {
+    void calculateScoreWithOvertimeStartTest() {
         Weight weight1 = new Weight(1,1, "13:30", "16:00");
         Schedule testSchedule = new Schedule("testSchedule", new ArrayList<>(),
                 Arrays.asList("weightTest1", "weightTest2"), 2, weight1, new CourseTestData());
@@ -119,7 +121,7 @@ class ScheduleTest {
     }
 
     @Test
-    void calculateScoreWithOvertimeEnd() {
+    void calculateScoreWithOvertimeEndTest() {
         Weight weight1 = new Weight(1,1, "8:00", "14:30");
         Schedule testSchedule = new Schedule("testSchedule", new ArrayList<>(),
                 Arrays.asList("weightTest1", "weightTest2"), 2, weight1, new CourseTestData());
@@ -128,7 +130,7 @@ class ScheduleTest {
     }
 
     @Test
-    void calculateScoreZero() {
+    void calculateScoreZeroTest() {
         Weight weight1 = new Weight(0,0, "8:00", "16:00");
         Schedule testSchedule = new Schedule("testSchedule", new ArrayList<>(),
                 Arrays.asList("weightTest1", "weightTest2"), 2, weight1, new CourseTestData());

@@ -31,11 +31,11 @@ public class CourseSchedulerApp {
     // MODIFIES: schedule
     // EFFECTS: initializes a demo schedule
     private void initDemoSchedule(Schedule schedule) {
-        List<String> courseIDs = Arrays.asList("CPSC 110", "CPSC 121", "CPSC 210", "BIOL 111");
+        List<String> courseIDs = Arrays.asList("CPSC 110", "CPSC 121", "CPSC 210", "ENGL 111");
         schedule.setName("Demo Schedule");
         schedule.setCourseIDs(courseIDs);
         schedule.setTerm(2);
-        schedule.setWeight(new Weight(1, 1, "8:00", "16:00"));
+        schedule.setWeight(new Weight(1, 1, "8:00", "14:00"));
     }
 
     // MODIFIES: schedule

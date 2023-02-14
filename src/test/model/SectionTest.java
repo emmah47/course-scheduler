@@ -9,10 +9,12 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+// A testing class for Section
 class SectionTest {
 
+    // EFFECTS: Tests for covering all possible scenarios of conflict
     @Test
-    void testHasConflictWith() {
+    void HasConflictWithTest() {
         Section s1 = new Section("section1",
                 "course1",
                 SectionType.LABORATORY,
@@ -66,8 +68,9 @@ class SectionTest {
         assertTrue(s1.hasConflictWith(s2));
     }
 
+    // EFFECTS: Test for the section's getters and setters
     @Test
-    void testGetterSetter(){
+    void GetterSetterTest(){
         Section s1 = new Section(null,
                 null,
                 SectionType.LABORATORY,

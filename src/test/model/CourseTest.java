@@ -4,7 +4,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+// A testing class for Course
 class CourseTest {
+
+    // EFFECTS: Tests the constructor of a course
     @Test
     public void testCourseConstructor() {
         Course testCourse = new Course("test course", "this is a test course");

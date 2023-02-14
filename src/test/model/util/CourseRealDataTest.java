@@ -10,15 +10,18 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+// A testing class for CourseRealData
 class CourseRealDataTest {
 
     CourseRealData courseRealData;
 
+    // EFFECTS: Makes new CourseRealData before every test
     @BeforeEach
     void setup() {
         courseRealData = new CourseRealData();
     }
 
+    // EFFECTS: Test for getting the root sections from a given course ID
     @Test
     void getRootSectionsTest() {
         List<Section> cpsc110Sections = courseRealData.getRootSections("CPSC 110", 1);
@@ -27,14 +30,14 @@ class CourseRealDataTest {
         assertEquals("CPSC 110", cpsc110Sections.get(1).getCourseID());
     }
 
-
+    // EFFECTS: Test for getting the section from a given section ID
     @Test
     void getSectionTest() {
         assertEquals("CPSC 110 101",
                 courseRealData.getSection("CPSC 110 101").getSectionID());
     }
 
-
+    // EFFECTS: Test for getting a list of sections given a list of section ids
     @Test
     void getSectionsTest() {
         assertEquals(new ArrayList<>(), courseRealData.getSections(new ArrayList<>()));
@@ -44,12 +47,13 @@ class CourseRealDataTest {
         assertEquals(expectedSections, courseRealData.getSections(Arrays.asList("CPSC 110 101", "CPSC 110 102")));
     }
 
-
+    // EFFECTS: Test for getting all the courses
     @Test
     void getAllCourse() {
         assertTrue(courseRealData.getAllCourse().size()>0);
     }
 
+    // EFFECTS: Test for getting all the course IDs
     @Test
     void getAllCourseIDs() {
         assertTrue(courseRealData.getAllCourseIDs().size()>0);

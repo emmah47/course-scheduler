@@ -10,11 +10,29 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+// A testing class for Scheduler
 class SchedulerTest {
 
-
+    // EFFECTS: Test for an empty schedule with no courses to be scheduled
     @Test
-    void scheduleAndCalculateScore() {
+    void scheduleAndCalculateScoreEmptyIDsTest() {
+        Weight weight = new Weight(1, 1, "9:00", "15:00");
+        Schedule schedule = new Schedule(
+                "test schedule",
+                Arrays.asList(),
+                new ArrayList<>(),
+                2,
+                weight,
+                new CourseTestData());
+        List<Schedule> result = Scheduler.scheduleAndCalculateScore(schedule);
+        assertEquals(1, result.size());
+        assertTrue(result.get(0).getSectionIDs().isEmpty());
+        assertEquals(200, result.get(0).getScore());
+    }
+
+    // EFFECTS: Test for scheduling 2 courses
+    @Test
+    void scheduleAndCalculateScoreTest() {
         Weight weight = new Weight(1, 1, "9:00", "15:00");
         Schedule schedule = new Schedule(
                 "test schedule",
