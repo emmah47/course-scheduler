@@ -26,14 +26,6 @@ class CourseTestDataTest {
         assertEquals("CPSC 110", cpsc110Sections.get(1).getCourseID());
     }
 
-    @Test
-    void getRootSectionsNoAntirequisitesTest() {
-        List<Section> testSections = courseTestData.getRootSections("testEmptyAntiReq", 2);
-        assertEquals(1, testSections.size());
-        assertEquals("testEmptyAntiReq", testSections.get(0).getCourseID());
-        List<Section> testSectionsLab = courseTestData.getRootSections("testEmptyAntiReqLab", 1);
-        assertEquals(0, testSectionsLab.size());
-    }
 
     @Test
     void getSectionTest() {

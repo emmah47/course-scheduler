@@ -1221,10 +1221,6 @@ public class CourseRealData implements CourseData {
                         "CPSC 210 L2N","CPSC 210 L2P","CPSC 210 L2R","CPSC 210 L2T","CPSC 210 L2U","CPSC 210 L2X",
                         "CPSC 210 L2Y","CPSC 210 L2Z"))));
 
-        // FOR UNIT TEST
-        data.put("testEmptyAntiReqLab", new Section("testEmptyAntiReqLab", "testEmptyAntiReqLab",
-                SectionType.LABORATORY, "11:00", "12:30", Arrays.asList("Mon", "Wed", "Fri"), 1,
-                Arrays.asList()));
 
     }
 
@@ -1235,12 +1231,8 @@ public class CourseRealData implements CourseData {
     public List<Section> getRootSections(String courseID, int term) {
         List<Section> result = new ArrayList<>();
         for (Section section : data.values()) {
-            if (courseID.equals(section.getCourseID()) && !section.getAntiRequisiteIDs().isEmpty()
+            if (courseID.equals(section.getCourseID()) && section.getSectionType() == SectionType.LECTURE
                     && section.getTerm() == term) {
-                result.add(section);
-            }
-            if (result.isEmpty() && courseID.equals(section.getCourseID()) && section.getSectionType()
-                    == SectionType.LECTURE && section.getTerm() == term) {
                 result.add(section);
             }
         }

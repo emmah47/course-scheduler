@@ -114,12 +114,8 @@ public class CourseTestData implements CourseData {
     public List<Section> getRootSections(String courseID, int term) {
         List<Section> result = new ArrayList<>();
         for (Section section : data.values()) {
-            if (courseID.equals(section.getCourseID()) && !section.getAntiRequisiteIDs().isEmpty()
+            if (courseID.equals(section.getCourseID()) && section.getSectionType() == SectionType.LECTURE
                     && section.getTerm() == term) {
-                result.add(section);
-            }
-            if (result.isEmpty() && courseID.equals(section.getCourseID()) && section.getSectionType()
-                    == SectionType.LECTURE && section.getTerm() == term) {
                 result.add(section);
             }
         }
