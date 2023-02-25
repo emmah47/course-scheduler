@@ -29,9 +29,8 @@ optimize the courses, which would be difficult to do by hand.
     - limiting the amount of spacing between individual courses
 - As a user, I want to be able to choose how many schedules are displayed
 - As a user, I want to be able to view the schedule 
-- As a user, I want to be able to save my schedules and preferences to file (if I so choose)
-- As a user, I want to be able to load my saved schedules and preferences from file (if I so choose)
-- As a user, I want to be able to delete my saved schedules from fil
+- As a user, I want to be able to save my schedules
+- As a user, I want to be able to save the chosen courses and preferences
 
 
 
