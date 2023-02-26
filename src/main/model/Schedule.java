@@ -7,7 +7,7 @@ import java.util.*;
 // represents a schedule with a name, list of courses, list of scheduled sections, term, preferred weights, and score.
 public class Schedule {
     private String name;                                 // name of schedule
-    private List<String> courseIDs;                      // list of course IDs (ex. "CPSC 210", "CPSC 121")
+    private List<Course> courses;                        // list of courses
     private List<String> sectionIDs;                     // list of section IDs (ex. "CPSC 210 101", "CPSC 210 L1Y")
     private int term;                                    // the term that the schedule is for
     private Weight weight;                               // a set of weights that will be used to calculate the score
@@ -23,14 +23,12 @@ public class Schedule {
     //          the score is initialized as 0, the data used for this schedule is set to courseData, sortedSections is
     //          initialized to a hashmap of empty arrays.
     public Schedule(String name,
-                    List<String> courseIDs,
-                    List<String> sectionIDs,
                     int term,
                     Weight weight,
                     CourseData courseData) {
         this.name = name;
-        this.courseIDs = courseIDs;
-        this.sectionIDs = sectionIDs;
+        this.courses = new ArrayList<>();
+        this.sectionIDs = new ArrayList<>();
         this.term = term;
         this.weight = weight;
         this.score = 0;
@@ -54,19 +52,31 @@ public class Schedule {
     }
 
     public List<String> getCourseIDs() {
+        List<String> courseIDs = new ArrayList<>();
+        for (Course course : courses) {
+            courseIDs.add(course.getCourseID());
+        }
         return courseIDs;
     }
 
-    public void setCourseIDs(List<String> courseIDs) {
-        this.courseIDs = courseIDs;
+    public void addCourse(Course course) {
+        courses.add(course);
     }
+
+
+    public void addCoursesByIDs(List<String> courseIDs) {
+        for (String courseID : courseIDs) {
+            this.courses.add(courseData.getCourseByID(courseID));
+        }
+    }
+
 
     public List<String> getSectionIDs() {
         return sectionIDs;
     }
 
-    public void setSectionIDs(List<String> sectionIDs) {
-        this.sectionIDs = sectionIDs;
+    public void addSectionID(String sectionID) {
+        this.sectionIDs.add(sectionID);
     }
 
     public Weight getWeight() {
@@ -105,8 +115,6 @@ public class Schedule {
     public Schedule makeCopy() {
         Schedule newSchedule = new Schedule(
                 this.name,
-                new ArrayList<>(this.courseIDs),
-                new ArrayList<>(this.sectionIDs),
                 this.term,
                 new Weight(this.weight.getCompactWeight(),
                         this.weight.getBalanceWeight(),
@@ -115,8 +123,13 @@ public class Schedule {
                 ),
                 this.courseData
         );
-
         newSchedule.setScore(this.score);
+        for (Course course : this.courses) {
+            newSchedule.addCourse(course);
+        }
+        for (String sectionID : this.sectionIDs) {
+            newSchedule.addSectionID(sectionID);
+        }
         return newSchedule;
     }
 
@@ -243,4 +256,5 @@ public class Schedule {
         }
         return 1 / (float)result;
     }
+
 }

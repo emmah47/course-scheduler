@@ -561,9 +561,6 @@ public class CourseRealData implements CourseData {
                 "9:30", "11:00", Arrays.asList("Tue","Thu"), 2,
                 Arrays.asList(Arrays.asList("CPSC 110 L20","CPSC 110 L21","CPSC 110 L23","CPSC 110 L2A",
                         "CPSC 110 L2B","CPSC 110 L2E","CPSC 110 L2H","CPSC 110 L2J","CPSC 110 L2P","CPSC 110 L2S"))));
-        data.put("CPSC 110 V01",  new Section("CPSC 110 V01", "CPSC 110", SectionType.LECTURE,
-                "11:00", "12:00", Arrays.asList("Mon","Wed","Fri"), 2,
-                Arrays.asList()));
         data.put("ENGL 111 003",  new Section("ENGL 111 003", "ENGL 111", SectionType.LECTURE,
                 "12:30", "14:00", Arrays.asList("Tue","Thu"), 2,
                 Arrays.asList()));
@@ -1273,5 +1270,10 @@ public class CourseRealData implements CourseData {
         return new ArrayList<>(courses.keySet());
     }
 
+    // EFFECTS: returns a course given the course ID
+    @Override
+    public Course getCourseByID(String courseID) {
+        return courses.get(courseID);
+    }
 
 }

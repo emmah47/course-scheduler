@@ -19,8 +19,6 @@ class SchedulerTest {
         Weight weight = new Weight(1, 1, "9:00", "15:00");
         Schedule schedule = new Schedule(
                 "test schedule",
-                Arrays.asList(),
-                new ArrayList<>(),
                 2,
                 weight,
                 new CourseTestData());
@@ -36,11 +34,10 @@ class SchedulerTest {
         Weight weight = new Weight(1, 1, "9:00", "15:00");
         Schedule schedule = new Schedule(
                 "test schedule",
-                Arrays.asList("CPSC 110", "CPSC 121"),
-                new ArrayList<>(),
                 1,
                 weight,
                 new CourseTestData());
+        schedule.addCoursesByIDs(Arrays.asList("CPSC 110", "CPSC 121"));
         List<Schedule> result = Scheduler.scheduleAndCalculateScore(schedule);
         assertEquals(16, result.size());
         assertTrue(result.get(0).getSortedSections().get("Mon").size() > 0);

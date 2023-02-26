@@ -17,7 +17,13 @@ public class CourseTestData implements CourseData {
     public CourseTestData() {
         // COURSES:
         courses.put("CPSC 110", new Course("CPSC 110", "UBC's introductory cs programming course"));
+        courses.put("CPSC 121", new Course("CPSC 121",
+                "Physical and mathematical structures of computation."));
         courses.put("CPSC 210", new Course("CPSC 210", "UBC's other cs programming course"));
+        courses.put("courseId1", new Course("courseId1",
+                "test course 1"));
+        courses.put("courseId2", new Course("courseId2",
+                "test course 2"));
 
 
         // LECTURES
@@ -154,5 +160,11 @@ public class CourseTestData implements CourseData {
     @Override
     public List<String> getAllCourseIDs() {
         return new ArrayList<>(courses.keySet());
+    }
+
+    // EFFECTS: returns a course given the course ID
+    @Override
+    public Course getCourseByID(String courseID) {
+        return courses.get(courseID);
     }
 }

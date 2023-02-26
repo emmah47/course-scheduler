@@ -21,7 +21,7 @@ public class CourseSchedulerApp {
 
     // EFFECTS: creates a Course scheduler app and then runs it
     CourseSchedulerApp() {
-        Schedule schedule = new Schedule("name", new ArrayList<>(), new ArrayList<>(), 2,
+        Schedule schedule = new Schedule("name", 2,
                 new Weight(1, 1, 1, 1),
                 new CourseRealData());
         input = new Scanner(System.in);
@@ -33,7 +33,10 @@ public class CourseSchedulerApp {
     private void initDemoSchedule(Schedule schedule) {
         List<String> courseIDs = Arrays.asList("CPSC 110", "CPSC 121", "CPSC 210", "ENGL 111");
         schedule.setName("Demo Schedule");
-        schedule.setCourseIDs(courseIDs);
+        for (String courseID : courseIDs) {
+            Course selectedCourse = schedule.getCourseData().getCourseByID(courseID);
+            schedule.addCourse(selectedCourse);
+        }
         schedule.setTerm(2);
         schedule.setWeight(new Weight(1, 1, "8:00", "14:00"));
     }
@@ -93,7 +96,6 @@ public class CourseSchedulerApp {
     // MODIFIES: schedule
     // EFFECTS: prompts user to select courses, and then adds them to the schedule
     private String selectCourses(Schedule schedule) {
-        List<String> courseIDs = schedule.getCourseIDs();
         String selection = "";
         while (true) {
             selection = input.nextLine();
@@ -104,10 +106,11 @@ public class CourseSchedulerApp {
                 return "demo";
             }
             if (schedule.getCourseData().getAllCourseIDs().contains(selection)) {
-                if (courseIDs.contains(selection)) {
+                if (schedule.getCourseIDs().contains(selection)) {
                     System.out.println(String.format("\"%s\" is already selected", selection));
                 } else {
-                    courseIDs.add(selection);
+                    Course selectedCourse = schedule.getCourseData().getCourseByID(selection);
+                    schedule.addCourse(selectedCourse);
                 }
             } else {
                 System.out.println(String.format("\"%s\" is invalid course id", selection));

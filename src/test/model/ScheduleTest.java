@@ -23,8 +23,11 @@ class ScheduleTest {
                 "16:00");
         List<String> courseIDs1 = new ArrayList<>(Arrays.asList("CPSC 110", "CPSC 121"));
         List<String> sectionIDs1 =  new ArrayList<>();
-        defaultSchedule = new Schedule("s1", courseIDs1, sectionIDs1, 1, weight1, new CourseTestData());
-
+        defaultSchedule = new Schedule("s1",1, weight1, new CourseTestData());
+        defaultSchedule.addCoursesByIDs(courseIDs1);
+        for (String sectionID : sectionIDs1) {
+            defaultSchedule.addSectionID(sectionID);
+        }
         section1 = new Section("Test Section 1", "Test Course", SectionType.LECTURE,
                 "1:00", "3:00", Arrays.asList("Mon, Wed, Fri"), 1, new ArrayList<>());
         section2 = new Section("Test Section 2", "Test Course", SectionType.LECTURE,
@@ -49,16 +52,14 @@ class ScheduleTest {
     void SettersTest() {
         Schedule schedule = new Schedule(
                 "testSchedule",
-                new ArrayList<>(),
-                new ArrayList<>(),
                 1,
                 new Weight(1, 1,"9:00","15:00" ),
-                null);
+                new CourseTestData());
         String newName = "new name";
         List<String> newCourseIdList = Arrays.asList("courseId1", "courseId2");
         int newTerm = 2;
         schedule.setName(newName);
-        schedule.setCourseIDs(newCourseIdList);
+        schedule.addCoursesByIDs(newCourseIdList);
         schedule.setTerm(newTerm);
         assertEquals(newName, schedule.getName());
         assertEquals(newCourseIdList, schedule.getCourseIDs());
@@ -72,10 +73,8 @@ class ScheduleTest {
         defaultSchedule.setScore(10);
         Schedule s1Clone = defaultSchedule.makeCopy();
         assertNotEquals(defaultSchedule, s1Clone);
-
-        s1Clone.getCourseIDs().add("200");
-        // defaultSchedule.setSectionIDs(Arrays.asList("400"));
-        s1Clone.getSectionIDs().add("100");
+        s1Clone.addCoursesByIDs(Arrays.asList("courseId1"));
+        s1Clone.addSectionID("test");
         Weight weight2 = new Weight(1,2, "8:00",
                 "16:00");
         defaultSchedule.setWeight(weight2);
@@ -93,7 +92,9 @@ class ScheduleTest {
         Section testS3 = defaultSchedule.getCourseData().getSection("Test Section 3");
         ArrayList<String> startingSectionIDs = new ArrayList<>();
         startingSectionIDs.add("Test Section 1");
-        defaultSchedule.setSectionIDs(startingSectionIDs);
+        for (String sectionID : startingSectionIDs) {
+            defaultSchedule.addSectionID(sectionID);
+        }
         assertTrue(defaultSchedule.tryAddSection(testS2));
         assertEquals("Test Section 2", defaultSchedule.getSectionIDs().get(1));
         defaultSchedule.getSectionIDs().remove(1);
@@ -105,8 +106,9 @@ class ScheduleTest {
     @Test
     void calculateScoreNoOvertimeTest() {
         Weight weight1 = new Weight(1,2, "8:00", "16:00");
-        Schedule testSchedule = new Schedule("testSchedule", new ArrayList<>(),
-                Arrays.asList("weightTest1", "weightTest2"), 2, weight1, new CourseTestData());
+        Schedule testSchedule = new Schedule("testSchedule", 2, weight1, new CourseTestData());
+        testSchedule.addSectionID("weightTest1");
+        testSchedule.addSectionID("weightTest2");
         testSchedule.calculateScore();
         assertEquals(300, testSchedule.getScore());
     }
@@ -114,8 +116,9 @@ class ScheduleTest {
     @Test
     void calculateScoreWithOvertimeStartTest() {
         Weight weight1 = new Weight(1,1, "13:30", "16:00");
-        Schedule testSchedule = new Schedule("testSchedule", new ArrayList<>(),
-                Arrays.asList("weightTest1", "weightTest2"), 2, weight1, new CourseTestData());
+        Schedule testSchedule = new Schedule("testSchedule", 2, weight1, new CourseTestData());
+        testSchedule.addSectionID("weightTest1");
+        testSchedule.addSectionID("weightTest2");
         testSchedule.calculateScore();
         assertEquals(33.333335876464844, testSchedule.getScore());
     }
@@ -123,8 +126,9 @@ class ScheduleTest {
     @Test
     void calculateScoreWithOvertimeEndTest() {
         Weight weight1 = new Weight(1,1, "8:00", "14:30");
-        Schedule testSchedule = new Schedule("testSchedule", new ArrayList<>(),
-                Arrays.asList("weightTest1", "weightTest2"), 2, weight1, new CourseTestData());
+        Schedule testSchedule = new Schedule("testSchedule", 2, weight1, new CourseTestData());
+        testSchedule.addSectionID("weightTest1");
+        testSchedule.addSectionID("weightTest2");
         testSchedule.calculateScore();
         assertEquals(33.333335876464844, testSchedule.getScore());
     }
@@ -132,8 +136,9 @@ class ScheduleTest {
     @Test
     void calculateScoreZeroTest() {
         Weight weight1 = new Weight(0,0, "8:00", "16:00");
-        Schedule testSchedule = new Schedule("testSchedule", new ArrayList<>(),
-                Arrays.asList("weightTest1", "weightTest2"), 2, weight1, new CourseTestData());
+        Schedule testSchedule = new Schedule("testSchedule", 2, weight1, new CourseTestData());
+        testSchedule.addSectionID("weightTest1");
+        testSchedule.addSectionID("weightTest2");
         testSchedule.calculateScore();
         assertEquals(0, testSchedule.getScore());
     }

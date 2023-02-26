@@ -9,7 +9,7 @@ class CourseTest {
 
     // EFFECTS: Tests the constructor of a course
     @Test
-    public void testCourseConstructor() {
+    public void CourseConstructorTest() {
         Course testCourse = new Course("test course", "this is a test course");
         assertEquals("test course", testCourse.getCourseID());
         assertEquals("this is a test course", testCourse.getDescription());

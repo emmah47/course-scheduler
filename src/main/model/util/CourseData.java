@@ -17,6 +17,9 @@ public interface CourseData {
     // given list of section IDs, gets sections
     List<Section> getSections(List<String> sectionsIDs);
 
+    // gets a course given id
+    Course getCourseByID(String courseID);
+
     // returns a list of all courses
     List<Course> getAllCourse();
 

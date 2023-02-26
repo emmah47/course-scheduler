@@ -1,5 +1,6 @@
 package model.util;
 
+import model.Course;
 import model.Section;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -47,15 +48,21 @@ class CourseRealDataTest {
         assertEquals(expectedSections, courseRealData.getSections(Arrays.asList("CPSC 110 101", "CPSC 110 102")));
     }
 
+    @Test
+    void getCourseByIDTest() {
+        Course course = courseRealData.getCourseByID("CPSC 110");
+        assertEquals("CPSC 110", course.getCourseID());
+    }
+
     // EFFECTS: Test for getting all the courses
     @Test
-    void getAllCourse() {
+    void getAllCourseTest() {
         assertTrue(courseRealData.getAllCourse().size()>0);
     }
 
     // EFFECTS: Test for getting all the course IDs
     @Test
-    void getAllCourseIDs() {
+    void getAllCourseIDsTest() {
         assertTrue(courseRealData.getAllCourseIDs().size()>0);
     }
 }
