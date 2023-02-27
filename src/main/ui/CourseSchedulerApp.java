@@ -83,7 +83,7 @@ public class CourseSchedulerApp {
     // EFFECTS: prints out the course IDs and their corresponding descriptions of all courses in the course data
     private void displayCourseSelection(Schedule schedule) {
         System.out.println("Step1: "
-                + "Please select a course from the following:");
+                + "Please select your courses from the following:");
         for (Course course : schedule.getCourseData().getAllCourse()) {
             System.out.println("\t" + course.getCourseID()
                     + ": " + course.getDescription());
@@ -226,7 +226,7 @@ public class CourseSchedulerApp {
         }
     }
 
-    // Prompts user to set the number of courses to be displayed
+    // EFFECTS: Prompts user to set the number of courses to be displayed
     private int selectNumOfDisplayedSchedule() {
         System.out.println("Please select the number of courses to be displayed:");
         while (true) {

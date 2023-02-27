@@ -51,6 +51,7 @@ public class Schedule {
         this.name = name;
     }
 
+    // EFFECTS: returns all the course ids of the courses in the schedule
     public List<String> getCourseIDs() {
         List<String> courseIDs = new ArrayList<>();
         for (Course course : courses) {
@@ -63,7 +64,8 @@ public class Schedule {
         courses.add(course);
     }
 
-
+    // MODIFIES: this
+    // EFFECTS: given a list of course ids, adds the corresponding courses to the schedule
     public void addCoursesByIDs(List<String> courseIDs) {
         for (String courseID : courseIDs) {
             this.courses.add(courseData.getCourseByID(courseID));
