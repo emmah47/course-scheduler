@@ -1,0 +1,47 @@
+[
+  {
+    "name":"demo schedule",
+    "courses":[
+      "CPSC 110",
+      "CPSC 121"
+    ],
+    "sectionIDs":[
+      "CPSC 121 L22",
+      "CPSC 121 204",
+      "CPSC 110 201",
+      "CPSC 110 L20",
+      "CPSC 121 204",
+      "CPSC 110 201",
+      "CPSC 121 T2M"
+    ],
+    "term":2,
+    "weight":{
+      "compactWeight":1,
+      "balanceWeight":1,
+      "preferredStartTime":600,
+      "preferredEndTime":960
+    }
+  },
+  {
+    "name":"demo schedule2",
+    "courses":[
+      "MATH 101",
+      "CPSC 121"
+    ],
+    "sectionIDs":[
+      "CPSC 121 L22",
+      "CPSC 121 204",
+      "CPSC 121 204",
+      "CPSC 121 T2M",
+      "MATH 101 A11",
+      "MATH 101 2A1"
+    ],
+    "term":2,
+    "weight":{
+      "compactWeight":5,
+      "balanceWeight":3,
+      "preferredStartTime":630,
+      "preferredEndTime":990
+    }
+  }
+]

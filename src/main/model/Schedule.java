@@ -65,6 +65,12 @@ public class Schedule {
     }
 
     // MODIFIES: this
+    // EFFECTS: given a course id, adds the corresponding course to the schedule
+    public void addCoursesByID(String courseID) {
+        this.courses.add(courseData.getCourseByID(courseID));
+    }
+
+    // MODIFIES: this
     // EFFECTS: given a list of course ids, adds the corresponding courses to the schedule
     public void addCoursesByIDs(List<String> courseIDs) {
         for (String courseID : courseIDs) {

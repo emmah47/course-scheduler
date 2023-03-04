@@ -41,4 +41,48 @@ class WeightTest {
         assertEquals(5, weight.getPreferredStartTime());
     }
 
+    @Test
+    void setPreferredStartTimeTestNoException() {
+        Weight w = new Weight(1, 1, 1, 1);
+        try {
+            w.setPreferredStartTime(30);
+            assertEquals(30, w.getPreferredStartTime());
+        } catch (InvalidTimeException e) {
+            fail();
+        }
+    }
+
+    @Test
+    void setPreferredEndTimeTestNoException() {
+        Weight w = new Weight(1, 1, 1, 1);
+        try {
+            w.setPreferredEndTime(30);
+            assertEquals(30, w.getPreferredEndTime());
+        } catch (InvalidTimeException e) {
+            fail();
+        }
+    }
+
+    @Test
+    void setPreferredStartTimeTestThrowsException() {
+        Weight w = new Weight(1, 1, 1, 1);
+        try {
+            w.setPreferredStartTime(-5);
+            fail();
+        } catch (InvalidTimeException e) {
+            assertEquals(1, w.getPreferredStartTime());
+        }
+    }
+
+    @Test
+    void setPreferredEndTimeTestThrowsException() {
+        Weight w = new Weight(1, 1, 1, 1);
+        try {
+            w.setPreferredEndTime(20000);
+            fail();
+        } catch (InvalidTimeException e) {
+            assertEquals(1, w.getPreferredEndTime());
+        }
+    }
+
 }

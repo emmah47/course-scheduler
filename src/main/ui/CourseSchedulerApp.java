@@ -1,69 +1,460 @@
 package ui;
 
-import model.Course;
-import model.Schedule;
-import model.Section;
-import model.Weight;
+
+import model.*;
 import model.util.CourseRealData;
 import model.util.HelperUtil;
+
 import model.util.Scheduler;
+import persistence.JsonReaderPreferences;
+import persistence.JsonReaderSchedule;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.io.IOException;
+import java.util.*;
 
-// Course Scheduler App
 public class CourseSchedulerApp {
+    private static final String JSON_STORE_WEIGHT = "./data/weight.json";
+    private static final String JSON_STORE_SCHEDULE = "./data/schedule.json";
     private static final List<String> WEEKDAYS = Arrays.asList("Mon", "Tue", "Wed", "Thu", "Fri"); // List of weekdays
     private Scanner input;
+    private Weight preferredWeights = new Weight(1, 1, "9:00", "16:00");
+    private JsonReaderPreferences jsonReaderPreferences;
+    private JsonReaderSchedule jsonReaderSchedule;
 
-
-    // EFFECTS: creates a Course scheduler app and then runs it
+    // constructor
     CourseSchedulerApp() {
-        Schedule schedule = new Schedule("name", 2,
-                new Weight(1, 1, 1, 1),
-                new CourseRealData());
         input = new Scanner(System.in);
-        runSchedulerApp(schedule);
+        jsonReaderPreferences = new JsonReaderPreferences(JSON_STORE_WEIGHT);
+        jsonReaderSchedule = new JsonReaderSchedule(JSON_STORE_SCHEDULE);
+        displayMainMenu();
     }
 
-    // MODIFIES: schedule
-    // EFFECTS: initializes a demo schedule
-    private void initDemoSchedule(Schedule schedule) {
-        List<String> courseIDs = Arrays.asList("CPSC 110", "CPSC 121", "CPSC 210", "ENGL 111");
-        schedule.setName("Demo Schedule");
-        for (String courseID : courseIDs) {
-            Course selectedCourse = schedule.getCourseData().getCourseByID(courseID);
-            schedule.addCourse(selectedCourse);
+
+    // displays the main menu
+    private void displayMainMenu() {
+        printMainMenu();
+        String selection;
+        while (true) {
+            selection = input.nextLine();
+            try {
+                if (selection.equals("0") || selection.equals("1") || selection.equals("2")) {
+                    break;
+                } else {
+                    System.out.println("Invalid input, please enter either 0, 1, or 2.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input, please enter either 0, 1, or 2.");
+            }
         }
-        schedule.setTerm(2);
-        schedule.setWeight(new Weight(1, 1, "8:00", "14:00"));
-    }
-
-    // MODIFIES: schedule
-    // EFFECTS: runs the Course Scheduler application. Displays a demo schedule, or prompts user to set course IDs,
-    //          term, weights, and choose the number of schedules to be displayed.
-    private void runSchedulerApp(Schedule schedule) {
-        displayCourseSelection(schedule);
-        int numOfSchedule = 3;
-        if (selectCourses(schedule).equals("demo")) {
-            initDemoSchedule(schedule);
+        if (selection.equals("1")) {
+            displayPreferenceSettingMenu();
+        } else if (selection.equals("2")) {
+            displaySavedSchedulesMenu();
         } else {
-            selectTerm(schedule);
-            setWeights(schedule);
-            numOfSchedule = selectNumOfDisplayedSchedule();
+            displaySavePreferencesMenu();
         }
-        List<Schedule> result = Scheduler.scheduleAndCalculateScore(schedule);
+    }
 
+    private void printMainMenu() {
+        System.out.println("Please select from one of the following:");
+        System.out.println("0 - Quit");
+        System.out.println("1 - Create Schedule");
+        System.out.println("2 - Load Saved Schedule");
+    }
+
+    // displays saved schedules menu
+    private void displaySavedSchedulesMenu() {
+        List<Schedule> savedSchedules = loadSavedSchedules();
+        printSavedScheduleMenu(savedSchedules);
+        System.out.println("Please select a number to view the corresponding schedule:");
+        String selection;
+        while (true) {
+            selection = input.nextLine();
+            try {
+                if (Integer.parseInt(selection) > savedSchedules.size()
+                        || Integer.parseInt(selection) < 0) {
+                    System.out.println("That schedule does not exist");
+                } else {
+                    break;
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input, please enter a number.");
+            }
+        }
+        if (selection.equals("0")) {
+            displayMainMenu();
+        } else {
+            displaySavedSchedule(savedSchedules.get(Integer.parseInt(selection) - 1));
+        }
+    }
+
+    private List<Schedule> loadSavedSchedules() {
+        try {
+            return jsonReaderSchedule.read();
+        } catch (IOException e) {
+            System.out.println("Unable to load schedules");
+        }
+        return new ArrayList<>(); // placeholder for return value
+    }
+
+    private void printSavedScheduleMenu(List<Schedule> savedSchedules) {
+        System.out.println("Saved schedules:");
+        System.out.println("0 - Back");
+        for (int i = 0; i < savedSchedules.size(); i++) {
+            System.out.println(String.format("%d - %s", i + 1, savedSchedules.get(i).getName()));
+        }
+    }
+
+
+    // gets and displays a schedules based on its name
+    private void displaySavedSchedule(Schedule s) {
+        printDisplaySavedScheduleHelper(s);
+        System.out.println("0 - back");
+        System.out.println("1 - delete current schedule");
+        String selection;
+        while (true) {
+            selection = input.nextLine();
+            try {
+                if (selection.equals("0") || selection.equals("1")) {
+                    break;
+                } else {
+                    System.out.println("Please choose either 0 or 1");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input, please enter a number.");
+            }
+        }
+        if (selection.equals("0")) {
+            displaySavedSchedulesMenu();
+        } else {
+            deleteSchedule(s);
+            displaySavedSchedulesMenu();
+        }
+    }
+
+    private void printDisplaySavedScheduleHelper(Schedule s) {
+        System.out.println("Schedule: " + s.getName());
+        printScheduleDetails(s);
+        System.out.print(displaySchedule(s));
+    }
+
+    private void deleteSchedule(Schedule s) {
+        System.out.println("Schedule has been deleted!");
+    }
+
+
+    private void displayPreferenceSettingMenu() {
+        printPreferenceSettingMenu();
+        System.out.println("Would you like to change these settings? Enter \"yes\", \"no\", or \"load\""
+                + " to load previously saved preferences.");
+        String selection;
+        while (true) {
+            selection = input.nextLine();
+            if (selection.equals("yes") || selection.equals("no") || selection.equals("load")) {
+                break;
+            } else {
+                System.out.println(String.format(selection + " is invalid."));
+            }
+        }
+        if (selection.equals("yes")) {
+            setWeights();
+        } else if (selection.equals("no")) {
+            displayCourseSelectionMenu();
+        } else {
+            loadAndSetWeights();
+        }
+    }
+
+    private void loadAndSetWeights() {
+        System.out.println("loading weights...");
+        try {
+            this.preferredWeights = jsonReaderPreferences.read();
+        } catch (IOException e) {
+            System.out.println("Unable to read from file: " + JSON_STORE_WEIGHT);
+        } finally {
+            displayPreferenceSettingMenu();
+        }
+    }
+
+
+    private void printPreferenceSettingMenu() {
+        System.out.println("Your current preference settings are:");
+        System.out.println("Compact weight: " + preferredWeights.getCompactWeight());
+        System.out.println("Balance weight: " + preferredWeights.getBalanceWeight());
+        System.out.println("Preferred start time: "
+                + HelperUtil.minutesToTime(preferredWeights.getPreferredStartTime()));
+        System.out.println("Preferred end time: "
+                + HelperUtil.minutesToTime(preferredWeights.getPreferredEndTime()));
+
+    }
+
+    private void setWeights() {
+        System.out.println("Please set weights based on following rules:");
+        System.out.println("\tThe compact weight determines how close together the classes are.");
+        System.out.println(
+                "\tThe balance weight determines how balanced the days are in terms of hours of class per day");
+        System.out.println("\tThe importance of these two weights are based on their ratio:");
+        System.out.println("\tFor example: compact is 2 and balance is 1, then the compactness of the schedule ");
+        System.out.println("\t             will be twice as important than the balance of the schedule. \n");
+
+        inputCompactWeight();
+        inputBalanceWeight();
+        inputStartTime();
+        inputEndTime();
+
+        displayPreferenceSettingMenu();
+    }
+
+    // MODIFIES: this
+    // EFFECTS: prompts user to set the compact weight, and sets it
+    private void inputCompactWeight() {
+        System.out.println("Please enter an integer for the compact weight:");
+        while (true) {
+            String inputStr = input.nextLine();
+            try {
+                int weight = Integer.parseInt(inputStr);
+                preferredWeights.setCompactWeight(weight);
+                break;
+            } catch (NumberFormatException nfe) {
+                System.out.println(String.format(
+                        "\"%s\" is invalid, Please enter an integer for the compact weight: ",
+                        inputStr));
+            }
+        }
+    }
+
+    // MODIFIES: this
+    // EFFECTS: prompts user to set the balance weight, and sets it
+    private void inputBalanceWeight() {
+        System.out.println("Please enter an integer for the balance weight:");
+        while (true) {
+            String inputStr = input.nextLine();
+            try {
+                int weight = Integer.parseInt(inputStr);
+                preferredWeights.setBalanceWeight(weight);
+                break;
+            } catch (NumberFormatException nfe) {
+                System.out.println(String.format(
+                        "\"%s\" is invalid, Please enter an integer for the balance weight: ",
+                        inputStr));
+            }
+        }
+    }
+
+    // MODIFIES: this
+    // EFFECTS: prompts user to set the preferred start time, and sets it
+    private void inputStartTime() {
+        System.out.println("Please enter an preferred start time in the form of hh:mm in 24hr time:");
+        while (true) {
+            String inputStr = input.nextLine();
+            try {
+                int startMinutes = HelperUtil.calculateMinutes(inputStr);
+                preferredWeights.setPreferredStartTime(startMinutes);
+                break;
+            } catch (InvalidTimeException ite) {
+                System.out.println(String.format(
+                        "\"%s\" is invalid, Please enter an preferred end time in the form of hh:mm in 24hr time: ",
+                        inputStr));
+            } catch (Exception e) {
+                System.out.println(String.format(
+                        "\"%s\" is invalid, Please enter an preferred start time in the form of hh:mm in 24hr time: ",
+                        inputStr));
+            }
+        }
+    }
+
+    // MODIFIES: this
+    // EFFECTS: prompts user to set the preferred end time, and sets it
+    private void inputEndTime() {
+        System.out.println("Please enter an preferred end time in the form of hh:mm in 24hr time:");
+        while (true) {
+            String inputStr = input.nextLine();
+            try {
+                int endMinutes = HelperUtil.calculateMinutes(inputStr);
+                preferredWeights.setPreferredEndTime(endMinutes);
+                break;
+            } catch (InvalidTimeException ite) {
+                System.out.println(String.format(
+                        "\"%s\" is invalid, Please enter an preferred end time in the form of hh:mm in 24hr time: ",
+                        inputStr));
+            } catch (Exception e) {
+                System.out.println(String.format(
+                        "\"%s\" is invalid, Please enter an preferred end time in the form of hh:mm in 24hr time: ",
+                        inputStr));
+            }
+        }
+    }
+
+
+
+    private void displayCourseSelectionMenu() {
+        Schedule schedule = new Schedule("default name", 1,
+                preferredWeights, new CourseRealData());
+        displayCourseSelection(schedule);
+    }
+
+    // EFFECTS: prints out the course IDs and their corresponding descriptions of all courses in the course data
+    private void displayCourseSelection(Schedule schedule) {
+        System.out.println("Please select a course from the following:");
+        for (Course course : schedule.getCourseData().getAllCourse()) {
+            System.out.println("\t" + course.getCourseID()
+                    + ": " + course.getDescription());
+        }
+        System.out.println("Enter your courses one at a time by course id, pressing enter each time.");
+        System.out.println("Enter \"done\" when done.");
+        selectCourses(schedule);
+    }
+
+    // MODIFIES: schedule
+    // EFFECTS: prompts user to select courses, and then adds them to the schedule
+    private void selectCourses(Schedule schedule) {
+        List<String> courseIDs = schedule.getCourseIDs();
+        while (true) {
+            String selection = input.nextLine();
+            if (selection.equals("done")) {
+                break;
+            }
+            if (schedule.getCourseData().getAllCourseIDs().contains(selection)) {
+                if (courseIDs.contains(selection)) {
+                    System.out.println(String.format("\"%s\" is already selected", selection));
+                } else {
+                    schedule.addCoursesByID(selection);
+                }
+            } else {
+                System.out.println(String.format("\"%s\" is invalid course id", selection));
+            }
+
+        }
+        System.out.println("Your selected courses are: " + schedule.getCourseIDs() + "\n");
+        selectTerm(schedule);
+    }
+
+
+    // MODIFIES: schedule
+    // prompts user to select a term, sets that term to the schedule
+    private void selectTerm(Schedule schedule) {
+        System.out.println("Please select a term. Choose either 1 or 2:");
+        String selection;
+        while (true) {
+            selection = input.nextLine();
+            if (selection.equals("1") || selection.equals("2")) {
+                schedule.setTerm(Integer.parseInt(selection));
+                break;
+            } else {
+                System.out.println(String.format("\"%s\" is an invalid term, Choose either 1 or 2: ", selection));
+            }
+        }
+        calculateAndPrintSchedules(schedule);
+    }
+
+
+    // EFFECTS: calculates the schedules and displays them
+    private void calculateAndPrintSchedules(Schedule schedule) {
+        int numOfSchedule = selectNumOfDisplayedSchedule();
+        List<Schedule> result = Scheduler.scheduleAndCalculateScore(schedule);
         int i = 0;
+        List<Schedule> topResults = new ArrayList<>();
         while (i < Math.min(numOfSchedule, result.size())) {
             printScheduleDetails(schedule);
             System.out.println(String.format("Number %d result:", i + 1));
             System.out.println(displaySchedule(result.get(i)));
+            topResults.add(result.get(i));
             i++;
         }
         System.out.println("Number of possible schedules: " + result.size());
+        displaySaveMenu(topResults);
+    }
+
+
+    private void displaySaveMenu(List<Schedule> schedules) {
+        System.out.println("Would you like to save your schedules? Enter \"yes\" or \"no\".");
+        String selection;
+        while (true) {
+            selection = input.nextLine();
+            if (selection.equals("yes") || selection.equals("no")) {
+                break;
+            } else {
+                System.out.println(String.format("\"%s\" is invalid, choose either \"yes\" or \"no\"", selection));
+            }
+        }
+        if (selection.equals("no")) {
+            displayMainMenu();
+        } else {
+            Schedule scheduleToBeSaved = selectScheduleToSave(schedules);
+            nameSchedule(scheduleToBeSaved);
+        }
+    }
+
+    private Schedule selectScheduleToSave(List<Schedule> schedules) {
+        System.out.println("Please enter the number of the schedule you want to save.");
+        String selection;
+        while (true) {
+            selection = input.nextLine();
+            try {
+                if (Integer.parseInt(selection) <= schedules.size() && Integer.parseInt(selection) > 0) {
+                    break;
+                } else {
+                    System.out.println(String.format("Schedule number %d does not exist.", selection));
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input, please enter a number.");
+            }
+        }
+        return schedules.get(Integer.parseInt(selection) - 1);
+    }
+
+
+    // EFFECTS: assigns a name to group of schedules, and each individual schedule is names "name_1", "name_2"...
+    private void nameSchedule(Schedule schedule) {
+        System.out.println("Please enter a name for your schedule.");
+        String name = input.nextLine();
+        schedule.setName(name);
+        saveSchedule(schedule);
+        System.out.println("Your schedule, " + name + ", has been saved!");
+        displayMainMenu();
+    }
+
+
+    private void saveSchedule(Schedule schedule) {
+        System.out.println("Saving the schedule...");
+    }
+
+
+    // Prompts user to set the number of courses to be displayed
+    private int selectNumOfDisplayedSchedule() {
+        System.out.println("Please select the number of courses to be displayed:");
+        while (true) {
+            String inputStr = input.nextLine();
+            try {
+                return Integer.parseInt(inputStr);
+            } catch (NumberFormatException nfe) {
+                System.out.println(String.format(
+                        "\"%s\" is invalid, Please select the number of courses to be displayed:",
+                        inputStr));
+            }
+        }
+    }
+
+    private void displaySavePreferencesMenu() {
+        System.out.println("Would you like to save your current preferences? Enter \"yes\" or \"no\".");
+        printPreferenceSettingMenu();
+        String selection;
+        while (true) {
+            selection = input.nextLine();
+            if (selection.equals("yes") || selection.equals("no")) {
+                break;
+            } else {
+                System.out.println("Please enter \"yes\" or \"no\".");
+            }
+        }
+        if (selection.equals("yes")) {
+            savePreference();
+        }
+    }
+
+
+    private void savePreference() {
+        System.out.println("Your preferences have been saved");
     }
 
 
@@ -80,166 +471,7 @@ public class CourseSchedulerApp {
         ));
     }
 
-    // EFFECTS: prints out the course IDs and their corresponding descriptions of all courses in the course data
-    private void displayCourseSelection(Schedule schedule) {
-        System.out.println("Step1: "
-                + "Please select your courses from the following:");
-        for (Course course : schedule.getCourseData().getAllCourse()) {
-            System.out.println("\t" + course.getCourseID()
-                    + ": " + course.getDescription());
-        }
-        System.out.println("Enter your courses one at a time by course id, pressing enter each time.");
-        System.out.println("Or enter \"demo\" to show the demo schedule.");
-        System.out.println("Enter \"done\" when done.");
-    }
 
-    // MODIFIES: schedule
-    // EFFECTS: prompts user to select courses, and then adds them to the schedule
-    private String selectCourses(Schedule schedule) {
-        String selection = "";
-        while (true) {
-            selection = input.nextLine();
-            if (selection.equals("done")) {
-                break;
-            }
-            if (selection.equals("demo")) {
-                return "demo";
-            }
-            if (schedule.getCourseData().getAllCourseIDs().contains(selection)) {
-                if (schedule.getCourseIDs().contains(selection)) {
-                    System.out.println(String.format("\"%s\" is already selected", selection));
-                } else {
-                    Course selectedCourse = schedule.getCourseData().getCourseByID(selection);
-                    schedule.addCourse(selectedCourse);
-                }
-            } else {
-                System.out.println(String.format("\"%s\" is invalid course id", selection));
-            }
-
-        }
-        System.out.println("Your selected courses are: " + schedule.getCourseIDs() + "\n");
-        return selection;
-    }
-
-    // MODIFIES: schedule
-    // prompts user to select a term, sets that term to the schedule
-    private void selectTerm(Schedule schedule) {
-        System.out.println("Step 2: Please select a term. Choose either 1 or 2:");
-        while (true) {
-            String selection = input.nextLine();
-            if (Arrays.asList("1", "2").contains(selection)) {
-                schedule.setTerm(Integer.parseInt(selection));
-                break;
-            } else {
-                System.out.println(String.format("\"%s\" is invalid term, Choose either 1 or 2: ", selection));
-            }
-        }
-
-    }
-
-    // MODIFIES: schedule
-    // EFFECTS: displays information about the weights and prompts user to set them
-    private void setWeights(Schedule schedule) {
-        System.out.println("Step 3: Please set weights based on following rules:");
-        System.out.println("\tThe compact weight determines how close together the classes are.");
-        System.out.println(
-                "\tThe balance weight determines how balanced the days are in terms of hours of class per day");
-        System.out.println("\tThe importance of these two weights are based on their ratio:");
-        System.out.println("\tFor example: compact is 2 and balance is 1, then the compactness of the schedule ");
-        System.out.println("\t             will be twice as important than the balance of the schedule. \n");
-
-        inputCompactWeight(schedule);
-        inputBalanceWeight(schedule);
-        inputStartTime(schedule);
-        inputEndTime(schedule);
-    }
-
-    // MODIFIES: this
-    // EFFECTS: prompts user to set the compact weight, and sets it
-    private void inputCompactWeight(Schedule schedule) {
-        System.out.println("Please enter an integer for the compact weight:");
-        while (true) {
-            String inputStr = input.nextLine();
-            try {
-                int weight = Integer.parseInt(inputStr);
-                schedule.getWeight().setCompactWeight(weight);
-                break;
-            } catch (NumberFormatException nfe) {
-                System.out.println(String.format(
-                        "\"%s\" is invalid, Please enter an integer for the compact weight: ",
-                        inputStr));
-            }
-        }
-    }
-
-    // MODIFIES: this
-    // EFFECTS: prompts user to set the balance weight, and sets it
-    private void inputBalanceWeight(Schedule schedule) {
-        System.out.println("Please enter an integer for the balance weight:");
-        while (true) {
-            String inputStr = input.nextLine();
-            try {
-                int weight = Integer.parseInt(inputStr);
-                schedule.getWeight().setBalanceWeight(weight);
-                break;
-            } catch (NumberFormatException nfe) {
-                System.out.println(String.format(
-                        "\"%s\" is invalid, Please enter an integer for the balance weight: ",
-                        inputStr));
-            }
-        }
-    }
-
-    // MODIFIES: this
-    // EFFECTS: prompts user to set the preferred start time, and sets it
-    private void inputStartTime(Schedule schedule) {
-        System.out.println("Please enter an preferred start time in the form of hh:mm in 24hr time:");
-        while (true) {
-            String inputStr = input.nextLine();
-            try {
-                int startMinutes = HelperUtil.calculateMinutes(inputStr);
-                schedule.getWeight().setPreferredStartTime(startMinutes);
-                break;
-            } catch (Exception e) {
-                System.out.println(String.format(
-                        "\"%s\" is invalid, Please enter an preferred start time in the form of hh:mm in 24hr time: ",
-                        inputStr));
-            }
-        }
-    }
-
-    // MODIFIES: this
-    // EFFECTS: prompts user to set the preferred end time, and sets it
-    private void inputEndTime(Schedule schedule) {
-        System.out.println("Please enter an preferred end time in the form of hh:mm in 24hr time:");
-        while (true) {
-            String inputStr = input.nextLine();
-            try {
-                int endMinutes = HelperUtil.calculateMinutes(inputStr);
-                schedule.getWeight().setPreferredEndTime(endMinutes);
-                break;
-            } catch (Exception e) {
-                System.out.println(String.format(
-                        "\"%s\" is invalid, Please enter an preferred end time in the form of hh:mm in 24hr time: ",
-                        inputStr));
-            }
-        }
-    }
-
-    // EFFECTS: Prompts user to set the number of courses to be displayed
-    private int selectNumOfDisplayedSchedule() {
-        System.out.println("Please select the number of courses to be displayed:");
-        while (true) {
-            String inputStr = input.nextLine();
-            try {
-                return Integer.parseInt(inputStr);
-            } catch (NumberFormatException nfe) {
-                System.out.println(String.format(
-                        "\"%s\" is invalid, Please select the number of courses to be displayed:",
-                        inputStr));
-            }
-        }
-    }
 
     // MODIFIES: value
     // EFFECTS: adds whitespace onto the end of strings so that they are the length of one cell in the display table
@@ -315,6 +547,4 @@ public class CourseSchedulerApp {
         result += getRowSeparator();
         return result;
     }
-
-
 }

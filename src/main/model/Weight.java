@@ -57,7 +57,10 @@ public class Weight {
         return preferredStartTime;
     }
 
-    public void setPreferredStartTime(int preferredStartTime) {
+    public void setPreferredStartTime(int preferredStartTime) throws InvalidTimeException {
+        if (preferredStartTime >= 1440 || preferredStartTime < 0) {
+            throw new InvalidTimeException();
+        }
         this.preferredStartTime = preferredStartTime;
     }
 
@@ -65,7 +68,10 @@ public class Weight {
         return preferredEndTime;
     }
 
-    public void setPreferredEndTime(int preferredEndTime) {
+    public void setPreferredEndTime(int preferredEndTime) throws InvalidTimeException {
+        if (preferredEndTime >= 1440 || preferredEndTime < 0) {
+            throw new InvalidTimeException();
+        }
         this.preferredEndTime = preferredEndTime;
     }
 
