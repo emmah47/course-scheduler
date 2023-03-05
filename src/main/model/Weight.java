@@ -1,13 +1,15 @@
 package model;
 
 import model.util.HelperUtil;
+import org.json.JSONObject;
+import persistence.Writable;
 
 // A set of weights decided by the user. It is used for calculating the score of each schedule to decide which schedules
 // are better. A category with a higher weight will impact the final score more. Also contains the preferred start and
 // end times. The scores are scaled by the ratio of their weights. For example, if compactWeight == 2 and balanceWeight
 // == 1, then the score for the compactness of the schedule will be considered twice as important as the score for the
 // balance.
-public class Weight {
+public class Weight implements Writable {
     // WEIGHTS
     private int compactWeight; // weight for scaling compact score
     private int balanceWeight; // weight for scaling balance score
@@ -57,6 +59,8 @@ public class Weight {
         return preferredStartTime;
     }
 
+    // MODIFIES: this
+    // EFFECTS: sets the preferred start time, throws an exception if time is not valid
     public void setPreferredStartTime(int preferredStartTime) throws InvalidTimeException {
         if (preferredStartTime >= 1440 || preferredStartTime < 0) {
             throw new InvalidTimeException();
@@ -68,6 +72,8 @@ public class Weight {
         return preferredEndTime;
     }
 
+    // MODIFIES: this
+    // EFFECTS: sets the preferred end time, throws an exception if time is not valid
     public void setPreferredEndTime(int preferredEndTime) throws InvalidTimeException {
         if (preferredEndTime >= 1440 || preferredEndTime < 0) {
             throw new InvalidTimeException();
@@ -75,5 +81,16 @@ public class Weight {
         this.preferredEndTime = preferredEndTime;
     }
 
-
+    // This code is based on the JsonSerializationDemo example provided for phase2
+    // EFFECTS: converts this to a json object
+    @Override
+    public JSONObject toJsonObject() {
+        JSONObject json = new JSONObject();
+        json.put("compactWeight", compactWeight);
+        json.put("balanceWeight", balanceWeight);
+        json.put("preferredStartTime", preferredStartTime);
+        json.put("preferredEndTime", preferredEndTime);
+        return json;
+    }
 }
+

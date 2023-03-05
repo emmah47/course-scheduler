@@ -64,7 +64,7 @@ class WeightTest {
     }
 
     @Test
-    void setPreferredStartTimeTestThrowsException() {
+    void setPreferredStartTimeTestThrowsExceptionNegative() {
         Weight w = new Weight(1, 1, 1, 1);
         try {
             w.setPreferredStartTime(-5);
@@ -75,10 +75,32 @@ class WeightTest {
     }
 
     @Test
-    void setPreferredEndTimeTestThrowsException() {
+    void setPreferredStartTimeTestThrowsExceptionTooLarge() {
+        Weight w = new Weight(1, 1, 1, 1);
+        try {
+            w.setPreferredStartTime(230942);
+            fail();
+        } catch (InvalidTimeException e) {
+            assertEquals(1, w.getPreferredStartTime());
+        }
+    }
+
+    @Test
+    void setPreferredEndTimeTestThrowsExceptionTooLarge() {
         Weight w = new Weight(1, 1, 1, 1);
         try {
             w.setPreferredEndTime(20000);
+            fail();
+        } catch (InvalidTimeException e) {
+            assertEquals(1, w.getPreferredEndTime());
+        }
+    }
+
+    @Test
+    void setPreferredEndTimeTestThrowsExceptionNegative() {
+        Weight w = new Weight(1, 1, 1, 1);
+        try {
+            w.setPreferredEndTime(-100);
             fail();
         } catch (InvalidTimeException e) {
             assertEquals(1, w.getPreferredEndTime());

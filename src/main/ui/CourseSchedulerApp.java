@@ -6,12 +6,16 @@ import model.util.CourseRealData;
 import model.util.HelperUtil;
 
 import model.util.Scheduler;
+import org.json.JSONArray;
 import persistence.JsonReaderPreferences;
 import persistence.JsonReaderSchedule;
+import persistence.JsonWriter;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.*;
 
+// A class that represents the course scheduler app
 public class CourseSchedulerApp {
     private static final String JSON_STORE_WEIGHT = "./data/weight.json";
     private static final String JSON_STORE_SCHEDULE = "./data/schedule.json";
@@ -20,17 +24,22 @@ public class CourseSchedulerApp {
     private Weight preferredWeights = new Weight(1, 1, "9:00", "16:00");
     private JsonReaderPreferences jsonReaderPreferences;
     private JsonReaderSchedule jsonReaderSchedule;
+    private JsonWriter jsonWriterPreferences;
+    private JsonWriter jsonWriterSchedules;
+    private List<Schedule> savedSchedules;
 
     // constructor
     CourseSchedulerApp() {
         input = new Scanner(System.in);
         jsonReaderPreferences = new JsonReaderPreferences(JSON_STORE_WEIGHT);
         jsonReaderSchedule = new JsonReaderSchedule(JSON_STORE_SCHEDULE);
+        jsonWriterPreferences = new JsonWriter(JSON_STORE_WEIGHT);
+        jsonWriterSchedules = new JsonWriter(JSON_STORE_SCHEDULE);
         displayMainMenu();
     }
 
 
-    // displays the main menu
+    // EFFECTS: displays the main menu
     private void displayMainMenu() {
         printMainMenu();
         String selection;
@@ -49,12 +58,13 @@ public class CourseSchedulerApp {
         if (selection.equals("1")) {
             displayPreferenceSettingMenu();
         } else if (selection.equals("2")) {
-            displaySavedSchedulesMenu();
+            tryDisplaySavedSchedulesMenu();
         } else {
             displaySavePreferencesMenu();
         }
     }
 
+    // EFFECTS: prints the main menu
     private void printMainMenu() {
         System.out.println("Please select from one of the following:");
         System.out.println("0 - Quit");
@@ -62,9 +72,19 @@ public class CourseSchedulerApp {
         System.out.println("2 - Load Saved Schedule");
     }
 
-    // displays saved schedules menu
+    // EFFECTS: checks if there are any saved schedules and only displays them if there are
+    private void tryDisplaySavedSchedulesMenu() {
+        this.savedSchedules = loadSavedSchedules();
+        if (savedSchedules.size() == 0) {
+            System.out.println("You don't have any saved schedules.");
+            displayMainMenu();
+        } else {
+            displaySavedSchedulesMenu();
+        }
+    }
+
+    // EFFECTS: displays saved schedules menu
     private void displaySavedSchedulesMenu() {
-        List<Schedule> savedSchedules = loadSavedSchedules();
         printSavedScheduleMenu(savedSchedules);
         System.out.println("Please select a number to view the corresponding schedule:");
         String selection;
@@ -88,15 +108,35 @@ public class CourseSchedulerApp {
         }
     }
 
-    private List<Schedule> loadSavedSchedules() {
+    // MODIFIES: file
+    // EFFECTS: saves this.savedSchedules to file
+    private void saveSchedulesToFile() {
         try {
-            return jsonReaderSchedule.read();
+            jsonWriterSchedules.open();
+            JSONArray jsonArraySchedules = new JSONArray();
+            for (Schedule schedule : this.savedSchedules) {
+                jsonArraySchedules.put(schedule.toJsonObject());
+            }
+            jsonWriterSchedules.writeJsonArray(jsonArraySchedules);
+            jsonWriterSchedules.close();
+        } catch (IOException e) {
+            System.out.println("Cannot save file.");
+        }
+
+    }
+
+    // EFFECTS: loads the saved schedules from file and returns them
+    private List<Schedule> loadSavedSchedules() {
+        List<Schedule> schedules = new ArrayList<>();
+        try {
+            schedules = jsonReaderSchedule.read();
         } catch (IOException e) {
             System.out.println("Unable to load schedules");
         }
-        return new ArrayList<>(); // placeholder for return value
+        return schedules;
     }
 
+    // EFFECTS: displays menu with all the names of the saved schedules
     private void printSavedScheduleMenu(List<Schedule> savedSchedules) {
         System.out.println("Saved schedules:");
         System.out.println("0 - Back");
@@ -106,7 +146,7 @@ public class CourseSchedulerApp {
     }
 
 
-    // gets and displays a schedules based on its name
+    // EFFECTS: gets and displays a schedule from save menu
     private void displaySavedSchedule(Schedule s) {
         printDisplaySavedScheduleHelper(s);
         System.out.println("0 - back");
@@ -128,21 +168,26 @@ public class CourseSchedulerApp {
             displaySavedSchedulesMenu();
         } else {
             deleteSchedule(s);
-            displaySavedSchedulesMenu();
+            tryDisplaySavedSchedulesMenu();
         }
     }
 
+    // EFFECTS: layouts and prints out the saved schedule
     private void printDisplaySavedScheduleHelper(Schedule s) {
         System.out.println("Schedule: " + s.getName());
         printScheduleDetails(s);
         System.out.print(displaySchedule(s));
     }
 
+    // MODIFIES: this, file
+    // EFFECTS: deletes the schedule from file
     private void deleteSchedule(Schedule s) {
+        this.savedSchedules.remove(s);
+        saveSchedulesToFile();
         System.out.println("Schedule has been deleted!");
     }
 
-
+    // EFFECTS: displays the preference setting menu
     private void displayPreferenceSettingMenu() {
         printPreferenceSettingMenu();
         System.out.println("Would you like to change these settings? Enter \"yes\", \"no\", or \"load\""
@@ -165,6 +210,8 @@ public class CourseSchedulerApp {
         }
     }
 
+    // MODIFIES: this
+    // EFFECTS: loads the saved weights
     private void loadAndSetWeights() {
         System.out.println("loading weights...");
         try {
@@ -176,7 +223,7 @@ public class CourseSchedulerApp {
         }
     }
 
-
+    // EFFECTS: displays current preferences
     private void printPreferenceSettingMenu() {
         System.out.println("Your current preference settings are:");
         System.out.println("Compact weight: " + preferredWeights.getCompactWeight());
@@ -188,6 +235,8 @@ public class CourseSchedulerApp {
 
     }
 
+    // MODIFIES: this
+    // EFFECTS: prompts user to set the weights, and sets them
     private void setWeights() {
         System.out.println("Please set weights based on following rules:");
         System.out.println("\tThe compact weight determines how close together the classes are.");
@@ -285,8 +334,7 @@ public class CourseSchedulerApp {
         }
     }
 
-
-
+    // EFFECTS: displays the course selection menu
     private void displayCourseSelectionMenu() {
         Schedule schedule = new Schedule("default name", 1,
                 preferredWeights, new CourseRealData());
@@ -366,6 +414,7 @@ public class CourseSchedulerApp {
     }
 
 
+    // EFFECTS: displays the save schedule menu
     private void displaySaveMenu(List<Schedule> schedules) {
         System.out.println("Would you like to save your schedules? Enter \"yes\" or \"no\".");
         String selection;
@@ -385,6 +434,7 @@ public class CourseSchedulerApp {
         }
     }
 
+    // EFFECTS: prompts user to select the schedule they want to save
     private Schedule selectScheduleToSave(List<Schedule> schedules) {
         System.out.println("Please enter the number of the schedule you want to save.");
         String selection;
@@ -408,19 +458,28 @@ public class CourseSchedulerApp {
     private void nameSchedule(Schedule schedule) {
         System.out.println("Please enter a name for your schedule.");
         String name = input.nextLine();
-        schedule.setName(name);
-        saveSchedule(schedule);
-        System.out.println("Your schedule, " + name + ", has been saved!");
-        displayMainMenu();
+        if (savedSchedules.stream().anyMatch(s -> s.getName().equals(name))) {
+            System.out.println("A schedule with the name \"" + name + "\" already exists."
+                              + " Please choose a different name.");
+            nameSchedule(schedule);
+        } else {
+            schedule.setName(name);
+            saveSchedule(schedule);
+            System.out.println("Your schedule, " + name + ", has been saved!");
+            displayMainMenu();
+        }
     }
 
-
+    // MODIFIES: file
+    // EFFECTS: saves this.savedSchedules to file
     private void saveSchedule(Schedule schedule) {
         System.out.println("Saving the schedule...");
+        this.savedSchedules.add(schedule);
+        saveSchedulesToFile();
     }
 
 
-    // Prompts user to set the number of courses to be displayed
+    // EFFECTS: Prompts user to set the number of courses to be displayed
     private int selectNumOfDisplayedSchedule() {
         System.out.println("Please select the number of courses to be displayed:");
         while (true) {
@@ -435,6 +494,7 @@ public class CourseSchedulerApp {
         }
     }
 
+    // EFFECTS: displays the save preferences menu
     private void displaySavePreferencesMenu() {
         System.out.println("Would you like to save your current preferences? Enter \"yes\" or \"no\".");
         printPreferenceSettingMenu();
@@ -452,8 +512,16 @@ public class CourseSchedulerApp {
         }
     }
 
-
+    // MODIFIES: file
+    // EFFECTS: saves the preferences
     private void savePreference() {
+        try {
+            jsonWriterPreferences.open();
+            jsonWriterPreferences.writeJsonObject(preferredWeights.toJsonObject());
+            jsonWriterPreferences.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Cannot find file to save to.");
+        }
         System.out.println("Your preferences have been saved");
     }
 

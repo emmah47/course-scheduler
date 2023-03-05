@@ -13,7 +13,8 @@ import model.Weight;
 import model.util.CourseRealData;
 import org.json.*;
 
-// Represents a reader that reads workroom from JSON data stored in file
+// This class is based on the JsonSerializationDemo example provided for phase2
+// Represents a reader that reads a schedule from JSON data stored in file
 public class JsonReaderSchedule {
     private String source;
 

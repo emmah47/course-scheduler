@@ -1,11 +1,14 @@
 package model;
 
 import model.util.CourseData;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import persistence.Writable;
 
 import java.util.*;
 
 // represents a schedule with a name, list of courses, list of scheduled sections, term, preferred weights, and score.
-public class Schedule {
+public class Schedule implements Writable {
     private String name;                                 // name of schedule
     private List<Course> courses;                        // list of courses
     private List<String> sectionIDs;                     // list of section IDs (ex. "CPSC 210 101", "CPSC 210 L1Y")
@@ -265,4 +268,39 @@ public class Schedule {
         return 1 / (float)result;
     }
 
+
+
+
+
+    // PERSISTENCE METHODS BELOW HERE
+
+    // EFFECTS: converts this to a json object
+    @Override
+    public JSONObject toJsonObject() {
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("courses", courseIDsToJson());
+        json.put("sectionIDs", sectionIDsToJson());
+        json.put("term", term);
+        json.put("weight", weight.toJsonObject());
+        return json;
+    }
+
+    // EFFECTS: converts courseIDs to a json array
+    private JSONArray courseIDsToJson() {
+        JSONArray json = new JSONArray();
+        for (String courseID : this.getCourseIDs()) {
+            json.put(courseID);
+        }
+        return json;
+    }
+
+    // EFFECTS: converts sectionIDs to a json array
+    private JSONArray sectionIDsToJson() {
+        JSONArray json = new JSONArray();
+        for (String sectionID : sectionIDs) {
+            json.put(sectionID);
+        }
+        return json;
+    }
 }

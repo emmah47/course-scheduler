@@ -1,47 +1,29 @@
-[
-  {
-    "name":"demo schedule",
-    "courses":[
-      "CPSC 110",
-      "CPSC 121"
+[{
+    "courses": [
+        "BIOL 111",
+        "ASTR 102",
+        "MATH 101",
+        "CPSC 121",
+        "CPSC 210"
     ],
-    "sectionIDs":[
-      "CPSC 121 L22",
-      "CPSC 121 204",
-      "CPSC 110 201",
-      "CPSC 110 L20",
-      "CPSC 121 204",
-      "CPSC 110 201",
-      "CPSC 121 T2M"
+    "sectionIDs": [
+        "BIOL 111 201",
+        "ASTR 102 201",
+        "MATH 101 2B1",
+        "CPSC 121 204",
+        "CPSC 210 201",
+        "ASTR 102 L2D",
+        "MATH 101 B12",
+        "CPSC 121 L2L",
+        "CPSC 121 T2P",
+        "CPSC 210 L2Y"
     ],
-    "term":2,
-    "weight":{
-      "compactWeight":1,
-      "balanceWeight":1,
-      "preferredStartTime":600,
-      "preferredEndTime":960
-    }
-  },
-  {
-    "name":"demo schedule2",
-    "courses":[
-      "MATH 101",
-      "CPSC 121"
-    ],
-    "sectionIDs":[
-      "CPSC 121 L22",
-      "CPSC 121 204",
-      "CPSC 121 204",
-      "CPSC 121 T2M",
-      "MATH 101 A11",
-      "MATH 101 2A1"
-    ],
-    "term":2,
-    "weight":{
-      "compactWeight":5,
-      "balanceWeight":3,
-      "preferredStartTime":630,
-      "preferredEndTime":990
-    }
-  }
-]
+    "name": "hi",
+    "weight": {
+        "compactWeight": 10,
+        "preferredStartTime": 480,
+        "preferredEndTime": 660,
+        "balanceWeight": 1
+    },
+    "term": 2
+}]

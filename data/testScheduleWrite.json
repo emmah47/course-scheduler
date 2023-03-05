@@ -1,0 +1,19 @@
+[{
+    "courses": [
+        "CPSC 110",
+        "CPSC 121"
+    ],
+    "sectionIDs": [
+        "CPSC 110 101",
+        "CPSC 110 L1A",
+        "CPSC 121 L1B"
+    ],
+    "name": "test",
+    "weight": {
+        "compactWeight": 1,
+        "preferredStartTime": 1,
+        "preferredEndTime": 1,
+        "balanceWeight": 1
+    },
+    "term": 2
+}]

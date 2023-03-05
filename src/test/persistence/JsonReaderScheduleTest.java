@@ -9,8 +9,10 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+// This code is based on the JsonSerializationDemo example provided for phase2
+// A testing class for JsonReaderSchedule
 class JsonReaderScheduleTest {
-    String source = "./data/testSchedule.json";
+    String source = "./data/testScheduleRead.json";
     JsonReaderSchedule jrs;
 
     @BeforeEach
@@ -21,6 +23,17 @@ class JsonReaderScheduleTest {
     @Test
     void jsonReaderScheduleConstructorTest() {
         assertEquals(source, this.source);
+    }
+
+    @Test
+    void readNonExistentFileTest() {
+        JsonReaderPreferences jrp = new JsonReaderPreferences("./data/illegalFile.json");
+        try {
+            jrp.read();
+            fail("Expected exception to be thrown");
+        } catch (IOException e) {
+            // pass
+        }
     }
 
     @Test

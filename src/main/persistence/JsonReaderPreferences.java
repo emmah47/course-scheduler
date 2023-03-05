@@ -9,6 +9,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
 
+// This class is based on the JsonSerializationDemo example provided for phase2
 // Represents a reader that reads weights from JSON data stored in file
 public class JsonReaderPreferences {
     private String source;
