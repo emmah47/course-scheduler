@@ -1,7 +1,11 @@
 package model;
 
+import org.json.JSONObject;
+import persistence.Writable;
+
+
 // represents a UBC course. Each course has a course ID (ex. "CPSC 210") and a description.
-public class Course {
+public class Course implements Writable {
     private String courseID;
     private String description;
 
@@ -25,6 +29,16 @@ public class Course {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    // This code is based on the JsonSerializationDemo example provided for phase2
+    // EFFECTS: returns this as JSON object
+    @Override
+    public JSONObject toJsonObject() {
+        JSONObject json = new JSONObject();
+        json.put("courseID", courseID);
+        json.put("description", description);
+        return json;
     }
 
 }

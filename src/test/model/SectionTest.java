@@ -1,6 +1,7 @@
 package model;
 
 
+import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -107,5 +108,23 @@ class SectionTest {
         assertEquals(newSectionType, s1.getSectionType());
         assertEquals(newTerm, s1.getTerm());
 
+    }
+
+    @Test
+    void toJsonObject() {
+        List<List<String>> antireqs = new ArrayList<>();
+        antireqs.add(Arrays.asList("s1", "s2"));
+        antireqs.add(Arrays.asList("s3", "s4"));
+        Section s = new Section("testSection", "testSection1", SectionType.LECTURE, "8:00", "9:00",
+                Arrays.asList("Mon", "Wed"), 2, antireqs);
+        JSONObject json = s.toJsonObject();
+        assertEquals("testSection", json.get("sectionID"));
+        assertEquals("testSection1", json.get("courseID"));
+        assertEquals(SectionType.LECTURE, json.get("sectionType"));
+        assertEquals("8:00", json.get("startTime"));
+        assertEquals("9:00", json.get("endTime"));
+        assertEquals(2, json.getJSONArray("weekdays").length());
+        assertEquals(2, json.get("term"));
+        assertEquals(2, json.getJSONArray("antiRequisiteIDs").length());
     }
 }

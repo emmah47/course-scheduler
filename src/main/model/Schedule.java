@@ -5,6 +5,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import persistence.Writable;
 
+
 import java.util.*;
 
 // represents a schedule with a name, list of courses, list of scheduled sections, term, preferred weights, and score.
@@ -274,6 +275,7 @@ public class Schedule implements Writable {
 
     // PERSISTENCE METHODS BELOW HERE
 
+    // This code is based on the JsonSerializationDemo example provided for phase2
     // EFFECTS: converts this to a json object
     @Override
     public JSONObject toJsonObject() {
@@ -303,4 +305,5 @@ public class Schedule implements Writable {
         }
         return json;
     }
+
 }

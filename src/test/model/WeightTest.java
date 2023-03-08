@@ -1,5 +1,7 @@
 package model;
 
+import model.exceptions.InvalidTimeException;
+import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -107,4 +109,13 @@ class WeightTest {
         }
     }
 
+    @Test
+    void toJsonObject() {
+        Weight w = new Weight(1, 2, 3, 4);
+        JSONObject json = w.toJsonObject();
+        assertEquals(1, json.get("compactWeight"));
+        assertEquals(2, json.get("balanceWeight"));
+        assertEquals(3, json.get("preferredStartTime"));
+        assertEquals(4, json.get("preferredEndTime"));
+    }
 }

@@ -2,6 +2,7 @@ package ui;
 
 
 import model.*;
+import model.exceptions.InvalidTimeException;
 import model.util.CourseRealData;
 import model.util.HelperUtil;
 
@@ -35,6 +36,7 @@ public class CourseSchedulerApp {
         jsonReaderSchedule = new JsonReaderSchedule(JSON_STORE_SCHEDULE);
         jsonWriterPreferences = new JsonWriter(JSON_STORE_WEIGHT);
         jsonWriterSchedules = new JsonWriter(JSON_STORE_SCHEDULE);
+        this.savedSchedules = loadSavedSchedules();
         displayMainMenu();
     }
 
@@ -74,7 +76,6 @@ public class CourseSchedulerApp {
 
     // EFFECTS: checks if there are any saved schedules and only displays them if there are
     private void tryDisplaySavedSchedulesMenu() {
-        this.savedSchedules = loadSavedSchedules();
         if (savedSchedules.size() == 0) {
             System.out.println("You don't have any saved schedules.");
             displayMainMenu();
@@ -337,7 +338,7 @@ public class CourseSchedulerApp {
     // EFFECTS: displays the course selection menu
     private void displayCourseSelectionMenu() {
         Schedule schedule = new Schedule("default name", 1,
-                preferredWeights, new CourseRealData());
+                preferredWeights, new CourseRealData("./data/courses.json", "./data/sections.json"));
         displayCourseSelection(schedule);
     }
 
@@ -444,7 +445,7 @@ public class CourseSchedulerApp {
                 if (Integer.parseInt(selection) <= schedules.size() && Integer.parseInt(selection) > 0) {
                     break;
                 } else {
-                    System.out.println(String.format("Schedule number %d does not exist.", selection));
+                    System.out.println(String.format("Schedule number %s does not exist.", selection));
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Invalid input, please enter a number.");
@@ -481,7 +482,7 @@ public class CourseSchedulerApp {
 
     // EFFECTS: Prompts user to set the number of courses to be displayed
     private int selectNumOfDisplayedSchedule() {
-        System.out.println("Please select the number of courses to be displayed:");
+        System.out.println("Please select the number of schedules to be displayed:");
         while (true) {
             String inputStr = input.nextLine();
             try {

@@ -3,12 +3,14 @@ package model.util;
 import model.Course;
 import model.Section;
 import model.SectionType;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.*;
 
 // Test data for unit tests.
 public class CourseTestData implements CourseData {
-    private Map<String, Section> data = new LinkedHashMap<>(); // a hashmap of Sections, with the value being a
+    private Map<String, Section> sections = new LinkedHashMap<>(); // a hashmap of Sections, with the value being a
     // section, and the key being the corresponding course ID.
     private Map<String, Course> courses = new LinkedHashMap<>(); // Some course IDs and their description
 
@@ -27,87 +29,87 @@ public class CourseTestData implements CourseData {
 
 
         // LECTURES
-        data.put("CPSC 110 101",  new Section("CPSC 110 101", "CPSC 110", SectionType.LECTURE,
+        sections.put("CPSC 110 101",  new Section("CPSC 110 101", "CPSC 110", SectionType.LECTURE,
                 "9:00", "10:30", Arrays.asList("Tue", "Thu"), 1,
                 Arrays.asList(Arrays.asList("CPSC 110 L10", "CPSC 110 L11"))));
-        data.put("CPSC 110 102", new Section("CPSC 110 102", "CPSC 110", SectionType.LECTURE,
+        sections.put("CPSC 110 102", new Section("CPSC 110 102", "CPSC 110", SectionType.LECTURE,
                 "11:00", "12:30", Arrays.asList("Mon", "Wed", "Fri"), 1,
                 Arrays.asList(Arrays.asList("CPSC 110 L12", "CPSC 110 L13"))));
-        data.put("CPSC 110 103", new Section("CPSC 110 103", "CPSC 110", SectionType.LECTURE,
+        sections.put("CPSC 110 103", new Section("CPSC 110 103", "CPSC 110", SectionType.LECTURE,
                 "11:00", "12:30", Arrays.asList("Mon", "Wed", "Fri"), 2,
                 Arrays.asList(Arrays.asList("CPSC 110 L12", "CPSC 110 L13"))));
 
 
-        data.put("CPSC 121 101",  new Section("CPSC 121 101", "CPSC 121", SectionType.LECTURE,
+        sections.put("CPSC 121 101",  new Section("CPSC 121 101", "CPSC 121", SectionType.LECTURE,
                 "10:00", "15:00", Arrays.asList("Tue", "Thu"), 1,
                 Arrays.asList(Arrays.asList("CPSC 121 L1A", "CPSC 121 L1B"),
                               Arrays.asList("CPSC 121 T1A", "CPSC 121 T1B"))));
-        data.put("CPSC 121 102", new Section("CPSC 121 102", "CPSC 121", SectionType.LECTURE,
+        sections.put("CPSC 121 102", new Section("CPSC 121 102", "CPSC 121", SectionType.LECTURE,
                 "15:00", "17:00", Arrays.asList("Tue", "Fri"), 1,
                 Arrays.asList(Arrays.asList("CPSC 121 L1A", "CPSC 121 L1B"),
                 Arrays.asList("CPSC 121 T1A", "CPSC 121 T1C"))));
 
-        data.put("testEmptyAntiReq", new Section("testEmptyAntiReq", "testEmptyAntiReq",
+        sections.put("testEmptyAntiReq", new Section("testEmptyAntiReq", "testEmptyAntiReq",
                 SectionType.LECTURE, "11:00", "12:30", Arrays.asList("Mon", "Wed", "Fri"), 2,
                 Arrays.asList()));
 
-        data.put("testEmptyAntiReqLab", new Section("testEmptyAntiReqLab", "testEmptyAntiReqLab",
+        sections.put("testEmptyAntiReqLab", new Section("testEmptyAntiReqLab", "testEmptyAntiReqLab",
                 SectionType.LABORATORY, "11:00", "12:30", Arrays.asList("Mon", "Wed", "Fri"), 1,
                 Arrays.asList()));
 
 
         // LABS
-        data.put("CPSC 110 L10", new Section("CPSC 110 L10", "CPSC 110", SectionType.LABORATORY,
+        sections.put("CPSC 110 L10", new Section("CPSC 110 L10", "CPSC 110", SectionType.LABORATORY,
                 "18:00", "21:00",
                 Arrays.asList("Wed"), 1, Arrays.asList()));
-        data.put("CPSC 110 L11", new Section("CPSC 110 L11", "CPSC 110", SectionType.LABORATORY,
+        sections.put("CPSC 110 L11", new Section("CPSC 110 L11", "CPSC 110", SectionType.LABORATORY,
                 "8:00", "11:00",
                 Arrays.asList("Thu"), 1, Arrays.asList()));
-        data.put("CPSC 110 L12", new Section("CPSC 110 L12", "CPSC 110", SectionType.LABORATORY,
+        sections.put("CPSC 110 L12", new Section("CPSC 110 L12", "CPSC 110", SectionType.LABORATORY,
                 "1:00", "3:00",
                 Arrays.asList("Fri"), 1, Arrays.asList()));
-        data.put("CPSC 110 L13", new Section("CPSC 110 L13", "CPSC 110", SectionType.LABORATORY,
+        sections.put("CPSC 110 L13", new Section("CPSC 110 L13", "CPSC 110", SectionType.LABORATORY,
                 "18:00", "21:00",
                 Arrays.asList("Mon"), 1, Arrays.asList()));
 
-        data.put("CPSC 121 L1A", new Section("CPSC 121 L1A", "CPSC 121", SectionType.LABORATORY,
+        sections.put("CPSC 121 L1A", new Section("CPSC 121 L1A", "CPSC 121", SectionType.LABORATORY,
                 "15:00", "17:00",
                 Arrays.asList("Wed"), 1, Arrays.asList()));
-        data.put("CPSC 121 L1B", new Section("CPSC 121 L1B", "CPSC 121", SectionType.LABORATORY,
+        sections.put("CPSC 121 L1B", new Section("CPSC 121 L1B", "CPSC 121", SectionType.LABORATORY,
                 "13:00", "15:00",
                 Arrays.asList("Tue"), 1, Arrays.asList()));
-        data.put("CPSC 121 L1C", new Section("CPSC 121 L1C", "CPSC 121", SectionType.LABORATORY,
+        sections.put("CPSC 121 L1C", new Section("CPSC 121 L1C", "CPSC 121", SectionType.LABORATORY,
                 "15:00", "17:00",
                 Arrays.asList("Tue"), 1, Arrays.asList()));
 
 
         // TUTORIALS
-        data.put("CPSC 121 T1A", new Section("CPSC 121 T1A", "CPSC 121", SectionType.TUTORIAL,
+        sections.put("CPSC 121 T1A", new Section("CPSC 121 T1A", "CPSC 121", SectionType.TUTORIAL,
                 "9:00", "10:00",
                 Arrays.asList("Mon"), 1, Arrays.asList()));
-        data.put("CPSC 121 T1B", new Section("CPSC 121 T1B", "CPSC 121", SectionType.TUTORIAL,
+        sections.put("CPSC 121 T1B", new Section("CPSC 121 T1B", "CPSC 121", SectionType.TUTORIAL,
                 "16:00", "17:00",
                 Arrays.asList("Tue"), 1, Arrays.asList()));
-        data.put("CPSC 121 T1C", new Section("CPSC 121 T1C", "CPSC 121", SectionType.TUTORIAL,
+        sections.put("CPSC 121 T1C", new Section("CPSC 121 T1C", "CPSC 121", SectionType.TUTORIAL,
                 "17:00", "18:00",
                 Arrays.asList("Mon"), 1, Arrays.asList()));
 
 
 
         // test time conflict
-        data.put("Test Section 1", new Section("Test Section 1", "Test Course", SectionType.LECTURE,
+        sections.put("Test Section 1", new Section("Test Section 1", "Test Course", SectionType.LECTURE,
                 "1:00", "3:00", Arrays.asList("Mon, Wed, Fri"), 1, new ArrayList<>()));
-        data.put("Test Section 2", new Section("Test Section 2", "Test Course", SectionType.LECTURE,
+        sections.put("Test Section 2", new Section("Test Section 2", "Test Course", SectionType.LECTURE,
                 "1:00", "4:00", Arrays.asList("Tues, Thurs"), 1, new ArrayList<>()));
-        data.put("Test Section 3", new Section("Test Section 3", "Test Course", SectionType.LECTURE,
+        sections.put("Test Section 3", new Section("Test Section 3", "Test Course", SectionType.LECTURE,
                 "12:00", "2:00", Arrays.asList("Mon, Wed, Fri"), 1, new ArrayList<>()));
 
 
         // Weight Test data:
-        data.put("weightTest1", new Section("weightTest1", "test course", SectionType.LECTURE,
+        sections.put("weightTest1", new Section("weightTest1", "test course", SectionType.LECTURE,
                 "13:00", "14:00", Arrays.asList("Mon", "Tue", "Wed", "Thu", "Fri"), 2,
                 new ArrayList<>()));
-        data.put("weightTest2", new Section("weightTest2", "test course", SectionType.LECTURE,
+        sections.put("weightTest2", new Section("weightTest2", "test course", SectionType.LECTURE,
                 "14:00", "15:00", Arrays.asList("Mon", "Tue", "Wed", "Thu", "Fri"), 2,
                 new ArrayList<>()));
 
@@ -119,7 +121,7 @@ public class CourseTestData implements CourseData {
     @Override
     public List<Section> getRootSections(String courseID, int term) {
         List<Section> result = new ArrayList<>();
-        for (Section section : data.values()) {
+        for (Section section : sections.values()) {
             if (courseID.equals(section.getCourseID()) && section.getSectionType() == SectionType.LECTURE
                     && section.getTerm() == term) {
                 result.add(section);
@@ -134,7 +136,7 @@ public class CourseTestData implements CourseData {
     // EFFECTS: returns a Section corresponding to the given Section ID.
     @Override
     public Section getSection(String sectionID) {
-        Section result = data.get(sectionID);
+        Section result = sections.get(sectionID);
         return result;
     }
 
@@ -167,4 +169,5 @@ public class CourseTestData implements CourseData {
     public Course getCourseByID(String courseID) {
         return courses.get(courseID);
     }
+
 }

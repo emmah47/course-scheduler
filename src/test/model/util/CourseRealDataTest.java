@@ -2,9 +2,12 @@ package model.util;
 
 import model.Course;
 import model.Section;
+import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -19,7 +22,19 @@ class CourseRealDataTest {
     // EFFECTS: Makes new CourseRealData before every test
     @BeforeEach
     void setup() {
-        courseRealData = new CourseRealData();
+        courseRealData = new CourseRealData("./data/courses.json", "./data/sections.json");
+    }
+
+    @Test
+    void constructorTest() {
+        courseRealData = new CourseRealData("./data/courses.json", "./data/sections.json");
+        assertNotEquals(0, courseRealData.getAllCourse().size());
+    }
+
+    @Test
+    void constructorFileNotFoundTest() {
+        courseRealData = new CourseRealData("./data/randomFile.json", "./data/randomFile.json");
+        assertEquals(0, courseRealData.getAllCourse().size());
     }
 
     // EFFECTS: Test for getting the root sections from a given course ID
@@ -65,4 +80,5 @@ class CourseRealDataTest {
     void getAllCourseIDsTest() {
         assertTrue(courseRealData.getAllCourseIDs().size()>0);
     }
+
 }

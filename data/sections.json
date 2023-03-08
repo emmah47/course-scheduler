@@ -1,0 +1,4328 @@
+
+[
+  {
+    "antiRequisiteIDs": [[
+      "PHYS 117 T1A",
+      "PHYS 117 T1B",
+      "PHYS 117 T1C",
+      "PHYS 117 T1D",
+      "PHYS 117 T1E",
+      "PHYS 117 T1F",
+      "PHYS 117 T1G",
+      "PHYS 117 T1N",
+      "PHYS 117 T1O"
+    ]],
+    "weekdays": [
+      "Mon",
+      "Wed",
+      "Fri"
+    ],
+    "startTime": "11:00",
+    "term": 1,
+    "sectionID": "PHYS 117 101",
+    "endTime": "12:00",
+    "sectionType": "LECTURE",
+    "courseID": "PHYS 117"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "10:00",
+    "term": 1,
+    "sectionID": "PHYS 117 T1A",
+    "endTime": "11:00",
+    "sectionType": "TUTORIAL",
+    "courseID": "PHYS 117"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "14:00",
+    "term": 1,
+    "sectionID": "PHYS 117 T1B",
+    "endTime": "15:00",
+    "sectionType": "TUTORIAL",
+    "courseID": "PHYS 117"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "11:00",
+    "term": 1,
+    "sectionID": "PHYS 117 T1C",
+    "endTime": "12:00",
+    "sectionType": "TUTORIAL",
+    "courseID": "PHYS 117"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "13:00",
+    "term": 1,
+    "sectionID": "PHYS 117 T1D",
+    "endTime": "14:00",
+    "sectionType": "TUTORIAL",
+    "courseID": "PHYS 117"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "15:30",
+    "term": 1,
+    "sectionID": "PHYS 117 T1E",
+    "endTime": "16:30",
+    "sectionType": "TUTORIAL",
+    "courseID": "PHYS 117"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "13:00",
+    "term": 1,
+    "sectionID": "PHYS 117 T1F",
+    "endTime": "14:00",
+    "sectionType": "TUTORIAL",
+    "courseID": "PHYS 117"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "16:00",
+    "term": 1,
+    "sectionID": "PHYS 117 T1G",
+    "endTime": "17:00",
+    "sectionType": "TUTORIAL",
+    "courseID": "PHYS 117"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "15:00",
+    "term": 1,
+    "sectionID": "PHYS 117 T1N",
+    "endTime": "16:00",
+    "sectionType": "TUTORIAL",
+    "courseID": "PHYS 117"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "10:00",
+    "term": 1,
+    "sectionID": "PHYS 117 T1O",
+    "endTime": "11:00",
+    "sectionType": "TUTORIAL",
+    "courseID": "PHYS 117"
+  },
+  {
+    "antiRequisiteIDs": [[
+      "PHYS 117 T1A",
+      "PHYS 117 T1B",
+      "PHYS 117 T1C",
+      "PHYS 117 T1D",
+      "PHYS 117 T1E",
+      "PHYS 117 T1F",
+      "PHYS 117 T1G",
+      "PHYS 117 T1N",
+      "PHYS 117 T1O"
+    ]],
+    "weekdays": [
+      "Mon",
+      "Wed",
+      "Fri"
+    ],
+    "startTime": "15:00",
+    "term": 1,
+    "sectionID": "PHYS 117 102",
+    "endTime": "16:00",
+    "sectionType": "LECTURE",
+    "courseID": "PHYS 117"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": [
+      "Tue",
+      "Thu"
+    ],
+    "startTime": "9:00",
+    "term": 1,
+    "sectionID": "PHYS 117 V01",
+    "endTime": "10:30",
+    "sectionType": "LECTURE",
+    "courseID": "PHYS 117"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": [
+      "Tue",
+      "Thu"
+    ],
+    "startTime": "10:30",
+    "term": 1,
+    "sectionID": "PHYS 117 V02",
+    "endTime": "12:00",
+    "sectionType": "LECTURE",
+    "courseID": "PHYS 117"
+  },
+  {
+    "antiRequisiteIDs": [[
+      "MATH 180 DF1",
+      "MATH 180 DF2",
+      "MATH 180 DM1",
+      "MATH 180 DM2",
+      "MATH 180 DT1",
+      "MATH 180 DW1",
+      "MATH 180 DW2"
+    ]],
+    "weekdays": ["Thu"],
+    "startTime": "16:00",
+    "term": 1,
+    "sectionID": "MATH 180 101",
+    "endTime": "18:00",
+    "sectionType": "LECTURE",
+    "courseID": "MATH 180"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "10:00",
+    "term": 1,
+    "sectionID": "MATH 180 DF1",
+    "endTime": "12:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 180"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "12:00",
+    "term": 1,
+    "sectionID": "MATH 180 DF2",
+    "endTime": "14:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 180"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "10:00",
+    "term": 1,
+    "sectionID": "MATH 180 DM1",
+    "endTime": "12:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 180"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "12:00",
+    "term": 1,
+    "sectionID": "MATH 180 DM2",
+    "endTime": "14:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 180"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "14:00",
+    "term": 1,
+    "sectionID": "MATH 180 DT1",
+    "endTime": "16:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 180"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "10:00",
+    "term": 1,
+    "sectionID": "MATH 180 DW1",
+    "endTime": "12:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 180"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "11:00",
+    "term": 1,
+    "sectionID": "MATH 180 DW2",
+    "endTime": "13:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 180"
+  },
+  {
+    "antiRequisiteIDs": [[
+      "CPSC 110 L12",
+      "CPSC 110 L13",
+      "CPSC 110 L14",
+      "CPSC 110 L15",
+      "CPSC 110 L16",
+      "CPSC 110 L19",
+      "CPSC 110 L1B",
+      "CPSC 110 L1E",
+      "CPSC 110 L1H",
+      "CPSC 110 L1M"
+    ]],
+    "weekdays": [
+      "Tue",
+      "Thu"
+    ],
+    "startTime": "11:00",
+    "term": 1,
+    "sectionID": "CPSC 110 101",
+    "endTime": "12:30",
+    "sectionType": "LECTURE",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "9:00",
+    "term": 1,
+    "sectionID": "CPSC 110 L12",
+    "endTime": "12:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "9:30",
+    "term": 1,
+    "sectionID": "CPSC 110 L13",
+    "endTime": "12:30",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "9:00",
+    "term": 1,
+    "sectionID": "CPSC 110 L14",
+    "endTime": "12:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "9:30",
+    "term": 1,
+    "sectionID": "CPSC 110 L15",
+    "endTime": "12:30",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "12:00",
+    "term": 1,
+    "sectionID": "CPSC 110 L16",
+    "endTime": "15:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "9:00",
+    "term": 1,
+    "sectionID": "CPSC 110 L19",
+    "endTime": "12:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "9:00",
+    "term": 1,
+    "sectionID": "CPSC 110 L1A",
+    "endTime": "12:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "12:00",
+    "term": 1,
+    "sectionID": "CPSC 110 L1B",
+    "endTime": "15:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "9:30",
+    "term": 1,
+    "sectionID": "CPSC 110 L1D",
+    "endTime": "12:30",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "12:30",
+    "term": 1,
+    "sectionID": "CPSC 110 L1E",
+    "endTime": "15:30",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "9:00",
+    "term": 1,
+    "sectionID": "CPSC 110 L1G",
+    "endTime": "12:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "12:00",
+    "term": 1,
+    "sectionID": "CPSC 110 L1H",
+    "endTime": "15:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "9:30",
+    "term": 1,
+    "sectionID": "CPSC 110 L1K",
+    "endTime": "12:30",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "12:30",
+    "term": 1,
+    "sectionID": "CPSC 110 L1M",
+    "endTime": "15:30",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "9:00",
+    "term": 1,
+    "sectionID": "CPSC 110 L1N",
+    "endTime": "12:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "12:00",
+    "term": 1,
+    "sectionID": "CPSC 110 L1P",
+    "endTime": "15:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "12:00",
+    "term": 1,
+    "sectionID": "CPSC 110 L1R",
+    "endTime": "15:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "12:30",
+    "term": 1,
+    "sectionID": "CPSC 110 L1S",
+    "endTime": "15:30",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "12:00",
+    "term": 1,
+    "sectionID": "CPSC 110 L1U",
+    "endTime": "15:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "12:30",
+    "term": 1,
+    "sectionID": "CPSC 110 L1V",
+    "endTime": "15:30",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "9:30",
+    "term": 1,
+    "sectionID": "CPSC 110 LAE",
+    "endTime": "12:30",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [[
+      "CPSC 110 L12",
+      "CPSC 110 L13",
+      "CPSC 110 L14",
+      "CPSC 110 L15",
+      "CPSC 110 L16",
+      "CPSC 110 L19",
+      "CPSC 110 L1B",
+      "CPSC 110 L1E",
+      "CPSC 110 L1H",
+      "CPSC 110 L1M"
+    ]],
+    "weekdays": [
+      "Tue",
+      "Thu"
+    ],
+    "startTime": "14:00",
+    "term": 1,
+    "sectionID": "CPSC 110 102",
+    "endTime": "15:30",
+    "sectionType": "LECTURE",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [[
+      "CPSC 110 L12",
+      "CPSC 110 L13",
+      "CPSC 110 L14",
+      "CPSC 110 L15",
+      "CPSC 110 L16",
+      "CPSC 110 L19",
+      "CPSC 110 L1B",
+      "CPSC 110 L1E",
+      "CPSC 110 L1H",
+      "CPSC 110 L1M"
+    ]],
+    "weekdays": [
+      "Mon",
+      "Wed"
+    ],
+    "startTime": "9:30",
+    "term": 1,
+    "sectionID": "CPSC 110 103",
+    "endTime": "11:00",
+    "sectionType": "LECTURE",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [[
+      "CPSC 110 L12",
+      "CPSC 110 L13",
+      "CPSC 110 L14",
+      "CPSC 110 L15",
+      "CPSC 110 L16",
+      "CPSC 110 L19",
+      "CPSC 110 L1B",
+      "CPSC 110 L1E",
+      "CPSC 110 L1H",
+      "CPSC 110 L1M"
+    ]],
+    "weekdays": [
+      "Mon",
+      "Wed"
+    ],
+    "startTime": "12:30",
+    "term": 1,
+    "sectionID": "CPSC 110 104",
+    "endTime": "14:00",
+    "sectionType": "LECTURE",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [["ENGL 111 L05"]],
+    "weekdays": [
+      "Mon",
+      "Wed"
+    ],
+    "startTime": "14:00",
+    "term": 1,
+    "sectionID": "ENGL 111 001",
+    "endTime": "15:00",
+    "sectionType": "LECTURE",
+    "courseID": "ENGL 111"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "14:00",
+    "term": 1,
+    "sectionID": "ENGL 111 L05",
+    "endTime": "15:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 111"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "14:00",
+    "term": 1,
+    "sectionID": "ENGL 111 L06",
+    "endTime": "15:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 111"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "14:00",
+    "term": 1,
+    "sectionID": "ENGL 111 L07",
+    "endTime": "15:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 111"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "14:00",
+    "term": 1,
+    "sectionID": "ENGL 111 L08",
+    "endTime": "15:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 111"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": [
+      "Tue",
+      "Thu"
+    ],
+    "startTime": "9:30",
+    "term": 1,
+    "sectionID": "ENGL 111 002",
+    "endTime": "11:00",
+    "sectionType": "LECTURE",
+    "courseID": "ENGL 111"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": [
+      "Tue",
+      "Thu"
+    ],
+    "startTime": "8:00",
+    "term": 1,
+    "sectionID": "BIOL 111 101",
+    "endTime": "9:30",
+    "sectionType": "LECTURE",
+    "courseID": "BIOL 111"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": [
+      "Tue",
+      "Thu"
+    ],
+    "startTime": "12:30",
+    "term": 1,
+    "sectionID": "BIOL 111 102",
+    "endTime": "14:00",
+    "sectionType": "LECTURE",
+    "courseID": "BIOL 111"
+  },
+  {
+    "antiRequisiteIDs": [
+      [
+        "CPSC 121 L1A",
+        "CPSC 121 L1B",
+        "CPSC 121 L1D",
+        "CPSC 121 L1E",
+        "CPSC 121 L1F",
+        "CPSC 121 L1G",
+        "CPSC 121 L1H",
+        "CPSC 121 L1J",
+        "CPSC 121 L1K",
+        "CPSC 121 L1L",
+        "CPSC 121 L1M",
+        "CPSC 121 L1N",
+        "CPSC 121 L1R",
+        "CPSC 121 L1T",
+        "CPSC 121 L1U",
+        "CPSC 121 L1V",
+        "CPSC 121 L1X",
+        "CPSC 121 L1Y",
+        "CPSC 121 L1Z"
+      ],
+      [
+        "CPSC 121 T1A",
+        "CPSC 121 T1B",
+        "CPSC 121 T1D",
+        "CPSC 121 T1E",
+        "CPSC 121 T1F",
+        "CPSC 121 T1G",
+        "CPSC 121 T1H",
+        "CPSC 121 T1J",
+        "CPSC 121 T1L",
+        "CPSC 121 T1M",
+        "CPSC 121 T1N",
+        "CPSC 121 T2C",
+        "CPSC 121 T2E",
+        "CPSC 121 T2S",
+        "CPSC 121 T2U"
+      ]
+    ],
+    "weekdays": [
+      "Tue",
+      "Thu"
+    ],
+    "startTime": "9:30",
+    "term": 1,
+    "sectionID": "CPSC 121 101",
+    "endTime": "11:00",
+    "sectionType": "LECTURE",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "15:00",
+    "term": 1,
+    "sectionID": "CPSC 121 L1A",
+    "endTime": "17:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "13:00",
+    "term": 1,
+    "sectionID": "CPSC 121 L1B",
+    "endTime": "15:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "13:00",
+    "term": 1,
+    "sectionID": "CPSC 121 L1D",
+    "endTime": "15:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "13:00",
+    "term": 1,
+    "sectionID": "CPSC 121 L1E",
+    "endTime": "15:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "15:00",
+    "term": 1,
+    "sectionID": "CPSC 121 L1F",
+    "endTime": "17:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "13:00",
+    "term": 1,
+    "sectionID": "CPSC 121 L1G",
+    "endTime": "15:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "9:00",
+    "term": 1,
+    "sectionID": "CPSC 121 L1H",
+    "endTime": "11:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "9:00",
+    "term": 1,
+    "sectionID": "CPSC 121 L1J",
+    "endTime": "11:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "11:00",
+    "term": 1,
+    "sectionID": "CPSC 121 L1K",
+    "endTime": "13:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "15:00",
+    "term": 1,
+    "sectionID": "CPSC 121 L1L",
+    "endTime": "17:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "9:00",
+    "term": 1,
+    "sectionID": "CPSC 121 L1M",
+    "endTime": "11:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "11:00",
+    "term": 1,
+    "sectionID": "CPSC 121 L1N",
+    "endTime": "13:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "9:00",
+    "term": 1,
+    "sectionID": "CPSC 121 L1R",
+    "endTime": "11:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "15:00",
+    "term": 1,
+    "sectionID": "CPSC 121 L1T",
+    "endTime": "17:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "11:00",
+    "term": 1,
+    "sectionID": "CPSC 121 L1U",
+    "endTime": "13:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "11:00",
+    "term": 1,
+    "sectionID": "CPSC 121 L1V",
+    "endTime": "13:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "9:00",
+    "term": 1,
+    "sectionID": "CPSC 121 L1X",
+    "endTime": "11:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "13:00",
+    "term": 1,
+    "sectionID": "CPSC 121 L1Y",
+    "endTime": "15:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "11:00",
+    "term": 1,
+    "sectionID": "CPSC 121 L1Z",
+    "endTime": "13:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "9:00",
+    "term": 1,
+    "sectionID": "CPSC 121 T1A",
+    "endTime": "10:00",
+    "sectionType": "TUTORIAL",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "16:00",
+    "term": 1,
+    "sectionID": "CPSC 121 T1B",
+    "endTime": "17:00",
+    "sectionType": "TUTORIAL",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "15:00",
+    "term": 1,
+    "sectionID": "CPSC 121 T1D",
+    "endTime": "16:00",
+    "sectionType": "TUTORIAL",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "11:00",
+    "term": 1,
+    "sectionID": "CPSC 121 T1E",
+    "endTime": "12:00",
+    "sectionType": "TUTORIAL",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "12:00",
+    "term": 1,
+    "sectionID": "CPSC 121 T1F",
+    "endTime": "13:00",
+    "sectionType": "TUTORIAL",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "16:00",
+    "term": 1,
+    "sectionID": "CPSC 121 T1G",
+    "endTime": "17:00",
+    "sectionType": "TUTORIAL",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "14:00",
+    "term": 1,
+    "sectionID": "CPSC 121 T1H",
+    "endTime": "15:00",
+    "sectionType": "TUTORIAL",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "15:00",
+    "term": 1,
+    "sectionID": "CPSC 121 T1J",
+    "endTime": "16:00",
+    "sectionType": "TUTORIAL",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "11:00",
+    "term": 1,
+    "sectionID": "CPSC 121 T1L",
+    "endTime": "12:00",
+    "sectionType": "TUTORIAL",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "11:00",
+    "term": 1,
+    "sectionID": "CPSC 121 T1M",
+    "endTime": "12:00",
+    "sectionType": "TUTORIAL",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "11:00",
+    "term": 1,
+    "sectionID": "CPSC 121 T1N",
+    "endTime": "12:00",
+    "sectionType": "TUTORIAL",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [
+      [
+        "CPSC 121 L1A",
+        "CPSC 121 L1B",
+        "CPSC 121 L1D",
+        "CPSC 121 L1E",
+        "CPSC 121 L1F",
+        "CPSC 121 L1G",
+        "CPSC 121 L1H",
+        "CPSC 121 L1J",
+        "CPSC 121 L1K",
+        "CPSC 121 L1L",
+        "CPSC 121 L1M",
+        "CPSC 121 L1N",
+        "CPSC 121 L1R",
+        "CPSC 121 L1T",
+        "CPSC 121 L1U",
+        "CPSC 121 L1V",
+        "CPSC 121 L1X",
+        "CPSC 121 L1Y",
+        "CPSC 121 L1Z"
+      ],
+      [
+        "CPSC 121 T1A",
+        "CPSC 121 T1B",
+        "CPSC 121 T1D",
+        "CPSC 121 T1E",
+        "CPSC 121 T1F",
+        "CPSC 121 T1G",
+        "CPSC 121 T1H",
+        "CPSC 121 T1J",
+        "CPSC 121 T1L",
+        "CPSC 121 T1M",
+        "CPSC 121 T1N"
+      ]
+    ],
+    "weekdays": [
+      "Tue",
+      "Thu"
+    ],
+    "startTime": "12:30",
+    "term": 1,
+    "sectionID": "CPSC 121 102",
+    "endTime": "14:00",
+    "sectionType": "LECTURE",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [["ENGL 110 LA1"]],
+    "weekdays": [
+      "Mon",
+      "Wed"
+    ],
+    "startTime": "9:00",
+    "term": 1,
+    "sectionID": "ENGL 110 001",
+    "endTime": "10:00",
+    "sectionType": "LECTURE",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "9:00",
+    "term": 1,
+    "sectionID": "ENGL 110 LA1",
+    "endTime": "10:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "9:00",
+    "term": 1,
+    "sectionID": "ENGL 110 LA2",
+    "endTime": "10:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "9:00",
+    "term": 1,
+    "sectionID": "ENGL 110 LA3",
+    "endTime": "10:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "9:00",
+    "term": 1,
+    "sectionID": "ENGL 110 LA4",
+    "endTime": "10:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "9:00",
+    "term": 1,
+    "sectionID": "ENGL 110 LA5",
+    "endTime": "10:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "9:00",
+    "term": 1,
+    "sectionID": "ENGL 110 LA6",
+    "endTime": "10:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [["ENGL 110 LB1"]],
+    "weekdays": [
+      "Mon",
+      "Wed"
+    ],
+    "startTime": "10:00",
+    "term": 1,
+    "sectionID": "ENGL 110 002",
+    "endTime": "11:00",
+    "sectionType": "LECTURE",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "10:00",
+    "term": 1,
+    "sectionID": "ENGL 110 LB1",
+    "endTime": "11:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "10:00",
+    "term": 1,
+    "sectionID": "ENGL 110 LB2",
+    "endTime": "11:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "10:00",
+    "term": 1,
+    "sectionID": "ENGL 110 LB3",
+    "endTime": "11:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "10:00",
+    "term": 1,
+    "sectionID": "ENGL 110 LB4",
+    "endTime": "11:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "10:00",
+    "term": 1,
+    "sectionID": "ENGL 110 LB5",
+    "endTime": "11:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "10:00",
+    "term": 1,
+    "sectionID": "ENGL 110 LB6",
+    "endTime": "11:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": [
+      "Mon",
+      "Wed"
+    ],
+    "startTime": "11:00",
+    "term": 1,
+    "sectionID": "ENGL 110 003",
+    "endTime": "12:00",
+    "sectionType": "LECTURE",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "11:00",
+    "term": 1,
+    "sectionID": "ENGL 110 LC1",
+    "endTime": "12:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "11:00",
+    "term": 1,
+    "sectionID": "ENGL 110 LC2",
+    "endTime": "12:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "11:00",
+    "term": 1,
+    "sectionID": "ENGL 110 LC3",
+    "endTime": "12:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "11:00",
+    "term": 1,
+    "sectionID": "ENGL 110 LC4",
+    "endTime": "12:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "11:00",
+    "term": 1,
+    "sectionID": "ENGL 110 LC5",
+    "endTime": "12:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": [
+      "Mon",
+      "Wed"
+    ],
+    "startTime": "12:00",
+    "term": 1,
+    "sectionID": "ENGL 110 004",
+    "endTime": "13:00",
+    "sectionType": "LECTURE",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "12:00",
+    "term": 1,
+    "sectionID": "ENGL 110 LF1",
+    "endTime": "13:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "12:00",
+    "term": 1,
+    "sectionID": "ENGL 110 LF2",
+    "endTime": "13:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "12:00",
+    "term": 1,
+    "sectionID": "ENGL 110 LF3",
+    "endTime": "13:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "12:00",
+    "term": 1,
+    "sectionID": "ENGL 110 LF4",
+    "endTime": "13:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "12:00",
+    "term": 1,
+    "sectionID": "ENGL 110 LF5",
+    "endTime": "13:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "12:00",
+    "term": 1,
+    "sectionID": "ENGL 110 LF6",
+    "endTime": "13:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": [
+      "Mon",
+      "Wed"
+    ],
+    "startTime": "13:00",
+    "term": 1,
+    "sectionID": "ENGL 110 005",
+    "endTime": "14:00",
+    "sectionType": "LECTURE",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "13:00",
+    "term": 1,
+    "sectionID": "ENGL 110 LE1",
+    "endTime": "14:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "13:00",
+    "term": 1,
+    "sectionID": "ENGL 110 LE2",
+    "endTime": "14:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "13:00",
+    "term": 1,
+    "sectionID": "ENGL 110 LE3",
+    "endTime": "14:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "13:00",
+    "term": 1,
+    "sectionID": "ENGL 110 LE4",
+    "endTime": "14:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "13:00",
+    "term": 1,
+    "sectionID": "ENGL 110 LE5",
+    "endTime": "14:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "13:00",
+    "term": 1,
+    "sectionID": "ENGL 110 LE6",
+    "endTime": "14:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": [
+      "Tue",
+      "Thu"
+    ],
+    "startTime": "9:30",
+    "term": 1,
+    "sectionID": "ENGL 110 006",
+    "endTime": "11:00",
+    "sectionType": "LECTURE",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [[
+      "CPSC 210 L11",
+      "CPSC 210 L12",
+      "CPSC 210 L13",
+      "CPSC 210 L15",
+      "CPSC 210 L16",
+      "CPSC 210 L1A",
+      "CPSC 210 L1B",
+      "CPSC 210 L1D",
+      "CPSC 210 L1E",
+      "CPSC 210 L1F",
+      "CPSC 210 L1G",
+      "CPSC 210 L1H",
+      "CPSC 210 L1J",
+      "CPSC 210 L1K",
+      "CPSC 210 L1L",
+      "CPSC 210 L1M",
+      "CPSC 210 L1P",
+      "CPSC 210 L1R",
+      "CPSC 210 L1T",
+      "CPSC 210 L1Y"
+    ]],
+    "weekdays": [
+      "Mon",
+      "Wed",
+      "Fri"
+    ],
+    "startTime": "11:00",
+    "term": 1,
+    "sectionID": "CPSC 210 101",
+    "endTime": "12:00",
+    "sectionType": "LECTURE",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "11:00",
+    "term": 1,
+    "sectionID": "CPSC 210 L11",
+    "endTime": "13:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "11:00",
+    "term": 1,
+    "sectionID": "CPSC 210 L12",
+    "endTime": "13:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "15:00",
+    "term": 1,
+    "sectionID": "CPSC 210 L13",
+    "endTime": "17:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "14:00",
+    "term": 1,
+    "sectionID": "CPSC 210 L15",
+    "endTime": "16:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "11:00",
+    "term": 1,
+    "sectionID": "CPSC 210 L16",
+    "endTime": "13:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "11:00",
+    "term": 1,
+    "sectionID": "CPSC 210 L1A",
+    "endTime": "13:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "13:00",
+    "term": 1,
+    "sectionID": "CPSC 210 L1B",
+    "endTime": "15:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "11:00",
+    "term": 1,
+    "sectionID": "CPSC 210 L1C",
+    "endTime": "13:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "15:00",
+    "term": 1,
+    "sectionID": "CPSC 210 L1D",
+    "endTime": "17:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "9:00",
+    "term": 1,
+    "sectionID": "CPSC 210 L1E",
+    "endTime": "11:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "11:00",
+    "term": 1,
+    "sectionID": "CPSC 210 L1F",
+    "endTime": "13:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "9:00",
+    "term": 1,
+    "sectionID": "CPSC 210 L1G",
+    "endTime": "11:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "15:00",
+    "term": 1,
+    "sectionID": "CPSC 210 L1H",
+    "endTime": "17:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "15:00",
+    "term": 1,
+    "sectionID": "CPSC 210 L1J",
+    "endTime": "17:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "9:00",
+    "term": 1,
+    "sectionID": "CPSC 210 L1K",
+    "endTime": "11:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "13:00",
+    "term": 1,
+    "sectionID": "CPSC 210 L1L",
+    "endTime": "15:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "13:00",
+    "term": 1,
+    "sectionID": "CPSC 210 L1M",
+    "endTime": "15:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "15:00",
+    "term": 1,
+    "sectionID": "CPSC 210 L1N",
+    "endTime": "17:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "15:00",
+    "term": 1,
+    "sectionID": "CPSC 210 L1O",
+    "endTime": "17:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "15:00",
+    "term": 1,
+    "sectionID": "CPSC 210 L1P",
+    "endTime": "17:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "9:00",
+    "term": 1,
+    "sectionID": "CPSC 210 L1R",
+    "endTime": "11:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "11:00",
+    "term": 1,
+    "sectionID": "CPSC 210 L1S",
+    "endTime": "13:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "13:00",
+    "term": 1,
+    "sectionID": "CPSC 210 L1T",
+    "endTime": "15:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "11:00",
+    "term": 1,
+    "sectionID": "CPSC 210 L1X",
+    "endTime": "13:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "13:00",
+    "term": 1,
+    "sectionID": "CPSC 210 L1Y",
+    "endTime": "15:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [[
+      "CPSC 210 L11",
+      "CPSC 210 L12",
+      "CPSC 210 L13",
+      "CPSC 210 L15",
+      "CPSC 210 L16",
+      "CPSC 210 L1A",
+      "CPSC 210 L1B",
+      "CPSC 210 L1D",
+      "CPSC 210 L1E",
+      "CPSC 210 L1F",
+      "CPSC 210 L1G",
+      "CPSC 210 L1H",
+      "CPSC 210 L1J",
+      "CPSC 210 L1K",
+      "CPSC 210 L1L",
+      "CPSC 210 L1M",
+      "CPSC 210 L1P",
+      "CPSC 210 L1R",
+      "CPSC 210 L1T",
+      "CPSC 210 L1Y"
+    ]],
+    "weekdays": [
+      "Mon",
+      "Wed",
+      "Fri"
+    ],
+    "startTime": "13:00",
+    "term": 1,
+    "sectionID": "CPSC 210 102",
+    "endTime": "14:00",
+    "sectionType": "LECTURE",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [[
+      "CPSC 110 L20",
+      "CPSC 110 L21",
+      "CPSC 110 L23",
+      "CPSC 110 L2A",
+      "CPSC 110 L2B",
+      "CPSC 110 L2E",
+      "CPSC 110 L2H",
+      "CPSC 110 L2J",
+      "CPSC 110 L2P",
+      "CPSC 110 L2S"
+    ]],
+    "weekdays": [
+      "Tue",
+      "Thu"
+    ],
+    "startTime": "12:30",
+    "term": 2,
+    "sectionID": "CPSC 110 201",
+    "endTime": "14:00",
+    "sectionType": "LECTURE",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "12:00",
+    "term": 2,
+    "sectionID": "CPSC 110 L20",
+    "endTime": "15:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "11:00",
+    "term": 2,
+    "sectionID": "CPSC 110 L21",
+    "endTime": "14:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "11:00",
+    "term": 2,
+    "sectionID": "CPSC 110 L23",
+    "endTime": "14:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "9:00",
+    "term": 2,
+    "sectionID": "CPSC 110 L2A",
+    "endTime": "12:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "12:00",
+    "term": 2,
+    "sectionID": "CPSC 110 L2B",
+    "endTime": "15:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "12:00",
+    "term": 2,
+    "sectionID": "CPSC 110 L2E",
+    "endTime": "15:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "11:00",
+    "term": 2,
+    "sectionID": "CPSC 110 L2F",
+    "endTime": "14:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "14:00",
+    "term": 2,
+    "sectionID": "CPSC 110 L2H",
+    "endTime": "17:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "9:00",
+    "term": 2,
+    "sectionID": "CPSC 110 L2J",
+    "endTime": "12:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "12:00",
+    "term": 2,
+    "sectionID": "CPSC 110 L2M",
+    "endTime": "15:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "14:00",
+    "term": 2,
+    "sectionID": "CPSC 110 L2P",
+    "endTime": "17:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "9:00",
+    "term": 2,
+    "sectionID": "CPSC 110 L2S",
+    "endTime": "12:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "12:00",
+    "term": 2,
+    "sectionID": "CPSC 110 L2T",
+    "endTime": "15:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "12:00",
+    "term": 2,
+    "sectionID": "CPSC 110 L2U",
+    "endTime": "15:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "12:00",
+    "term": 2,
+    "sectionID": "CPSC 110 L2W",
+    "endTime": "15:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [[
+      "CPSC 110 L20",
+      "CPSC 110 L21",
+      "CPSC 110 L23",
+      "CPSC 110 L2A",
+      "CPSC 110 L2B",
+      "CPSC 110 L2E",
+      "CPSC 110 L2H",
+      "CPSC 110 L2J",
+      "CPSC 110 L2P",
+      "CPSC 110 L2S"
+    ]],
+    "weekdays": [
+      "Tue",
+      "Thu"
+    ],
+    "startTime": "9:30",
+    "term": 2,
+    "sectionID": "CPSC 110 203",
+    "endTime": "11:00",
+    "sectionType": "LECTURE",
+    "courseID": "CPSC 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": [
+      "Tue",
+      "Thu"
+    ],
+    "startTime": "12:30",
+    "term": 2,
+    "sectionID": "ENGL 111 003",
+    "endTime": "14:00",
+    "sectionType": "LECTURE",
+    "courseID": "ENGL 111"
+  },
+  {
+    "antiRequisiteIDs": [["ENGL 111 L20"]],
+    "weekdays": [
+      "Mon",
+      "Wed"
+    ],
+    "startTime": "10:00",
+    "term": 2,
+    "sectionID": "ENGL 111 005",
+    "endTime": "11:00",
+    "sectionType": "LECTURE",
+    "courseID": "ENGL 111"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "10:00",
+    "term": 2,
+    "sectionID": "ENGL 111 L20",
+    "endTime": "11:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 111"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "10:00",
+    "term": 2,
+    "sectionID": "ENGL 111 L21",
+    "endTime": "11:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 111"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "10:00",
+    "term": 2,
+    "sectionID": "ENGL 111 L22",
+    "endTime": "11:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 111"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "10:00",
+    "term": 2,
+    "sectionID": "ENGL 111 L23",
+    "endTime": "11:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 111"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": [
+      "Tue",
+      "Thu"
+    ],
+    "startTime": "14:00",
+    "term": 2,
+    "sectionID": "ENGL 111 006",
+    "endTime": "15:30",
+    "sectionType": "LECTURE",
+    "courseID": "ENGL 111"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": [
+      "Tue",
+      "Thu"
+    ],
+    "startTime": "12:30",
+    "term": 2,
+    "sectionID": "BIOL 111 201",
+    "endTime": "14:00",
+    "sectionType": "LECTURE",
+    "courseID": "BIOL 111"
+  },
+  {
+    "antiRequisiteIDs": [[
+      "MATH 101 A11",
+      "MATH 101 A12",
+      "MATH 101 A13",
+      "MATH 101 A14",
+      "MATH 101 A15",
+      "MATH 101 A16",
+      "MATH 101 A17",
+      "MATH 101 A18"
+    ]],
+    "weekdays": ["Tue"],
+    "startTime": "8:00",
+    "term": 2,
+    "sectionID": "MATH 101 2A1",
+    "endTime": "10:00",
+    "sectionType": "LECTURE",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "10:00",
+    "term": 2,
+    "sectionID": "MATH 101 A11",
+    "endTime": "11:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "MATH 101 A12",
+    "endTime": "14:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "9:00",
+    "term": 2,
+    "sectionID": "MATH 101 A13",
+    "endTime": "10:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "MATH 101 A14",
+    "endTime": "14:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "14:00",
+    "term": 2,
+    "sectionID": "MATH 101 A15",
+    "endTime": "15:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "8:00",
+    "term": 2,
+    "sectionID": "MATH 101 A16",
+    "endTime": "9:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "8:00",
+    "term": 2,
+    "sectionID": "MATH 101 A17",
+    "endTime": "9:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "14:00",
+    "term": 2,
+    "sectionID": "MATH 101 A18",
+    "endTime": "15:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [[
+      "MATH 101 A21",
+      "MATH 101 A22",
+      "MATH 101 A23",
+      "MATH 101 A24",
+      "MATH 101 A25",
+      "MATH 101 A26",
+      "MATH 101 A27"
+    ]],
+    "weekdays": ["Tue"],
+    "startTime": "10:00",
+    "term": 2,
+    "sectionID": "MATH 101 2A2",
+    "endTime": "12:00",
+    "sectionType": "LECTURE",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "9:00",
+    "term": 2,
+    "sectionID": "MATH 101 A21",
+    "endTime": "10:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "11:00",
+    "term": 2,
+    "sectionID": "MATH 101 A22",
+    "endTime": "12:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "14:00",
+    "term": 2,
+    "sectionID": "MATH 101 A23",
+    "endTime": "15:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "9:00",
+    "term": 2,
+    "sectionID": "MATH 101 A24",
+    "endTime": "10:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "11:00",
+    "term": 2,
+    "sectionID": "MATH 101 A25",
+    "endTime": "12:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "9:00",
+    "term": 2,
+    "sectionID": "MATH 101 A26",
+    "endTime": "10:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "10:00",
+    "term": 2,
+    "sectionID": "MATH 101 A27",
+    "endTime": "11:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "10:00",
+    "term": 2,
+    "sectionID": "MATH 101 A28",
+    "endTime": "11:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "9:00",
+    "term": 2,
+    "sectionID": "MATH 101 A29",
+    "endTime": "10:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [[
+      "MATH 101 A31",
+      "MATH 101 A32",
+      "MATH 101 A33",
+      "MATH 101 A34",
+      "MATH 101 A35",
+      "MATH 101 A36",
+      "MATH 101 A37",
+      "MATH 101 A39"
+    ]],
+    "weekdays": ["Tue"],
+    "startTime": "12:00",
+    "term": 2,
+    "sectionID": "MATH 101 2A3",
+    "endTime": "14:00",
+    "sectionType": "LECTURE",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "12:00",
+    "term": 2,
+    "sectionID": "MATH 101 A31",
+    "endTime": "13:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "15:00",
+    "term": 2,
+    "sectionID": "MATH 101 A32",
+    "endTime": "16:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "16:00",
+    "term": 2,
+    "sectionID": "MATH 101 A33",
+    "endTime": "17:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "8:00",
+    "term": 2,
+    "sectionID": "MATH 101 A34",
+    "endTime": "9:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "10:00",
+    "term": 2,
+    "sectionID": "MATH 101 A35",
+    "endTime": "11:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "15:00",
+    "term": 2,
+    "sectionID": "MATH 101 A36",
+    "endTime": "16:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "MATH 101 A37",
+    "endTime": "14:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "MATH 101 A39",
+    "endTime": "14:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [[
+      "MATH 101 A41",
+      "MATH 101 A42",
+      "MATH 101 A43",
+      "MATH 101 A44",
+      "MATH 101 A45",
+      "MATH 101 A46"
+    ]],
+    "weekdays": ["Tue"],
+    "startTime": "14:00",
+    "term": 2,
+    "sectionID": "MATH 101 2A4",
+    "endTime": "16:00",
+    "sectionType": "LECTURE",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "12:00",
+    "term": 2,
+    "sectionID": "MATH 101 A41",
+    "endTime": "13:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "11:00",
+    "term": 2,
+    "sectionID": "MATH 101 A42",
+    "endTime": "12:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "12:00",
+    "term": 2,
+    "sectionID": "MATH 101 A43",
+    "endTime": "13:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "12:30",
+    "term": 2,
+    "sectionID": "MATH 101 A44",
+    "endTime": "13:30",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "8:00",
+    "term": 2,
+    "sectionID": "MATH 101 A45",
+    "endTime": "9:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "15:00",
+    "term": 2,
+    "sectionID": "MATH 101 A46",
+    "endTime": "16:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [[
+      "MATH 101 AR2",
+      "MATH 101 AR3",
+      "MATH 101 AR5",
+      "MATH 101 AR6"
+    ]],
+    "weekdays": ["Tue"],
+    "startTime": "10:00",
+    "term": 2,
+    "sectionID": "MATH 101 2AR",
+    "endTime": "12:00",
+    "sectionType": "LECTURE",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "11:00",
+    "term": 2,
+    "sectionID": "MATH 101 AR2",
+    "endTime": "12:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "9:00",
+    "term": 2,
+    "sectionID": "MATH 101 AR3",
+    "endTime": "10:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "10:00",
+    "term": 2,
+    "sectionID": "MATH 101 AR5",
+    "endTime": "11:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "11:00",
+    "term": 2,
+    "sectionID": "MATH 101 AR6",
+    "endTime": "12:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [[
+      "MATH 101 B11",
+      "MATH 101 B12",
+      "MATH 101 B13",
+      "MATH 101 B14",
+      "MATH 101 B15",
+      "MATH 101 B16",
+      "MATH 101 B17",
+      "MATH 101 B18"
+    ]],
+    "weekdays": ["Wed"],
+    "startTime": "8:00",
+    "term": 2,
+    "sectionID": "MATH 101 2B1",
+    "endTime": "10:00",
+    "sectionType": "LECTURE",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "12:00",
+    "term": 2,
+    "sectionID": "MATH 101 B11",
+    "endTime": "13:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "8:00",
+    "term": 2,
+    "sectionID": "MATH 101 B12",
+    "endTime": "9:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "9:00",
+    "term": 2,
+    "sectionID": "MATH 101 B13",
+    "endTime": "10:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "12:00",
+    "term": 2,
+    "sectionID": "MATH 101 B14",
+    "endTime": "13:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "MATH 101 B15",
+    "endTime": "14:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "8:00",
+    "term": 2,
+    "sectionID": "MATH 101 B16",
+    "endTime": "9:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "9:00",
+    "term": 2,
+    "sectionID": "MATH 101 B17",
+    "endTime": "10:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "10:00",
+    "term": 2,
+    "sectionID": "MATH 101 B18",
+    "endTime": "11:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [[
+      "MATH 101 B21",
+      "MATH 101 B22",
+      "MATH 101 B23",
+      "MATH 101 B24",
+      "MATH 101 B25",
+      "MATH 101 B26"
+    ]],
+    "weekdays": ["Wed"],
+    "startTime": "12:00",
+    "term": 2,
+    "sectionID": "MATH 101 2B2",
+    "endTime": "14:00",
+    "sectionType": "LECTURE",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "MATH 101 B21",
+    "endTime": "14:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "11:00",
+    "term": 2,
+    "sectionID": "MATH 101 B22",
+    "endTime": "12:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "12:00",
+    "term": 2,
+    "sectionID": "MATH 101 B23",
+    "endTime": "13:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "MATH 101 B24",
+    "endTime": "14:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "9:00",
+    "term": 2,
+    "sectionID": "MATH 101 B25",
+    "endTime": "10:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "11:00",
+    "term": 2,
+    "sectionID": "MATH 101 B26",
+    "endTime": "12:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [[
+      "MATH 101 B31",
+      "MATH 101 B32",
+      "MATH 101 B33",
+      "MATH 101 B34",
+      "MATH 101 B35",
+      "MATH 101 B36"
+    ]],
+    "weekdays": ["Wed"],
+    "startTime": "14:00",
+    "term": 2,
+    "sectionID": "MATH 101 2B3",
+    "endTime": "16:00",
+    "sectionType": "LECTURE",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "10:00",
+    "term": 2,
+    "sectionID": "MATH 101 B31",
+    "endTime": "11:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "14:00",
+    "term": 2,
+    "sectionID": "MATH 101 B32",
+    "endTime": "15:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "12:00",
+    "term": 2,
+    "sectionID": "MATH 101 B33",
+    "endTime": "13:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "MATH 101 B34",
+    "endTime": "14:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "15:00",
+    "term": 2,
+    "sectionID": "MATH 101 B35",
+    "endTime": "16:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "16:00",
+    "term": 2,
+    "sectionID": "MATH 101 B36",
+    "endTime": "17:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [[
+      "MATH 101 C11",
+      "MATH 101 C12",
+      "MATH 101 C13",
+      "MATH 101 C14",
+      "MATH 101 C15",
+      "MATH 101 C16",
+      "MATH 101 C17"
+    ]],
+    "weekdays": ["Thu"],
+    "startTime": "10:00",
+    "term": 2,
+    "sectionID": "MATH 101 2C1",
+    "endTime": "12:00",
+    "sectionType": "LECTURE",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "10:00",
+    "term": 2,
+    "sectionID": "MATH 101 C11",
+    "endTime": "11:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "8:00",
+    "term": 2,
+    "sectionID": "MATH 101 C12",
+    "endTime": "9:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "9:00",
+    "term": 2,
+    "sectionID": "MATH 101 C13",
+    "endTime": "10:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "11:00",
+    "term": 2,
+    "sectionID": "MATH 101 C14",
+    "endTime": "12:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "12:00",
+    "term": 2,
+    "sectionID": "MATH 101 C15",
+    "endTime": "13:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "MATH 101 C16",
+    "endTime": "14:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "16:00",
+    "term": 2,
+    "sectionID": "MATH 101 C17",
+    "endTime": "17:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "16:00",
+    "term": 2,
+    "sectionID": "MATH 101 C18",
+    "endTime": "17:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [[
+      "MATH 101 C21",
+      "MATH 101 C22",
+      "MATH 101 C23",
+      "MATH 101 C24",
+      "MATH 101 C25",
+      "MATH 101 C26",
+      "MATH 101 C27",
+      "MATH 101 C28"
+    ]],
+    "weekdays": ["Thu"],
+    "startTime": "12:00",
+    "term": 2,
+    "sectionID": "MATH 101 2C2",
+    "endTime": "14:00",
+    "sectionType": "LECTURE",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "12:00",
+    "term": 2,
+    "sectionID": "MATH 101 C21",
+    "endTime": "13:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "15:00",
+    "term": 2,
+    "sectionID": "MATH 101 C22",
+    "endTime": "16:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "8:00",
+    "term": 2,
+    "sectionID": "MATH 101 C23",
+    "endTime": "9:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "MATH 101 C24",
+    "endTime": "14:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "8:00",
+    "term": 2,
+    "sectionID": "MATH 101 C25",
+    "endTime": "9:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "12:00",
+    "term": 2,
+    "sectionID": "MATH 101 C26",
+    "endTime": "13:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "MATH 101 C27",
+    "endTime": "14:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "10:00",
+    "term": 2,
+    "sectionID": "MATH 101 C28",
+    "endTime": "11:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [[
+      "MATH 101 C31",
+      "MATH 101 C32",
+      "MATH 101 C33",
+      "MATH 101 C34",
+      "MATH 101 C35",
+      "MATH 101 C36"
+    ]],
+    "weekdays": ["Thu"],
+    "startTime": "14:00",
+    "term": 2,
+    "sectionID": "MATH 101 2C3",
+    "endTime": "16:00",
+    "sectionType": "LECTURE",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "MATH 101 C31",
+    "endTime": "14:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "14:00",
+    "term": 2,
+    "sectionID": "MATH 101 C32",
+    "endTime": "15:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "10:00",
+    "term": 2,
+    "sectionID": "MATH 101 C33",
+    "endTime": "11:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "14:00",
+    "term": 2,
+    "sectionID": "MATH 101 C34",
+    "endTime": "15:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "MATH 101 C35",
+    "endTime": "14:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "14:00",
+    "term": 2,
+    "sectionID": "MATH 101 C36",
+    "endTime": "15:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "MATH 101"
+  },
+  {
+    "antiRequisiteIDs": [[
+      "ASTR 102 L2A",
+      "ASTR 102 L2B",
+      "ASTR 102 L2C",
+      "ASTR 102 L2D",
+      "ASTR 102 L2E",
+      "ASTR 102 L2F"
+    ]],
+    "weekdays": [
+      "Mon",
+      "Wed",
+      "Fri"
+    ],
+    "startTime": "12:00",
+    "term": 2,
+    "sectionID": "ASTR 102 201",
+    "endTime": "13:00",
+    "sectionType": "LECTURE",
+    "courseID": "ASTR 102"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "12:00",
+    "term": 2,
+    "sectionID": "ASTR 102 L2A",
+    "endTime": "14:00",
+    "sectionType": "LABORATORY",
+    "courseID": "ASTR 102"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "10:00",
+    "term": 2,
+    "sectionID": "ASTR 102 L2B",
+    "endTime": "12:00",
+    "sectionType": "LABORATORY",
+    "courseID": "ASTR 102"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "15:00",
+    "term": 2,
+    "sectionID": "ASTR 102 L2C",
+    "endTime": "17:00",
+    "sectionType": "LABORATORY",
+    "courseID": "ASTR 102"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "ASTR 102 L2D",
+    "endTime": "15:00",
+    "sectionType": "LABORATORY",
+    "courseID": "ASTR 102"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "9:00",
+    "term": 2,
+    "sectionID": "ASTR 102 L2E",
+    "endTime": "11:00",
+    "sectionType": "LABORATORY",
+    "courseID": "ASTR 102"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "8:00",
+    "term": 2,
+    "sectionID": "ASTR 102 L2F",
+    "endTime": "10:00",
+    "sectionType": "LABORATORY",
+    "courseID": "ASTR 102"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "CPSC 121 T2C",
+    "endTime": "14:00",
+    "sectionType": "TUTORIAL",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "CPSC 121 T2E",
+    "endTime": "14:00",
+    "sectionType": "TUTORIAL",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "12:00",
+    "term": 2,
+    "sectionID": "CPSC 121 T2S",
+    "endTime": "13:00",
+    "sectionType": "TUTORIAL",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "12:00",
+    "term": 2,
+    "sectionID": "CPSC 121 T2U",
+    "endTime": "13:00",
+    "sectionType": "TUTORIAL",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [
+      [
+        "CPSC 121 L22",
+        "CPSC 121 L25",
+        "CPSC 121 L26",
+        "CPSC 121 L27",
+        "CPSC 121 L28",
+        "CPSC 121 L29",
+        "CPSC 121 L2C",
+        "CPSC 121 L2D",
+        "CPSC 121 L2E",
+        "CPSC 121 L2F",
+        "CPSC 121 L2G",
+        "CPSC 121 L2H",
+        "CPSC 121 L2K",
+        "CPSC 121 L2L",
+        "CPSC 121 L2M",
+        "CPSC 121 L2N",
+        "CPSC 121 L2P",
+        "CPSC 121 L2R",
+        "CPSC 121 L2U",
+        "CPSC 121 L2V",
+        "CPSC 121 L2Y",
+        "CPSC 121 L2Z"
+      ],
+      [
+        "CPSC 121 T2A",
+        "CPSC 121 T2B",
+        "CPSC 121 T2C",
+        "CPSC 121 T2D",
+        "CPSC 121 T2E",
+        "CPSC 121 T2F",
+        "CPSC 121 T2G",
+        "CPSC 121 T2H",
+        "CPSC 121 T2J",
+        "CPSC 121 T2K",
+        "CPSC 121 T2M",
+        "CPSC 121 T2N",
+        "CPSC 121 T2P",
+        "CPSC 121 T2Q",
+        "CPSC 121 T2T",
+        "CPSC 121 T2U"
+      ]
+    ],
+    "weekdays": [
+      "Tue",
+      "Thu"
+    ],
+    "startTime": "12:30",
+    "term": 2,
+    "sectionID": "CPSC 121 201",
+    "endTime": "14:00",
+    "sectionType": "LECTURE",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "9:00",
+    "term": 2,
+    "sectionID": "CPSC 121 L22",
+    "endTime": "11:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "CPSC 121 L25",
+    "endTime": "15:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "15:00",
+    "term": 2,
+    "sectionID": "CPSC 121 L26",
+    "endTime": "17:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "14:00",
+    "term": 2,
+    "sectionID": "CPSC 121 L27",
+    "endTime": "16:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "11:00",
+    "term": 2,
+    "sectionID": "CPSC 121 L28",
+    "endTime": "13:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "12:00",
+    "term": 2,
+    "sectionID": "CPSC 121 L29",
+    "endTime": "14:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "15:00",
+    "term": 2,
+    "sectionID": "CPSC 121 L2A",
+    "endTime": "17:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "9:00",
+    "term": 2,
+    "sectionID": "CPSC 121 L2C",
+    "endTime": "11:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "CPSC 121 L2D",
+    "endTime": "15:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "15:00",
+    "term": 2,
+    "sectionID": "CPSC 121 L2E",
+    "endTime": "17:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "9:00",
+    "term": 2,
+    "sectionID": "CPSC 121 L2F",
+    "endTime": "11:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "11:00",
+    "term": 2,
+    "sectionID": "CPSC 121 L2G",
+    "endTime": "13:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "11:00",
+    "term": 2,
+    "sectionID": "CPSC 121 L2H",
+    "endTime": "13:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "11:00",
+    "term": 2,
+    "sectionID": "CPSC 121 L2J",
+    "endTime": "13:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "15:00",
+    "term": 2,
+    "sectionID": "CPSC 121 L2K",
+    "endTime": "17:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "CPSC 121 L2L",
+    "endTime": "15:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "9:00",
+    "term": 2,
+    "sectionID": "CPSC 121 L2M",
+    "endTime": "11:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "11:00",
+    "term": 2,
+    "sectionID": "CPSC 121 L2N",
+    "endTime": "13:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "CPSC 121 L2P",
+    "endTime": "15:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "CPSC 121 L2Q",
+    "endTime": "15:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "15:00",
+    "term": 2,
+    "sectionID": "CPSC 121 L2R",
+    "endTime": "17:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "CPSC 121 L2U",
+    "endTime": "15:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "11:00",
+    "term": 2,
+    "sectionID": "CPSC 121 L2V",
+    "endTime": "13:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "9:00",
+    "term": 2,
+    "sectionID": "CPSC 121 L2Y",
+    "endTime": "11:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "15:00",
+    "term": 2,
+    "sectionID": "CPSC 121 L2Z",
+    "endTime": "17:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "11:00",
+    "term": 2,
+    "sectionID": "CPSC 121 T2A",
+    "endTime": "12:00",
+    "sectionType": "TUTORIAL",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "CPSC 121 T2B",
+    "endTime": "14:00",
+    "sectionType": "TUTORIAL",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "12:00",
+    "term": 2,
+    "sectionID": "CPSC 121 T2D",
+    "endTime": "13:00",
+    "sectionType": "TUTORIAL",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "15:00",
+    "term": 2,
+    "sectionID": "CPSC 121 T2F",
+    "endTime": "16:00",
+    "sectionType": "TUTORIAL",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "11:00",
+    "term": 2,
+    "sectionID": "CPSC 121 T2G",
+    "endTime": "12:00",
+    "sectionType": "TUTORIAL",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "15:00",
+    "term": 2,
+    "sectionID": "CPSC 121 T2H",
+    "endTime": "16:00",
+    "sectionType": "TUTORIAL",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "9:00",
+    "term": 2,
+    "sectionID": "CPSC 121 T2J",
+    "endTime": "10:00",
+    "sectionType": "TUTORIAL",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "11:00",
+    "term": 2,
+    "sectionID": "CPSC 121 T2K",
+    "endTime": "12:00",
+    "sectionType": "TUTORIAL",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "11:00",
+    "term": 2,
+    "sectionID": "CPSC 121 T2M",
+    "endTime": "12:00",
+    "sectionType": "TUTORIAL",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "9:00",
+    "term": 2,
+    "sectionID": "CPSC 121 T2N",
+    "endTime": "10:00",
+    "sectionType": "TUTORIAL",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "9:00",
+    "term": 2,
+    "sectionID": "CPSC 121 T2P",
+    "endTime": "10:00",
+    "sectionType": "TUTORIAL",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "CPSC 121 T2Q",
+    "endTime": "14:00",
+    "sectionType": "TUTORIAL",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "10:00",
+    "term": 2,
+    "sectionID": "CPSC 121 T2T",
+    "endTime": "11:00",
+    "sectionType": "TUTORIAL",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [
+      [
+        "CPSC 121 L22",
+        "CPSC 121 L25",
+        "CPSC 121 L26",
+        "CPSC 121 L27",
+        "CPSC 121 L28",
+        "CPSC 121 L29",
+        "CPSC 121 L2C",
+        "CPSC 121 L2D",
+        "CPSC 121 L2E",
+        "CPSC 121 L2F",
+        "CPSC 121 L2G",
+        "CPSC 121 L2H",
+        "CPSC 121 L2K",
+        "CPSC 121 L2L",
+        "CPSC 121 L2M",
+        "CPSC 121 L2N",
+        "CPSC 121 L2P",
+        "CPSC 121 L2R",
+        "CPSC 121 L2U",
+        "CPSC 121 L2V",
+        "CPSC 121 L2Y",
+        "CPSC 121 L2Z"
+      ],
+      [
+        "CPSC 121 T2A",
+        "CPSC 121 T2B",
+        "CPSC 121 T2C",
+        "CPSC 121 T2D",
+        "CPSC 121 T2E",
+        "CPSC 121 T2F",
+        "CPSC 121 T2G",
+        "CPSC 121 T2H",
+        "CPSC 121 T2J",
+        "CPSC 121 T2K",
+        "CPSC 121 T2M",
+        "CPSC 121 T2N",
+        "CPSC 121 T2P",
+        "CPSC 121 T2Q",
+        "CPSC 121 T2T",
+        "CPSC 121 T2U"
+      ]
+    ],
+    "weekdays": [
+      "Tue",
+      "Thu"
+    ],
+    "startTime": "15:30",
+    "term": 2,
+    "sectionID": "CPSC 121 202",
+    "endTime": "17:00",
+    "sectionType": "LECTURE",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [
+      [
+        "CPSC 121 L22",
+        "CPSC 121 L25",
+        "CPSC 121 L26",
+        "CPSC 121 L27",
+        "CPSC 121 L28",
+        "CPSC 121 L29",
+        "CPSC 121 L2C",
+        "CPSC 121 L2D",
+        "CPSC 121 L2E",
+        "CPSC 121 L2F",
+        "CPSC 121 L2G",
+        "CPSC 121 L2H",
+        "CPSC 121 L2K",
+        "CPSC 121 L2L",
+        "CPSC 121 L2M",
+        "CPSC 121 L2N",
+        "CPSC 121 L2P",
+        "CPSC 121 L2R",
+        "CPSC 121 L2U",
+        "CPSC 121 L2V",
+        "CPSC 121 L2Y",
+        "CPSC 121 L2Z"
+      ],
+      [
+        "CPSC 121 T2A",
+        "CPSC 121 T2B",
+        "CPSC 121 T2C",
+        "CPSC 121 T2D",
+        "CPSC 121 T2E",
+        "CPSC 121 T2F",
+        "CPSC 121 T2G",
+        "CPSC 121 T2H",
+        "CPSC 121 T2J",
+        "CPSC 121 T2K",
+        "CPSC 121 T2M",
+        "CPSC 121 T2N",
+        "CPSC 121 T2P",
+        "CPSC 121 T2Q",
+        "CPSC 121 T2T",
+        "CPSC 121 T2U"
+      ]
+    ],
+    "weekdays": [
+      "Tue",
+      "Thu"
+    ],
+    "startTime": "9:30",
+    "term": 2,
+    "sectionID": "CPSC 121 204",
+    "endTime": "11:00",
+    "sectionType": "LECTURE",
+    "courseID": "CPSC 121"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": [
+      "Mon",
+      "Wed"
+    ],
+    "startTime": "9:00",
+    "term": 2,
+    "sectionID": "ENGL 110 007",
+    "endTime": "10:00",
+    "sectionType": "LECTURE",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "9:00",
+    "term": 2,
+    "sectionID": "ENGL 110 LP1",
+    "endTime": "10:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "9:00",
+    "term": 2,
+    "sectionID": "ENGL 110 LP2",
+    "endTime": "10:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "9:00",
+    "term": 2,
+    "sectionID": "ENGL 110 LP3",
+    "endTime": "10:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "9:00",
+    "term": 2,
+    "sectionID": "ENGL 110 LP4",
+    "endTime": "10:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "9:00",
+    "term": 2,
+    "sectionID": "ENGL 110 LP5",
+    "endTime": "10:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": [
+      "Mon",
+      "Wed"
+    ],
+    "startTime": "11:00",
+    "term": 2,
+    "sectionID": "ENGL 110 008",
+    "endTime": "12:00",
+    "sectionType": "LECTURE",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "11:00",
+    "term": 2,
+    "sectionID": "ENGL 110 LQ1",
+    "endTime": "12:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "11:00",
+    "term": 2,
+    "sectionID": "ENGL 110 LQ2",
+    "endTime": "12:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "11:00",
+    "term": 2,
+    "sectionID": "ENGL 110 LQ3",
+    "endTime": "12:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "11:00",
+    "term": 2,
+    "sectionID": "ENGL 110 LQ4",
+    "endTime": "12:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "11:00",
+    "term": 2,
+    "sectionID": "ENGL 110 LQ5",
+    "endTime": "12:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": [
+      "Mon",
+      "Wed"
+    ],
+    "startTime": "12:00",
+    "term": 2,
+    "sectionID": "ENGL 110 009",
+    "endTime": "13:00",
+    "sectionType": "LECTURE",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "12:00",
+    "term": 2,
+    "sectionID": "ENGL 110 LR1",
+    "endTime": "13:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "12:00",
+    "term": 2,
+    "sectionID": "ENGL 110 LR2",
+    "endTime": "13:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "12:00",
+    "term": 2,
+    "sectionID": "ENGL 110 LR3",
+    "endTime": "13:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "12:00",
+    "term": 2,
+    "sectionID": "ENGL 110 LR4",
+    "endTime": "13:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "12:00",
+    "term": 2,
+    "sectionID": "ENGL 110 LR5",
+    "endTime": "13:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "12:00",
+    "term": 2,
+    "sectionID": "ENGL 110 LR6",
+    "endTime": "13:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": [
+      "Mon",
+      "Wed"
+    ],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "ENGL 110 010",
+    "endTime": "14:00",
+    "sectionType": "LECTURE",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "ENGL 110 LS1",
+    "endTime": "14:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "ENGL 110 LS2",
+    "endTime": "14:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "ENGL 110 LS3",
+    "endTime": "14:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "ENGL 110 LS4",
+    "endTime": "14:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "ENGL 110 LS5",
+    "endTime": "14:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "ENGL 110 LS6",
+    "endTime": "14:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": [
+      "Mon",
+      "Wed"
+    ],
+    "startTime": "14:00",
+    "term": 2,
+    "sectionID": "ENGL 110 011",
+    "endTime": "15:00",
+    "sectionType": "LECTURE",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "14:00",
+    "term": 2,
+    "sectionID": "ENGL 110 LT1",
+    "endTime": "15:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "14:00",
+    "term": 2,
+    "sectionID": "ENGL 110 LT2",
+    "endTime": "15:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "14:00",
+    "term": 2,
+    "sectionID": "ENGL 110 LT3",
+    "endTime": "15:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "14:00",
+    "term": 2,
+    "sectionID": "ENGL 110 LT4",
+    "endTime": "15:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "14:00",
+    "term": 2,
+    "sectionID": "ENGL 110 LT5",
+    "endTime": "15:00",
+    "sectionType": "DISCUSSION",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": [
+      "Tue",
+      "Thu"
+    ],
+    "startTime": "9:30",
+    "term": 2,
+    "sectionID": "ENGL 110 012",
+    "endTime": "11:00",
+    "sectionType": "LECTURE",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": [
+      "Tue",
+      "Thu"
+    ],
+    "startTime": "11:00",
+    "term": 2,
+    "sectionID": "ENGL 110 013",
+    "endTime": "12:30",
+    "sectionType": "LECTURE",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": [
+      "Tue",
+      "Thu"
+    ],
+    "startTime": "14:00",
+    "term": 2,
+    "sectionID": "ENGL 110 015",
+    "endTime": "15:30",
+    "sectionType": "LECTURE",
+    "courseID": "ENGL 110"
+  },
+  {
+    "antiRequisiteIDs": [[
+      "CPSC 210 L2A",
+      "CPSC 210 L2B",
+      "CPSC 210 L2D",
+      "CPSC 210 L2E",
+      "CPSC 210 L2F",
+      "CPSC 210 L2G",
+      "CPSC 210 L2H",
+      "CPSC 210 L2J",
+      "CPSC 210 L2K",
+      "CPSC 210 L2M",
+      "CPSC 210 L2N",
+      "CPSC 210 L2P",
+      "CPSC 210 L2R",
+      "CPSC 210 L2T",
+      "CPSC 210 L2U",
+      "CPSC 210 L2X",
+      "CPSC 210 L2Y",
+      "CPSC 210 L2Z"
+    ]],
+    "weekdays": [
+      "Mon",
+      "Wed",
+      "Fri"
+    ],
+    "startTime": "10:00",
+    "term": 2,
+    "sectionID": "CPSC 210 201",
+    "endTime": "11:00",
+    "sectionType": "LECTURE",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "9:00",
+    "term": 2,
+    "sectionID": "CPSC 210 L2A",
+    "endTime": "11:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "11:00",
+    "term": 2,
+    "sectionID": "CPSC 210 L2B",
+    "endTime": "13:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "11:00",
+    "term": 2,
+    "sectionID": "CPSC 210 L2D",
+    "endTime": "13:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "9:00",
+    "term": 2,
+    "sectionID": "CPSC 210 L2E",
+    "endTime": "11:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "9:00",
+    "term": 2,
+    "sectionID": "CPSC 210 L2F",
+    "endTime": "11:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "9:00",
+    "term": 2,
+    "sectionID": "CPSC 210 L2G",
+    "endTime": "11:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "9:00",
+    "term": 2,
+    "sectionID": "CPSC 210 L2H",
+    "endTime": "11:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "CPSC 210 L2J",
+    "endTime": "15:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "15:00",
+    "term": 2,
+    "sectionID": "CPSC 210 L2K",
+    "endTime": "17:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "11:00",
+    "term": 2,
+    "sectionID": "CPSC 210 L2L",
+    "endTime": "13:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "15:00",
+    "term": 2,
+    "sectionID": "CPSC 210 L2M",
+    "endTime": "17:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Tue"],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "CPSC 210 L2N",
+    "endTime": "15:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "15:00",
+    "term": 2,
+    "sectionID": "CPSC 210 L2P",
+    "endTime": "17:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Wed"],
+    "startTime": "11:00",
+    "term": 2,
+    "sectionID": "CPSC 210 L2R",
+    "endTime": "13:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "11:00",
+    "term": 2,
+    "sectionID": "CPSC 210 L2T",
+    "endTime": "13:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Mon"],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "CPSC 210 L2U",
+    "endTime": "15:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "11:00",
+    "term": 2,
+    "sectionID": "CPSC 210 L2X",
+    "endTime": "13:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Fri"],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "CPSC 210 L2Y",
+    "endTime": "15:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [],
+    "weekdays": ["Thu"],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "CPSC 210 L2Z",
+    "endTime": "15:00",
+    "sectionType": "LABORATORY",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [[
+      "CPSC 210 L2A",
+      "CPSC 210 L2B",
+      "CPSC 210 L2D",
+      "CPSC 210 L2E",
+      "CPSC 210 L2F",
+      "CPSC 210 L2G",
+      "CPSC 210 L2H",
+      "CPSC 210 L2J",
+      "CPSC 210 L2K",
+      "CPSC 210 L2M",
+      "CPSC 210 L2N",
+      "CPSC 210 L2P",
+      "CPSC 210 L2R",
+      "CPSC 210 L2T",
+      "CPSC 210 L2U",
+      "CPSC 210 L2X",
+      "CPSC 210 L2Y",
+      "CPSC 210 L2Z"
+    ]],
+    "weekdays": [
+      "Mon",
+      "Wed",
+      "Fri"
+    ],
+    "startTime": "13:00",
+    "term": 2,
+    "sectionID": "CPSC 210 202",
+    "endTime": "14:00",
+    "sectionType": "LECTURE",
+    "courseID": "CPSC 210"
+  },
+  {
+    "antiRequisiteIDs": [[
+      "CPSC 210 L2A",
+      "CPSC 210 L2B",
+      "CPSC 210 L2D",
+      "CPSC 210 L2E",
+      "CPSC 210 L2F",
+      "CPSC 210 L2G",
+      "CPSC 210 L2H",
+      "CPSC 210 L2J",
+      "CPSC 210 L2K",
+      "CPSC 210 L2M",
+      "CPSC 210 L2N",
+      "CPSC 210 L2P",
+      "CPSC 210 L2R",
+      "CPSC 210 L2T",
+      "CPSC 210 L2U",
+      "CPSC 210 L2X",
+      "CPSC 210 L2Y",
+      "CPSC 210 L2Z"
+    ]],
+    "weekdays": [
+      "Mon",
+      "Wed",
+      "Fri"
+    ],
+    "startTime": "15:00",
+    "term": 2,
+    "sectionID": "CPSC 210 203",
+    "endTime": "16:00",
+    "sectionType": "LECTURE",
+    "courseID": "CPSC 210"
+  }
+]

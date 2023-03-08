@@ -1,0 +1,42 @@
+[
+  {
+    "description": "Fundamental program and computation structures. Introductory programming skills.",
+    "courseID": "CPSC 110"
+  },
+  {
+    "description": "Physical and mathematical structures of computation.",
+    "courseID": "CPSC 121"
+  },
+  {
+    "description": "Design, development, and analysis of robust software components. ",
+    "courseID": "CPSC 210"
+  },
+  {
+    "description": "Dynamics and Waves. Kinematics including curvilinear motion.",
+    "courseID": "PHYS 117"
+  },
+  {
+    "description": "Study of selected examples of literary and cultural expression.",
+    "courseID": "ENGL 110"
+  },
+  {
+    "description": "Study of selected communication genres from a language-based perspective",
+    "courseID": "ENGL 111"
+  },
+  {
+    "description": "Topics as for Math 100; intended for students with no previous knowledge of Calculus.",
+    "courseID": "MATH 180"
+  },
+  {
+    "description": "The definite integral, integration techniques, applications, modelling, infinite series.",
+    "courseID": "MATH 101"
+  },
+  {
+    "description": "Modern stellar and extragalactic astronomy.",
+    "courseID": "ASTR 102"
+  },
+  {
+    "description": "Concepts fundamental to biological issues",
+    "courseID": "BIOL 111"
+  }
+]

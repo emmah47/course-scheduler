@@ -3,6 +3,7 @@ package model.util;
 import model.Course;
 import model.Section;
 
+
 import java.util.List;
 
 // Array of methods to load sections from data. Data contains a list of Courses and a list of Sections.

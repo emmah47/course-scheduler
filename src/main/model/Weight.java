@@ -1,8 +1,10 @@
 package model;
 
+import model.exceptions.InvalidTimeException;
 import model.util.HelperUtil;
 import org.json.JSONObject;
 import persistence.Writable;
+
 
 // A set of weights decided by the user. It is used for calculating the score of each schedule to decide which schedules
 // are better. A category with a higher weight will impact the final score more. Also contains the preferred start and

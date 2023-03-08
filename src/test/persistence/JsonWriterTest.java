@@ -5,7 +5,6 @@ import model.Weight;
 import model.util.CourseTestData;
 import org.json.JSONArray;
 import org.junit.jupiter.api.Test;
-import ui.CourseSchedulerApp;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -15,7 +14,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 // This code is based on the JsonSerializationDemo example provided for phase2
-// Tests for JsonWriter
+// a testing class for JsonWriter
 class JsonWriterTest {
     String weightDestination = "./data/testWeightWrite.json";
     String scheduleDestination = "./data/testScheduleWrite.json";

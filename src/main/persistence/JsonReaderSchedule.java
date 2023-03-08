@@ -58,7 +58,7 @@ public class JsonReaderSchedule {
         String name = jsonObject.getString("name");
         int term = jsonObject.getInt("term");
         Schedule s = new Schedule(name, term,
-                new Weight(1, 1, 1, 1), new CourseRealData());
+                new Weight(1, 1, 1, 1), new CourseRealData("./data/courses.json", "./data/sections.json"));
         addCourses(s, jsonObject);
         addSections(s, jsonObject);
         addWeight(s, jsonObject);

@@ -2,6 +2,9 @@ package model;
 
 
 import model.util.HelperUtil;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import persistence.Writable;
 
 import java.util.List;
 
@@ -12,7 +15,7 @@ import java.util.List;
 // Antirequisits are the sections that depend on this section. For example, if for CPSC 110 101 lecture you have to
 // choose one lab from L01, L02, and L03, and for CPSC 110 102 lecture you have to choose one lab from L03 and L04, then
 // CPSC 110 101's antirequisites are L01, L02, and L03, and CPSC 110 102's antirequisites are L03 and L04.
-public class Section {
+public class Section implements Writable {
     private String courseID;                         // the course ID (ex "CPSC 210")
     private String sectionID;                        // the section ID (ex "CPSC 201 101")
     private SectionType sectionType;                 // the section's type
@@ -142,4 +145,46 @@ public class Section {
         }
     }
 
+    // EFFECTS: converts sectionIDs to a json array
+    @Override
+    public JSONObject toJsonObject() {
+        JSONObject json = new JSONObject();
+        json.put("courseID", courseID);
+        json.put("sectionID", sectionID);
+        json.put("sectionType", sectionType);
+        json.put("startTime", startTime);
+        json.put("endTime", endTime);
+        json.put("weekdays", weekDaysToJson());
+        json.put("term", term);
+        json.put("antiRequisiteIDs", antiRequisiteIDsToJson());
+        return json;
+    }
+
+    // EFFECTS: returns weekdays as a JSONArray
+    private JSONArray weekDaysToJson() {
+        JSONArray json = new JSONArray();
+        for (String weekday : weekDays) {
+            json.put(weekday);
+        }
+        return json;
+    }
+
+    // EFFECTS: returns antirequisiteIDs as a JSONArray
+    private JSONArray antiRequisiteIDsToJson() {
+        JSONArray json = new JSONArray();
+        for (List<String> antirequisiteList : antiRequisiteIDs) {
+            json.put(antirequisiteListToJson(antirequisiteList));
+        }
+        return json;
+    }
+
+    // This code is based on the JsonSerializationDemo example provided for phase2
+    // EFFECTS: returns antirequisites as a JSONArray
+    private JSONArray antirequisiteListToJson(List<String> antirequisites) {
+        JSONArray json = new JSONArray();
+        for (String antirequisite : antirequisites) {
+            json.put(antirequisite);
+        }
+        return json;
+    }
 }

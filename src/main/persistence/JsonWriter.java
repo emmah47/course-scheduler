@@ -1,6 +1,5 @@
 package persistence;
 
-import model.Weight;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -9,7 +8,7 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
 // This class is based on the JsonSerializationDemo example provided for phase2
-// Represents a writer that writes JSON representation of a Weight to file
+// Represents a writer that writes JSON representation of an arbitrary class to file
 public class JsonWriter {
     private static final int TAB = 4;
     private PrintWriter writer;
@@ -28,13 +27,13 @@ public class JsonWriter {
     }
 
     // MODIFIES: this
-    // EFFECTS: writes JSON representation of Weight to file
+    // EFFECTS: writes JSON representation of a class to file
     public void writeJsonObject(JSONObject jsonObject) {
         saveToFile(jsonObject.toString(TAB));
     }
 
     // MODIFIES: this
-    // EFFECTS: writes JSON representation of Weight to file
+    // EFFECTS: writes JSON representation of a class to file
     public void writeJsonArray(JSONArray jsonArray) {
         saveToFile(jsonArray.toString(TAB));
     }

@@ -1,5 +1,6 @@
 package model;
 
+import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -21,4 +22,11 @@ class CourseTest {
         assertEquals(newDescription, testCourse.getDescription());
     }
 
+    @Test
+    void toJsonObject() {
+        Course testCourse = new Course("test course", "this is a test course");
+        JSONObject json = testCourse.toJsonObject();
+        assertEquals(json.get("courseID"), "test course");
+        assertEquals(json.get("description"), "this is a test course");
+    }
 }
