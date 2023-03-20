@@ -7,36 +7,23 @@ import model.util.CourseRealData;
 import model.util.HelperUtil;
 
 import model.util.Scheduler;
-import org.json.JSONArray;
-import persistence.JsonReaderPreferences;
-import persistence.JsonReaderSchedule;
-import persistence.JsonWriter;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.*;
 
-// A class that represents the course scheduler app
-public class CourseSchedulerApp {
-    private static final String JSON_STORE_WEIGHT = "./data/weight.json";
-    private static final String JSON_STORE_SCHEDULE = "./data/schedule.json";
-    private static final List<String> WEEKDAYS = Arrays.asList("Mon", "Tue", "Wed", "Thu", "Fri"); // List of weekdays
+// A class that represents the course scheduler console app
+public class SchedulerConsoleApp extends SchedulerApp {
     private Scanner input;
-    private Weight preferredWeights = new Weight(1, 1, "9:00", "16:00");
-    private JsonReaderPreferences jsonReaderPreferences;
-    private JsonReaderSchedule jsonReaderSchedule;
-    private JsonWriter jsonWriterPreferences;
-    private JsonWriter jsonWriterSchedules;
-    private List<Schedule> savedSchedules;
 
     // constructor
-    CourseSchedulerApp() {
+    SchedulerConsoleApp() {
+        super();
         input = new Scanner(System.in);
-        jsonReaderPreferences = new JsonReaderPreferences(JSON_STORE_WEIGHT);
-        jsonReaderSchedule = new JsonReaderSchedule(JSON_STORE_SCHEDULE);
-        jsonWriterPreferences = new JsonWriter(JSON_STORE_WEIGHT);
-        jsonWriterSchedules = new JsonWriter(JSON_STORE_SCHEDULE);
-        this.savedSchedules = loadSavedSchedules();
+    }
+
+
+    // EFFECTS: runs the course scheduler gui app
+    public void run() {
         displayMainMenu();
     }
 
@@ -109,33 +96,6 @@ public class CourseSchedulerApp {
         }
     }
 
-    // MODIFIES: file
-    // EFFECTS: saves this.savedSchedules to file
-    private void saveSchedulesToFile() {
-        try {
-            jsonWriterSchedules.open();
-            JSONArray jsonArraySchedules = new JSONArray();
-            for (Schedule schedule : this.savedSchedules) {
-                jsonArraySchedules.put(schedule.toJsonObject());
-            }
-            jsonWriterSchedules.writeJsonArray(jsonArraySchedules);
-            jsonWriterSchedules.close();
-        } catch (IOException e) {
-            System.out.println("Cannot save file.");
-        }
-
-    }
-
-    // EFFECTS: loads the saved schedules from file and returns them
-    private List<Schedule> loadSavedSchedules() {
-        List<Schedule> schedules = new ArrayList<>();
-        try {
-            schedules = jsonReaderSchedule.read();
-        } catch (IOException e) {
-            System.out.println("Unable to load schedules");
-        }
-        return schedules;
-    }
 
     // EFFECTS: displays menu with all the names of the saved schedules
     private void printSavedScheduleMenu(List<Schedule> savedSchedules) {
@@ -180,13 +140,6 @@ public class CourseSchedulerApp {
         System.out.print(displaySchedule(s));
     }
 
-    // MODIFIES: this, file
-    // EFFECTS: deletes the schedule from file
-    private void deleteSchedule(Schedule s) {
-        this.savedSchedules.remove(s);
-        saveSchedulesToFile();
-        System.out.println("Schedule has been deleted!");
-    }
 
     // EFFECTS: displays the preference setting menu
     private void displayPreferenceSettingMenu() {
@@ -471,13 +424,6 @@ public class CourseSchedulerApp {
         }
     }
 
-    // MODIFIES: file
-    // EFFECTS: saves this.savedSchedules to file
-    private void saveSchedule(Schedule schedule) {
-        System.out.println("Saving the schedule...");
-        this.savedSchedules.add(schedule);
-        saveSchedulesToFile();
-    }
 
 
     // EFFECTS: Prompts user to set the number of courses to be displayed
@@ -513,18 +459,6 @@ public class CourseSchedulerApp {
         }
     }
 
-    // MODIFIES: file
-    // EFFECTS: saves the preferences
-    private void savePreference() {
-        try {
-            jsonWriterPreferences.open();
-            jsonWriterPreferences.writeJsonObject(preferredWeights.toJsonObject());
-            jsonWriterPreferences.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("Cannot find file to save to.");
-        }
-        System.out.println("Your preferences have been saved");
-    }
 
 
     // EFFECTS: prints the selected courses, term, preferred time, and weights of the given schedule

@@ -1,1 +1,24 @@
-[]
+[{
+    "courses": [
+        "CPSC 110",
+        "CPSC 121",
+        "CPSC 210"
+    ],
+    "sectionIDs": [
+        "CPSC 110 103",
+        "CPSC 121 101",
+        "CPSC 210 101",
+        "CPSC 110 L16",
+        "CPSC 121 L1Z",
+        "CPSC 121 T1F",
+        "CPSC 210 L16"
+    ],
+    "name": "lsdkf",
+    "weight": {
+        "compactWeight": 1,
+        "preferredStartTime": 540,
+        "preferredEndTime": 960,
+        "balanceWeight": 1
+    },
+    "term": 1
+}]

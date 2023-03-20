@@ -2,9 +2,10 @@ package ui;
 
 
 
-// Creates a CourseSchedulerApp
+// displays the UI selector menu
 public class Main {
     public static void main(String[] args) {
-        CourseSchedulerApp schedulerApp = new CourseSchedulerApp();
+        UiSelectorMenu uiSelectorMenu = new UiSelectorMenu();
+        uiSelectorMenu.display();
     }
 }
