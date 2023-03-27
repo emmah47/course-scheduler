@@ -1,6 +1,6 @@
 {
-    "compactWeight": 20,
-    "preferredStartTime": 600,
-    "preferredEndTime": 840,
-    "balanceWeight": 15
+    "compactWeight": 1,
+    "preferredStartTime": 540,
+    "preferredEndTime": 960,
+    "balanceWeight": 2
 }

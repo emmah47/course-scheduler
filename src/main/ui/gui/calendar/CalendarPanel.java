@@ -22,7 +22,9 @@ public class CalendarPanel extends JPanel {
         setWeekdayDisplay();
         setTimeDisplay();
         setBackground();
-        setSections();
+        if (this.schedule != null) {
+            setSections();
+        }
     }
 
     // EFFECTS: sets the background of the calendar by filling it with background blocks
