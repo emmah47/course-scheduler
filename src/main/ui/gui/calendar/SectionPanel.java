@@ -24,10 +24,10 @@ public class SectionPanel extends JPanel implements MouseListener {
         this.setBackground(new Color(0xdff0d8));
         setBorder(BorderFactory.createMatteBorder(1, 10, 1, 1, new Color(0x808080)));
         label = new JLabel();
-        label.setText(String.format("<html><a href=\"link\" target=\"_blank\">" +
-                        "<b><span style=\"font-size:10pt\"> %s </span></b></a>" +
-                        "<center style=\"font-size:9pt\">%s - %s</center>" +
-                        "</html> ",
+        label.setText(String.format("<html><a href=\"link\" target=\"_blank\">"
+                        + "<b><span style=\"font-size:10pt\"> %s </span></b></a>"
+                        + "<center style=\"font-size:9pt\">%s - %s</center>"
+                        + "</html> ",
                 section.getSectionID(), section.getStartTime(), section.getEndTime()));
         label.setForeground(new Color(0x0000));
         addMouseListener(this);
@@ -47,7 +47,7 @@ public class SectionPanel extends JPanel implements MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
-        if(!isReadOnly) {
+        if (!isReadOnly) {
             popupMenu.add(menuItemDelete);
             popupMenu.show(this, e.getX(), e.getY());
         }
@@ -60,7 +60,7 @@ public class SectionPanel extends JPanel implements MouseListener {
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        if(!isReadOnly) {
+        if (!isReadOnly) {
             setBorder(BorderFactory.createMatteBorder(1, 10, 1, 1, new Color(0x1E90FF)));
         }
 
@@ -68,7 +68,7 @@ public class SectionPanel extends JPanel implements MouseListener {
 
     @Override
     public void mouseExited(MouseEvent e) {
-        if(!isReadOnly) {
+        if (!isReadOnly) {
             setBorder(BorderFactory.createMatteBorder(1, 10, 1, 1, new Color(0x808080)));
         }
     }

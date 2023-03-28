@@ -88,7 +88,7 @@ public class CalendarPanel extends JPanel implements ActionListener {
 
     // EFFECTS: puts the sections into the calendar
     private void setSections() {
-        for(SectionPanel sectionPanel: sectionPanelList){
+        for (SectionPanel sectionPanel: sectionPanelList) {
             this.remove(sectionPanel);
         }
 
