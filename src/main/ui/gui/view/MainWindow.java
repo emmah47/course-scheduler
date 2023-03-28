@@ -10,6 +10,8 @@ import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class MainWindow extends JFrame implements ListSelectionListener, ActionListener {
     private SchedulerApp app;
@@ -25,7 +27,9 @@ public class MainWindow extends JFrame implements ListSelectionListener, ActionL
         displaySelectedCalendar(app.getSavedSchedules().get(0).getName());
         this.setTitle("UBC Course Scheduler");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setSize(dim);
+        this.setLocationRelativeTo(null);
         constructLayout();
     }
 
@@ -80,7 +84,20 @@ public class MainWindow extends JFrame implements ListSelectionListener, ActionL
         }
         if (e.getSource().equals(savedScheduleListPanel.getCreateBtn())) {
             calendarCreationDialogue = new CalendarCreationDialogue(this, "create a schedule", app);
+
+            // add a window listener
+            calendarCreationDialogue.addWindowListener(new WindowAdapter()
+            {
+                public void windowClosed(WindowEvent e)
+                {
+                    savedScheduleListPanel.refreshList();
+                }
+
+            });
+
+
             calendarCreationDialogue.pack();
+            calendarCreationDialogue.setSize(1024,600);
             calendarCreationDialogue.setLocationRelativeTo(this);
             calendarCreationDialogue.setVisible(true);
         }

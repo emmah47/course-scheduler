@@ -146,6 +146,19 @@ public class Schedule implements Writable {
     }
 
     // MODIFIES: this
+    // EFFECTS: removes all sections of a course given the course ID.
+    public void removeCourse(String courseId) {
+        courses.remove(courseData.getCourseByID(courseId));
+        List<String> toBeRemoved = new ArrayList<>();
+        for (int i = 0; i < sectionIDs.size(); i++) {
+            if (courseData.getSection(sectionIDs.get(i)).getCourseID().equals(courseId)) {
+                toBeRemoved.add(sectionIDs.get(i));
+            }
+            sectionIDs.removeAll(toBeRemoved);
+        }
+    }
+
+    // MODIFIES: this
     // EFFECTS: if it is possible to add the given section to the schedule, it will add the section and return true.
     //          if not, returns false
     public boolean tryAddSection(Section section) {

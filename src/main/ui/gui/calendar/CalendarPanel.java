@@ -93,7 +93,7 @@ public class CalendarPanel extends JPanel {
                 c.gridx = i;
                 c.gridy = 1 + (section.getStartTimeInMinutes() - 480) / 30;
                 c.gridheight = (section.getEndTimeInMinutes() - section.getStartTimeInMinutes()) / 30;
-                c.insets = new Insets(5, 5, 5, 5);
+                c.insets = new Insets(0, 5, 0, 5);
                 this.add(sectionPanel, c, 0);
             }
         }

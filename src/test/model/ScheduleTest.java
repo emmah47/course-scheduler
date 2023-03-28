@@ -1,5 +1,6 @@
 package model;
 
+import model.util.CourseRealData;
 import model.util.CourseTestData;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

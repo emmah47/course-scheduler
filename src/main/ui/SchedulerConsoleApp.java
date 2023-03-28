@@ -129,6 +129,7 @@ public class SchedulerConsoleApp extends SchedulerApp {
             displaySavedSchedulesMenu();
         } else {
             deleteSchedule(s);
+            System.out.println("Schedule has been deleted!");
             tryDisplaySavedSchedulesMenu();
         }
     }
@@ -418,6 +419,7 @@ public class SchedulerConsoleApp extends SchedulerApp {
             nameSchedule(schedule);
         } else {
             schedule.setName(name);
+            System.out.println("Saving the schedule...");
             saveSchedule(schedule);
             System.out.println("Your schedule, " + name + ", has been saved!");
             displayMainMenu();
@@ -456,6 +458,7 @@ public class SchedulerConsoleApp extends SchedulerApp {
         }
         if (selection.equals("yes")) {
             savePreference();
+            System.out.println("Your preferences have been saved");
         }
     }
 

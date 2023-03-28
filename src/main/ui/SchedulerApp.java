@@ -35,6 +35,14 @@ public abstract class SchedulerApp {
         this.savedSchedules = loadSavedSchedules();
     }
 
+    public void LoadSavedWeight() {
+        try {
+            this.preferredWeights = jsonReaderPreferences.read();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public CourseRealData getData() {
         return data;
     }
@@ -86,14 +94,12 @@ public abstract class SchedulerApp {
     public void deleteSchedule(Schedule s) {
         this.savedSchedules.remove(s);
         saveSchedulesToFile();
-        System.out.println("Schedule has been deleted!");
     }
 
 
     // MODIFIES: file
     // EFFECTS: adds schedule to be saved to this.saved schedule and then saves this.savedSchedules to file
     public void saveSchedule(Schedule schedule) {
-        System.out.println("Saving the schedule...");
         this.savedSchedules.add(schedule);
         saveSchedulesToFile();
     }
@@ -109,7 +115,6 @@ public abstract class SchedulerApp {
         } catch (FileNotFoundException e) {
             System.out.println("Cannot find file to save to.");
         }
-        System.out.println("Your preferences have been saved");
     }
 
     // EFFECTS: returns the schedule with a name matching the given string, returns null if not found
