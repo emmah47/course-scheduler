@@ -6,18 +6,25 @@ import model.util.HelperUtil;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.time.DayOfWeek;
 import java.time.format.TextStyle;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 // A class representing a calendar
-public class CalendarPanel extends JPanel {
+public class CalendarPanel extends JPanel implements ActionListener {
     public static final int MAX_COLS = 5;
     public static final int MAX_ROWS = 22;
     private Schedule schedule;
+    private boolean isReadOnly;
+    private List<SectionPanel> sectionPanelList = new ArrayList<>();
 
     // EFFECTS: constructs a new calendar
-    public CalendarPanel(Schedule schedule) {
+    public CalendarPanel(Schedule schedule, boolean isReadOnly) {
+        this.isReadOnly = isReadOnly;
         this.schedule = schedule;
         setWeekdayDisplay();
         setTimeDisplay();
@@ -81,11 +88,17 @@ public class CalendarPanel extends JPanel {
 
     // EFFECTS: puts the sections into the calendar
     private void setSections() {
+        for(SectionPanel sectionPanel: sectionPanelList){
+            this.remove(sectionPanel);
+        }
+
         for (int i = 1; i <= MAX_COLS; i++) {
             String weekdayKey = DayOfWeek.of(i).getDisplayName(TextStyle.SHORT, Locale.ENGLISH);
 
             for (Section section : schedule.getSortedSections().get(weekdayKey)) {
-                SectionPanel sectionPanel = new SectionPanel(section);
+                SectionPanel sectionPanel = new SectionPanel(section, isReadOnly);
+                sectionPanelList.add(sectionPanel);
+                sectionPanel.addActionListener(this);
                 GridBagConstraints c = new GridBagConstraints();
                 c.fill = GridBagConstraints.BOTH;
                 c.weightx = 0.5;
@@ -93,9 +106,19 @@ public class CalendarPanel extends JPanel {
                 c.gridx = i;
                 c.gridy = 1 + (section.getStartTimeInMinutes() - 480) / 30;
                 c.gridheight = (section.getEndTimeInMinutes() - section.getStartTimeInMinutes()) / 30;
-                c.insets = new Insets(0, 5, 0, 5);
+                c.insets = new Insets(2, 2, 2, 2);
                 this.add(sectionPanel, c, 0);
             }
         }
+        revalidate();
+        repaint();
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        String sectionId = ((JMenuItem)e.getSource()).getName();
+        schedule.getSectionIDs().remove(sectionId);
+        schedule.calculateScore();
+        setSections();
     }
 }

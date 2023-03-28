@@ -35,7 +35,7 @@ public abstract class SchedulerApp {
         this.savedSchedules = loadSavedSchedules();
     }
 
-    public void LoadSavedWeight() {
+    public void loadSavedWeight() {
         try {
             this.preferredWeights = jsonReaderPreferences.read();
         } catch (IOException e) {

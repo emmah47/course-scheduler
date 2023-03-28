@@ -1,7 +1,5 @@
 package ui;
 
-
-import ui.gui.calendar.CalendarPanel;
 import ui.gui.view.MainWindow;
 
 

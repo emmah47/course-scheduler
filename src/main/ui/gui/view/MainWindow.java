@@ -86,10 +86,8 @@ public class MainWindow extends JFrame implements ListSelectionListener, ActionL
             calendarCreationDialogue = new CalendarCreationDialogue(this, "create a schedule", app);
 
             // add a window listener
-            calendarCreationDialogue.addWindowListener(new WindowAdapter()
-            {
-                public void windowClosed(WindowEvent e)
-                {
+            calendarCreationDialogue.addWindowListener(new WindowAdapter() {
+                public void windowClosed(WindowEvent e) {
                     savedScheduleListPanel.refreshList();
                 }
 

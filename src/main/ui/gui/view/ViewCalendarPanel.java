@@ -18,7 +18,7 @@ public class ViewCalendarPanel extends JPanel {
     ViewCalendarPanel(Schedule schedule, SchedulerApp app) {
         this.app = app;
         this.schedule = schedule;
-        this.calendarPanel = new CalendarPanel(schedule);
+        this.calendarPanel = new CalendarPanel(schedule, true);
         this.calendarHeader = new CalendarHeader(schedule);
 
 

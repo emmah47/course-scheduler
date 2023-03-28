@@ -39,7 +39,6 @@ public class UnitBorder extends MatteBorder {
         g2d.fill(topBorderRect);
         g2d.setPaint(oldPaint);
         g.setColor(color);
-//        g.fillRect(0, 0, width - insets.right, insets.top);
         g.fillRect(0, insets.top, insets.left, height - insets.top);
         g.fillRect(insets.left, height - insets.bottom, width - insets.left, insets.bottom);
         g.fillRect(width - insets.right, 0, insets.right, height - insets.bottom);

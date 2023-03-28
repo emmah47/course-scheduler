@@ -39,6 +39,10 @@ public class Schedule implements Writable {
         this.courseData = courseData;
 
         this.sortedSections = new HashMap<>();
+        initSortedSections();
+    }
+
+    private void initSortedSections() {
         sortedSections.put("Mon", new ArrayList<>());
         sortedSections.put("Tue", new ArrayList<>());
         sortedSections.put("Wed", new ArrayList<>());
@@ -146,19 +150,6 @@ public class Schedule implements Writable {
     }
 
     // MODIFIES: this
-    // EFFECTS: removes all sections of a course given the course ID.
-    public void removeCourse(String courseId) {
-        courses.remove(courseData.getCourseByID(courseId));
-        List<String> toBeRemoved = new ArrayList<>();
-        for (int i = 0; i < sectionIDs.size(); i++) {
-            if (courseData.getSection(sectionIDs.get(i)).getCourseID().equals(courseId)) {
-                toBeRemoved.add(sectionIDs.get(i));
-            }
-            sectionIDs.removeAll(toBeRemoved);
-        }
-    }
-
-    // MODIFIES: this
     // EFFECTS: if it is possible to add the given section to the schedule, it will add the section and return true.
     //          if not, returns false
     public boolean tryAddSection(Section section) {
@@ -202,6 +193,7 @@ public class Schedule implements Writable {
     // MODIFIES: this
     // EFFECTS: Calculates the score of the schedule, and assigns that score to the schedule
     public void calculateScore() {
+        initSortedSections();
         List<Section> sections = courseData.getSections(sectionIDs);
         for (Section section : sections) {
             for (String day : section.getWeekDays()) {

@@ -17,7 +17,6 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class CalendarCreationPanel extends JPanel implements ActionListener, ChangeListener {
     private SchedulerApp app;
@@ -28,7 +27,7 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
     private List<JCheckBox> cblCourse;
     private JComboBox cbStartTime = new JComboBox();
     private JComboBox cbEndTime = new JComboBox();
-    private JButton btnGenerateSchdele = new JButton("Generate Schedule ->");
+    private JButton btnGenerateSchedule = new JButton("Generate Schedule ->");
     private JButton btnSavePref = new JButton("Save");
     private JButton btnLoadPref = new JButton("Load");
     private JButton btnSaveSchedule = new JButton("Save Schedule");
@@ -50,7 +49,7 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
         dialogue = parent;
         this.app = app;
         cblCourse = new ArrayList<>();
-        btnGenerateSchdele.addActionListener(this);
+        btnGenerateSchedule.addActionListener(this);
         btnSavePref.addActionListener(this);
         btnLoadPref.addActionListener(this);
         btnSaveSchedule.addActionListener(this);
@@ -149,7 +148,7 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
         c.weightx = 1;
         c.weighty = 0.5;
         c.anchor = GridBagConstraints.EAST;
-        lp.add(btnGenerateSchdele, c);
+        lp.add(btnGenerateSchedule, c);
         return lp;
     }
 
@@ -380,9 +379,9 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
         if (e.getSource().equals(btnSavePref)) {
             saveWeights();
         } else if (e.getSource().equals(btnLoadPref)) {
-            app.LoadSavedWeight();
+            app.loadSavedWeight();
             loadWeights();
-        } else if (e.getSource().equals(btnGenerateSchdele)) {
+        } else if (e.getSource().equals(btnGenerateSchedule)) {
             generateSchedules();
         } else if (e.getSource().equals(btnLeft)) {
             selectedScheduleIdx--;
@@ -399,7 +398,7 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
         String name = getScheduleNameFromDialog();
 
         //If a string was returned, say so.
-        if ( name == null || name.isBlank()) {
+        if (name == null || name.equals("")) {
             JOptionPane.showMessageDialog(this,
                     "Schedule Name cannot be empty, save failed!", "Error",
                     JOptionPane.ERROR_MESSAGE);
@@ -486,7 +485,7 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
         c.fill = GridBagConstraints.BOTH;
         c.weightx = 1;
         c.weighty = 1;
-        selectedSchedulePane.add(new CalendarPanel(schedule), c);
+        selectedSchedulePane.add(new CalendarPanel(schedule, false), c);
         selectedSchedulePane.revalidate();
     }
 

@@ -31,7 +31,7 @@ public class CourseTestData implements CourseData {
         // LECTURES
         sections.put("CPSC 110 101",  new Section("CPSC 110 101", "CPSC 110", SectionType.LECTURE,
                 "9:00", "10:30", Arrays.asList("Tue", "Thu"), 1,
-                Arrays.asList(Arrays.asList("CPSC 110 L10", "CPSC 110 L11", "CPSC L10"))));
+                Arrays.asList(Arrays.asList("CPSC 110 L10", "CPSC 110 L11"))));
         sections.put("CPSC 110 102", new Section("CPSC 110 102", "CPSC 110", SectionType.LECTURE,
                 "11:00", "12:30", Arrays.asList("Mon", "Wed", "Fri"), 1,
                 Arrays.asList(Arrays.asList("CPSC 110 L12", "CPSC 110 L13"))));
