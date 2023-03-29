@@ -1,93 +1,27 @@
-[
-    {
-        "courses": [
-            "CPSC 110",
-            "CPSC 121",
-            "CPSC 210",
-            "PHYS 117",
-            "ENGL 110",
-            "ENGL 111",
-            "MATH 180",
-            "BIOL 111"
-        ],
-        "sectionIDs": [
-            "CPSC 110 101",
-            "CPSC 121 101",
-            "CPSC 210 102",
-            "PHYS 117 102",
-            "ENGL 110 004",
-            "ENGL 111 001",
-            "MATH 180 101",
-            "BIOL 111 102",
-            "CPSC 110 L14",
-            "CPSC 121 L1K",
-            "CPSC 121 T1M",
-            "CPSC 210 L1G",
-            "PHYS 117 T1A",
-            "ENGL 111 L05",
-            "MATH 180 DT1"
-        ],
-        "name": "kljwpoepkflsf",
-        "weight": {
-            "compactWeight": 13,
-            "preferredStartTime": 540,
-            "preferredEndTime": 960,
-            "balanceWeight": 29
-        },
-        "term": 1
+[{
+    "courses": [
+        "CPSC 110",
+        "CPSC 121",
+        "CPSC 210",
+        "MATH 101"
+    ],
+    "sectionIDs": [
+        "CPSC 110 201",
+        "CPSC 121 204",
+        "CPSC 210 201",
+        "MATH 101 2B2",
+        "CPSC 110 L2B",
+        "CPSC 121 L2N",
+        "CPSC 121 T2A",
+        "CPSC 210 L2U",
+        "MATH 101 B22"
+    ],
+    "name": "Demo Schedule",
+    "weight": {
+        "compactWeight": 12,
+        "preferredStartTime": 540,
+        "preferredEndTime": 930,
+        "balanceWeight": 21
     },
-    {
-        "courses": [
-            "CPSC 110",
-            "CPSC 121",
-            "PHYS 117",
-            "ENGL 110",
-            "ENGL 111"
-        ],
-        "sectionIDs": [
-            "CPSC 110 101",
-            "CPSC 121 102",
-            "PHYS 117 101",
-            "ENGL 110 004",
-            "ENGL 111 002",
-            "CPSC 110 L16",
-            "CPSC 121 L1E",
-            "CPSC 121 T1A",
-            "PHYS 117 T1A"
-        ],
-        "name": "asdasd",
-        "weight": {
-            "compactWeight": 66,
-            "preferredStartTime": 540,
-            "preferredEndTime": 960,
-            "balanceWeight": 22
-        },
-        "term": 1
-    },
-    {
-        "courses": [
-            "CPSC 110",
-            "CPSC 121",
-            "CPSC 210",
-            "MATH 101"
-        ],
-        "sectionIDs": [
-            "CPSC 110 201",
-            "CPSC 121 204",
-            "CPSC 210 203",
-            "MATH 101 2A4",
-            "CPSC 110 L2B",
-            "CPSC 121 T2G",
-            "CPSC 210 L2U",
-            "MATH 101 A41"
-        ],
-        "name": "jkljkljkljkljkljljjlj",
-        "weight": {
-            "compactWeight": 15,
-            "preferredStartTime": 540,
-            "preferredEndTime": 960,
-            "balanceWeight": 22
-        },
-        "term": 2
-    }
-]
+    "term": 2
+}]

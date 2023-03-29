@@ -6,9 +6,12 @@ import model.util.HelperUtil;
 import javax.swing.*;
 import java.awt.*;
 
+// The header on top of the displayed saved calendar that contains information about the schedule such as courses,
+// weights, etc.
 public class CalendarHeader extends JPanel {
     private Schedule schedule;
 
+    // EFFECT: Constructs a new CalendarHeader
     public CalendarHeader(Schedule s) {
         this.schedule = s;
         setBackground(Color.WHITE);

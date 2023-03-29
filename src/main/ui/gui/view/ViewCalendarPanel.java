@@ -9,14 +9,14 @@ import java.awt.*;
 
 // SOURCE: This code was based on the demo code in the oracle java documentation
 
+// The calendar display in the saved schedule window
 public class ViewCalendarPanel extends JPanel {
-    private SchedulerApp app;
     private CalendarPanel calendarPanel;
     private CalendarHeader calendarHeader;
     private Schedule schedule;
 
+    // EFFECTS: constructs a new ViewCalendarPanel
     ViewCalendarPanel(Schedule schedule, SchedulerApp app) {
-        this.app = app;
         this.schedule = schedule;
         this.calendarPanel = new CalendarPanel(schedule, true);
         this.calendarHeader = new CalendarHeader(schedule);

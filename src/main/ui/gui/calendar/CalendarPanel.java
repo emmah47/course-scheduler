@@ -34,6 +34,7 @@ public class CalendarPanel extends JPanel implements ActionListener {
         }
     }
 
+    // MODIFIES: this
     // EFFECTS: sets the background of the calendar by filling it with background blocks
     private void setBackground() {
         for (int i = 1; i <= MAX_COLS; i++) {
@@ -50,6 +51,7 @@ public class CalendarPanel extends JPanel implements ActionListener {
         }
     }
 
+    // MODIFIES: this
     // EFFECTS: sets the weekday display
     private void setWeekdayDisplay() {
         this.setBackground(Color.WHITE);
@@ -68,6 +70,7 @@ public class CalendarPanel extends JPanel implements ActionListener {
         }
     }
 
+    // MODIFIES: this
     // EFFECTS: sets the time display
     private void setTimeDisplay() {
         for (int i = 0; i < MAX_ROWS / 2; i++) {
@@ -86,6 +89,7 @@ public class CalendarPanel extends JPanel implements ActionListener {
         }
     }
 
+    // MODIFIES: this
     // EFFECTS: puts the sections into the calendar
     private void setSections() {
         for (SectionPanel sectionPanel: sectionPanelList) {
@@ -114,10 +118,13 @@ public class CalendarPanel extends JPanel implements ActionListener {
         repaint();
     }
 
+    // MODIFIES: this
+    // EFFECTS: when the delete section button is clicked on, removes the section from the calendar
     @Override
     public void actionPerformed(ActionEvent e) {
-        String sectionId = ((JMenuItem)e.getSource()).getName();
-        schedule.getSectionIDs().remove(sectionId);
+        String courseId = ((JMenuItem)e.getSource()).getName();
+        schedule.getCourses().removeIf(course -> course.getCourseID().equals(courseId));
+        schedule.getSectionIDs().removeIf(cId -> cId.startsWith(courseId));
         schedule.calculateScore();
         setSections();
     }

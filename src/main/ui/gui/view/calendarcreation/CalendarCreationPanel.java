@@ -18,12 +18,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+// This is the actual panel that holds all the buttons, graphics, etc. for calendar creation.
 public class CalendarCreationPanel extends JPanel implements ActionListener, ChangeListener {
     private SchedulerApp app;
     private JPanel coursePane;
     private JPanel weightPane;
     private JPanel previewPane = new JPanel();
-    private JTextField txtName;
     private List<JCheckBox> cblCourse;
     private JComboBox cbStartTime = new JComboBox();
     private JComboBox cbEndTime = new JComboBox();
@@ -45,6 +45,7 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
     private JLabel lbCompact = new JLabel("");
     private CalendarCreationDialogue dialogue;
 
+    // EFFECTS: constructs a new CalendarCreationPanel
     public CalendarCreationPanel(SchedulerApp app, CalendarCreationDialogue parent) {
         dialogue = parent;
         this.app = app;
@@ -64,6 +65,8 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
         loadWeights();
     }
 
+    // MODIFIES: this
+    // EFFECTS: sets up the schedule preview panel
     private void setupPreview() {
         previewPane.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
@@ -79,6 +82,8 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
         setupPreviewButtons();
     }
 
+    // MODIFIES: this
+    // EFFECT: Sets up the preview buttons
     private void setupPreviewButtons() {
         GridBagConstraints c;
         c = new GridBagConstraints();
@@ -103,6 +108,9 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
         previewPane.add(btnRight, c);
     }
 
+    // MODIFIES: this
+    // EFFECT: sets up the form on the left side of the panel that contains all the buttons and fields for course
+    // selection and preferences
     private void setupForm() {
         addCoursePaneLabels();
         addWeightPaneLabels();
@@ -110,11 +118,13 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
         addTermTextField();
         addBalanceSlider();
         addCompactSlider();
-        addStartTextField();
-        addEndTextField();
-        addButtons();
+        addStartInputField();
+        addEndInputField();
+        addSaveLoadWeightButtons();
     }
 
+    // MODIFIES: this
+    // EFFECT: sets up the main background panels (one for the form and one for the preview)
     private void setupLayOut() {
         JPanel lp = setupLeftPane();
         JPanel rp = setupRightPane();
@@ -136,9 +146,11 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
 
     }
 
+    // MODIFIES: this
+    // EFFECT: the part of the setupLayout that handles the left panel
     private JPanel setupLeftPane() {
         JPanel lp = new JPanel();
-        addCourseSettingPaneSection(lp);
+        addCourseSelectionPaneSection(lp);
         addWeightSettingPaneSection(lp);
 
         GridBagConstraints c;
@@ -152,7 +164,9 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
         return lp;
     }
 
-    private void addCourseSettingPaneSection(JPanel lp) {
+    // MODIFIES: this
+    // EFFECT: Adds the course selection and set term buttons/fields to the left panel
+    private void addCourseSelectionPaneSection(JPanel lp) {
         lp.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = 0;
@@ -172,6 +186,8 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
         lp.add(courseSettingPane, c);
     }
 
+    // MODIFIES: this
+    // EFFECT: adds the weight preferences to the left panel
     private void addWeightSettingPaneSection(JPanel lp) {
         GridBagConstraints c;
 
@@ -193,6 +209,8 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
         lp.add(weightSettingPane, c);
     }
 
+    // MODIFIES: this
+    // EFFECT: is part of the setupLayout that handles the right panel
     private JPanel setupRightPane() {
         JPanel rp = new JPanel();
         rp.setLayout(new BoxLayout(rp, BoxLayout.PAGE_AXIS));
@@ -204,6 +222,8 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
         return rp;
     }
 
+    // MODIFIES: this
+    // EFFECT: adds course panel labels
     private void addCoursePaneLabels() {
         List<String> labels = Arrays.asList(
                 "Select courses:",
@@ -219,6 +239,8 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
         }
     }
 
+    // MODIFIES: this
+    // EFFECT: adds weight panel labels
     private void addWeightPaneLabels() {
         List<String> labels = getWeightLabels();
 
@@ -249,6 +271,7 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
 
     }
 
+    // EFFECT: returns weight labels as a list of strings
     private List<String> getWeightLabels() {
         List<String> labels = Arrays.asList(
                 "Set balance weight:",
@@ -258,7 +281,8 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
         return labels;
     }
 
-
+    // MODIFIES: this
+    // EFFECT: adds the course checkboxes to the course panel
     private void addCourseCheckBoxes() {
         List<Course> courses = app.getData().getAllCourse();
         JPanel panel = new JPanel();
@@ -279,6 +303,8 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
         coursePane.add(panel, c);
     }
 
+    // MODIFIES: this
+    // EFFECT: adds the term text field to the course panel
     public void addTermTextField() {
         rbt1.setSelected(true);
         ButtonGroup group = new ButtonGroup();
@@ -298,6 +324,8 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
 
     }
 
+    // MODIFIES: this
+    // EFFECT: adds the balance weight slider to the weight panel
     private void addBalanceSlider() {
         balanceSlider.setMajorTickSpacing(100);
         balanceSlider.setMinorTickSpacing(10);
@@ -314,6 +342,8 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
         weightPane.add(balanceSlider, c);
     }
 
+    // MODIFIES: this
+    // EFFECT: adds the compact weight slider to the weight panel
     private void addCompactSlider() {
         compactSlider.setMajorTickSpacing(100);
         compactSlider.setMinorTickSpacing(10);
@@ -330,7 +360,9 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
         weightPane.add(compactSlider, c);
     }
 
-    private void addStartTextField() {
+    // MODIFIES: this
+    // EFFECT: adds the preferred start time input field to the weight panel
+    private void addStartInputField() {
         for (int i = 0; i < 22; i++) {
             cbStartTime.addItem(HelperUtil.minutesToTime(480 + 30 * i));
         }
@@ -344,7 +376,9 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
         weightPane.add(cbStartTime, c);
     }
 
-    private void addEndTextField() {
+    // MODIFIES: this
+    // EFFECT: adds the preferred end time input field to the weight panel
+    private void addEndInputField() {
         for (int i = 0; i < 22; i++) {
             cbEndTime.addItem(HelperUtil.minutesToTime(480 + 30 * i));
         }
@@ -358,8 +392,9 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
         weightPane.add(cbEndTime, c);
     }
 
-
-    private void addButtons() {
+    // MODIFIES: this
+    // EFFECT: adds the save preference and load preference buttons to the weight panel
+    private void addSaveLoadWeightButtons() {
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = 1;
         c.gridy = 14;
@@ -373,7 +408,8 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
 
     }
 
-
+    // MODIFIES: this
+    // EFFECT: method that controls what to do when the save, load, left, right, save schedule buttons are pressed
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource().equals(btnSavePref)) {
@@ -394,11 +430,14 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
         }
     }
 
+    // MODIFIES: this
+    // EFFECT: prompts user to name the schedule and then saves it
     private void saveSchedule() {
         String name = getScheduleNameFromDialog();
-
-        //If a string was returned, say so.
-        if (name == null || name.equals("")) {
+        if (name == null) {
+            return;
+        }
+        if (name.equals("")) {
             JOptionPane.showMessageDialog(this,
                     "Schedule Name cannot be empty, save failed!", "Error",
                     JOptionPane.ERROR_MESSAGE);
@@ -413,15 +452,18 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
         Schedule schedule = topSchedules.get(selectedScheduleIdx);
         schedule.setName(name);
         app.saveSchedule(schedule);
+
         dialogue.dispose();
 
     }
 
+
+    // EFFECT: returns the name from the dialog
     private String getScheduleNameFromDialog() {
         String name = (String) JOptionPane.showInputDialog(
                 this,
                 "Please input a name:\n"
-                        + "(The name need to be unique in saved schedule list)",
+                        + "(The name need to be unique in saved schedules list)",
                 "Save Schedule...",
                 JOptionPane.PLAIN_MESSAGE,
                 null,
@@ -431,6 +473,8 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
     }
 
 
+    // MODIFIES: this
+    // EFFECT: generates and displays the schedules
     private void generateSchedules() {
         setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
         Weight weight = new Weight(1, 1, 1, 1);
@@ -453,6 +497,7 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
 
     }
 
+    // EFFECT: switches to and renders selected calendar
     private void showSelectedCalender() {
         if (topSchedules.size() > 0 && selectedScheduleIdx == -1) {
             selectedScheduleIdx = 0;
@@ -467,6 +512,7 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
 
     }
 
+    // EFFECT: renders the calendar
     private void renderCalendar() {
         Schedule schedule = null;
 
@@ -489,6 +535,8 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
         selectedSchedulePane.revalidate();
     }
 
+    // MODIFIES: this
+    // EFFECT: saves the weights
     private void saveWeights() {
         Weight newWeight = app.getPreferredWeights();
         newWeight.setBalanceWeight(balanceSlider.getValue());
@@ -498,6 +546,8 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
         app.savePreference();
     }
 
+    // MODIFIES: this
+    // EFFECT: loads the weights
     private void loadWeights() {
         Weight weights = app.getPreferredWeights();
         String startTime = HelperUtil.minutesToTime(weights.getPreferredStartTime());
@@ -510,6 +560,8 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
         lbCompact.setText(String.format("(%d)", compactSlider.getValue()));
     }
 
+    // MODIFIES: this
+    // EFFECT: controls the weight display on the two weight sliders
     @Override
     public void stateChanged(ChangeEvent e) {
         if (e.getSource().equals(balanceSlider)) {

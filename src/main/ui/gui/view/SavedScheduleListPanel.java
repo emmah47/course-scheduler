@@ -8,6 +8,7 @@ import java.awt.*;
 
 // SOURCE: This code was based on the demo code in the oracle java documentation
 
+// A list of saved schedules that is displayed as a scrollable list
 public class SavedScheduleListPanel extends JPanel {
     private SchedulerApp app;
     private JList scheduleJList;
@@ -15,6 +16,7 @@ public class SavedScheduleListPanel extends JPanel {
     private JButton delete;
     private DefaultListModel listModel;
 
+    // EFFECTS: constructs a new SavedScheduleListPanel
     SavedScheduleListPanel(SchedulerApp app) {
         this.app = app;
         listModel = new DefaultListModel();
@@ -38,6 +40,8 @@ public class SavedScheduleListPanel extends JPanel {
         this.add(delete);
     }
 
+    // MODIFIES: this
+    // EFFECTS: populates the list
     private void populateJList() {
         for (Schedule schedule : app.getSavedSchedules()) {
             listModel.addElement(schedule.getName());
@@ -56,11 +60,15 @@ public class SavedScheduleListPanel extends JPanel {
         return create;
     }
 
+    // MODIFIES: this
+    // EFFECTS: refreshes the list
     public void refreshList() {
         scheduleJList.removeAll();
         scheduleJList.revalidate();
         listModel.clear();
         populateJList();
-        scheduleJList.setSelectedIndex(0);
+        if (app.getSavedSchedules().size() > 0) {
+            scheduleJList.setSelectedIndex(0);
+        }
     }
 }

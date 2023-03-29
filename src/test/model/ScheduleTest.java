@@ -144,4 +144,9 @@ class ScheduleTest {
         assertEquals(0, testSchedule.getScore());
     }
 
+    @Test
+    void getCourseTest() {
+        assertEquals(2, defaultSchedule.getCourses().size());
+    }
+
 }

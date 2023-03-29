@@ -4,7 +4,8 @@ import javax.swing.border.MatteBorder;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-// A class for making a custom border that is dashed on only one side
+// A class for making a custom border that is dashed on only one side. This is used to draw the background
+// lines in the calendar
 public class UnitBorder extends MatteBorder {
 
     public static final int DASH_LENGTH = 3;
@@ -14,6 +15,7 @@ public class UnitBorder extends MatteBorder {
         super(top, left, bottom, right, matteColor);
     }
 
+    // MODIFIES: this
     // EFFECTS: makes the border's top side dashed
     @Override
     public void paintBorder(Component c, Graphics g, int x, int y, int width, int height) {

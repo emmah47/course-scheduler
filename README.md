@@ -32,6 +32,23 @@ optimize the courses, which would be difficult to do by hand.
 - As a user, I want to be able to save my schedules and preferences to file (if I so choose)
 - As a user, I want to be able to load my saved schedules and preferences from file (if I so choose)
 - As a user, I want to be able to delete my saved schedules from file
+- As a user, I want to be able to delete courses from the calendar preview
+
+
+### Instructions for Grader:
+
+- You can generate the first required action related to adding Xs (Courses) to a Y (Schedule) by clicking on the "Make New Schedule" button,
+selecting the desired courses and setting the preferences, then clicking the "Generate Schedule" button.
+- You can generate the second required action related to adding Xs to a Y by first generating a schedule, and then 
+you can remove courses from the preview schedule by clicking on a section block in the preview, and then clicking on
+"Delete Course" popup menu. Deleting a section will delete all the sections in the schedule with the same courseId.
+- You can locate my visual component by selecting a saved schedule to view the schedule, or by creating a new schedule
+like described in the bullet point above, and then looking through the previews.
+- You can save the state of my application by pressing the save button on the schedule creation panel to save the 
+preferences, and also by clicking on the "Save Schedule <number> of <number> as..." button that will appear
+under the schedule preview.
+- You can reload the state of my application by clicking on the "Load" button in the schedule creation window to load
+the saved preferences. The saved schedules load automatically.
 
 
 

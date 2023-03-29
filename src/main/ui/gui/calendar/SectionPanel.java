@@ -32,8 +32,8 @@ public class SectionPanel extends JPanel implements MouseListener {
         label.setForeground(new Color(0x0000));
         addMouseListener(this);
         this.add(label);
-        menuItemDelete.setText(String.format("Delete Section %s", section.getSectionID()));
-        menuItemDelete.setName(section.getSectionID());
+        menuItemDelete.setText(String.format("Delete Course %s", section.getCourseID()));
+        menuItemDelete.setName(section.getCourseID());
     }
 
     public Section getSection() {
@@ -45,6 +45,8 @@ public class SectionPanel extends JPanel implements MouseListener {
 
     }
 
+    // MODIFIES: this
+    // EFFECTS: if this section panel is read only, it will show a popup delete menu when clicked on
     @Override
     public void mousePressed(MouseEvent e) {
         if (!isReadOnly) {
@@ -58,6 +60,9 @@ public class SectionPanel extends JPanel implements MouseListener {
 
     }
 
+    // MODIFIES: this
+    // EFFECTS: if the section panel is read only, makes the border blue when the mouse is hovered over
+    // this section panel
     @Override
     public void mouseEntered(MouseEvent e) {
         if (!isReadOnly) {
@@ -66,6 +71,9 @@ public class SectionPanel extends JPanel implements MouseListener {
 
     }
 
+    // MODIFIES: this
+    // EFFECTS: if the section panel is read only, sets the border colour back to its original colour when the mouse
+    // leaves the section panel
     @Override
     public void mouseExited(MouseEvent e) {
         if (!isReadOnly) {
@@ -73,6 +81,8 @@ public class SectionPanel extends JPanel implements MouseListener {
         }
     }
 
+    // MODIFIES: this
+    // EFFECTS: adds an action listener to this
     public void addActionListener(ActionListener listener) {
         menuItemDelete.addActionListener(listener);
     }

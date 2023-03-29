@@ -6,10 +6,12 @@ import ui.SchedulerApp;
 import javax.swing.*;
 import java.awt.*;
 
+// A holder panel that holds the actual calendar panel and calendar header
 public class ViewCalendarHolderPanel extends JPanel {
     private ViewCalendarPanel viewCalendarPanel;
     private SchedulerApp app;
 
+    // EFFECTS: constructs a new ViewCalendarHolderPanel
     public ViewCalendarHolderPanel(Schedule s, SchedulerApp app) {
         this.app = app;
         viewCalendarPanel = new ViewCalendarPanel(s, app);
@@ -23,11 +25,15 @@ public class ViewCalendarHolderPanel extends JPanel {
         this.add(viewCalendarPanel, c);
     }
 
+    // MODIFIES: this
+    // EFFECTS: removes the viewCalenderPanel
     public void removeViewCalendarPanel() {
         this.remove(viewCalendarPanel);
         this.revalidate();
     }
 
+    // MODIFIES: this
+    // EFFECTS: adds a ViewCalendarPanel
     public void addViewCalendarPanel(Schedule s) {
         this.viewCalendarPanel = new ViewCalendarPanel(s, app);
         this.revalidate();
