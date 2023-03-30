@@ -445,7 +445,7 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
         }
         if (app.getSavedScheduleByName(name) != null) {
             JOptionPane.showMessageDialog(this,
-                    String.format("Schedule Name %name has been used, save failed!", name), "Error",
+                    String.format("Schedule Name \"%s\" has been used, save failed!", name), "Error",
                     JOptionPane.ERROR_MESSAGE);
             return;
         }
