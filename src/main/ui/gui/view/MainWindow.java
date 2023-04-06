@@ -2,7 +2,9 @@ package ui.gui.view;
 
 import model.Schedule;
 import ui.SchedulerApp;
-import ui.gui.view.calendarcreation.CalendarCreationDialogue;
+import ui.gui.view.calendarcreation.CalendarCreationDialog;
+import model.log.Event;
+import model.log.EventLog;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -18,11 +20,13 @@ public class MainWindow extends JFrame implements ListSelectionListener, ActionL
     private SchedulerApp app;
     private SavedScheduleListPanel savedScheduleListPanel;
     private ViewCalendarHolderPanel viewCalendarHolderPanel;
-    CalendarCreationDialogue calendarCreationDialogue;
+    private CalendarCreationDialog calendarCreationDialog;
+    private EventLog eventLog;
 
     // EFFECTS: constructs a new main window
     public MainWindow(SchedulerApp app) {
         this.app = app;
+        this.eventLog = EventLog.getInstance();
         this.savedScheduleListPanel = new SavedScheduleListPanel(app);
         viewCalendarHolderPanel = new ViewCalendarHolderPanel(null, app);
         if (app.getSavedSchedules().size() > 0) {
@@ -34,6 +38,7 @@ public class MainWindow extends JFrame implements ListSelectionListener, ActionL
         this.setSize(dim);
         this.setLocationRelativeTo(null);
         constructLayout();
+        printLog();
     }
 
     // EFFECTS: displays a new main window
@@ -101,9 +106,9 @@ public class MainWindow extends JFrame implements ListSelectionListener, ActionL
             savedScheduleListPanel.refreshList();
         }
         if (e.getSource().equals(savedScheduleListPanel.getCreateBtn())) {
-            calendarCreationDialogue = new CalendarCreationDialogue(this, "create a schedule", app);
+            calendarCreationDialog = new CalendarCreationDialog(this, "create a schedule", app);
 
-            calendarCreationDialogue.addWindowListener(new WindowAdapter() {
+            calendarCreationDialog.addWindowListener(new WindowAdapter() {
                 public void windowClosed(WindowEvent e) {
                     savedScheduleListPanel.refreshList();
                     displaySelectedCalendar(app.getSavedSchedules().get(0).getName());
@@ -114,9 +119,21 @@ public class MainWindow extends JFrame implements ListSelectionListener, ActionL
     }
 
     private void showCalendarCreationDialog() {
-        calendarCreationDialogue.pack();
-        calendarCreationDialogue.setSize(1024,600);
-        calendarCreationDialogue.setLocationRelativeTo(this);
-        calendarCreationDialogue.setVisible(true);
+        calendarCreationDialog.pack();
+        calendarCreationDialog.setSize(1024,600);
+        calendarCreationDialog.setLocationRelativeTo(this);
+        calendarCreationDialog.setVisible(true);
     }
+
+    private void printLog() {
+        this.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent windowEvent) {
+                for (Event e : eventLog) {
+                    System.out.println(e.toString() + "\n\n");
+                }
+            }
+        });
+    }
+
 }

@@ -1,10 +1,6 @@
 package persistence;
 
 import model.Course;
-import model.Section;
-import model.SectionType;
-import model.util.CourseData;
-import model.util.CourseRealData;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

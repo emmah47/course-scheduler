@@ -149,4 +149,16 @@ class ScheduleTest {
         assertEquals(2, defaultSchedule.getCourses().size());
     }
 
+    @Test
+    void removeCourseById() {
+        defaultSchedule.addSectionID("CPSC 110 101");
+        defaultSchedule.addSectionID("CPSC 121 101");
+        defaultSchedule.removeCourseById("CPSC 110");
+        assertEquals(1, defaultSchedule.getCourseIDs().size());
+        assertEquals(1, defaultSchedule.getSectionIDs().size());
+
+        defaultSchedule.removeCourseById("LDKSJFKLDS");
+        assertEquals(1, defaultSchedule.getCourseIDs().size());
+        assertEquals(1, defaultSchedule.getSectionIDs().size());
+    }
 }

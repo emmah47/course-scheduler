@@ -1,5 +1,7 @@
 package model;
 
+import model.log.Event;
+import model.log.EventLog;
 import model.util.CourseData;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -72,14 +74,11 @@ public class Schedule implements Writable {
         return courses;
     }
 
-    public void addCourse(Course course) {
-        courses.add(course);
-    }
-
     // MODIFIES: this
     // EFFECTS: given a course id, adds the corresponding course to the schedule
     public void addCoursesByID(String courseID) {
         this.courses.add(courseData.getCourseByID(courseID));
+        EventLog.getInstance().logEvent(new Event(String.format("Added %s to Schedule.", courseID)));
     }
 
     // MODIFIES: this
@@ -145,10 +144,10 @@ public class Schedule implements Writable {
         );
         newSchedule.setScore(this.score);
         for (Course course : this.courses) {
-            newSchedule.addCourse(course);
+            newSchedule.courses.add(course);
         }
         for (String sectionID : this.sectionIDs) {
-            newSchedule.addSectionID(sectionID);
+            newSchedule.sectionIDs.add(sectionID);
         }
         return newSchedule;
     }
@@ -315,4 +314,12 @@ public class Schedule implements Writable {
         return json;
     }
 
+    // MODIFIES: this
+    // EFFECTS: given a course id, removes the course and its corresponding sections from this
+    public void removeCourseById(String courseId) {
+        this.getCourses().removeIf(course -> course.getCourseID().equals(courseId));
+        this.getSectionIDs().removeIf(cId -> cId.startsWith(courseId));
+        this.calculateScore();
+        EventLog.getInstance().logEvent(new Event(String.format("Deleted %s from Schedule.", courseId)));
+    }
 }

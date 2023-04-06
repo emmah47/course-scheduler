@@ -123,9 +123,7 @@ public class CalendarPanel extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         String courseId = ((JMenuItem)e.getSource()).getName();
-        schedule.getCourses().removeIf(course -> course.getCourseID().equals(courseId));
-        schedule.getSectionIDs().removeIf(cId -> cId.startsWith(courseId));
-        schedule.calculateScore();
+        schedule.removeCourseById(courseId);
         setSections();
     }
 }

@@ -43,10 +43,10 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
     private JButton btnSaveAs = new JButton("Save as");
     private JLabel lbBalance = new JLabel("");
     private JLabel lbCompact = new JLabel("");
-    private CalendarCreationDialogue dialogue;
+    private CalendarCreationDialog dialogue;
 
     // EFFECTS: constructs a new CalendarCreationPanel
-    public CalendarCreationPanel(SchedulerApp app, CalendarCreationDialogue parent) {
+    public CalendarCreationPanel(SchedulerApp app, CalendarCreationDialog parent) {
         dialogue = parent;
         this.app = app;
         cblCourse = new ArrayList<>();

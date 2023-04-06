@@ -51,6 +51,30 @@ under the schedule preview.
 the saved preferences. The saved schedules load automatically.
 
 
+### Phase 4: Task 3: 
+In my UML, everything that has an association arrow pointing to my abstract SchedulerApp class is related to the gui, 
+meaning that all the implementation for the console app is inside either the SchedulerApp class or the 
+SchedulerConsoleApp, making the methods inside very hard to find and very messy. Right now, if I want to find a method 
+inside the SchedulerConsoleApp, I have to start from the displayMainMenu() method and click through the chain of 
+functions to get to the one I need, which is bad. This can be improved by making it more object-oriented and making
+the menus objects.
+
+The schedule class contains a courses field that holds a list of Courses. It used to contain a list of strings that 
+were course identifiers, like the sections field that contains a list of strings that are section identifiers. I was 
+forced to make this change to fulfill the "add multiple Xs to Y" requirement, but I think that holding a list of
+Strings that are course identifiers instead of a list of the courses themselves is better. This is because the search 
+function for scheduling the courses requires me to make copies of the schedule, and I feel like its better to make and
+store thousands (or more) copies of a Schedule that holds a list of Strings rather than a Schedule that holds a list of
+other more complicated objects (Courses).
+
+One last part that I feel like could be refactored is the very repetitive JsonReader classes. It would be nice to make
+a more general JSON reader class that can be used for all the reader class right now, similar to the JsonWriter, if
+possible.
+
+
+
+
+
 
 
 
