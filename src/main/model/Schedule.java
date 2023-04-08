@@ -320,6 +320,6 @@ public class Schedule implements Writable {
         this.getCourses().removeIf(course -> course.getCourseID().equals(courseId));
         this.getSectionIDs().removeIf(cId -> cId.startsWith(courseId));
         this.calculateScore();
-        EventLog.getInstance().logEvent(new Event(String.format("Deleted %s from Schedule.", courseId)));
+        EventLog.getInstance().logEvent(new Event(String.format("Removed %s from Schedule.", courseId)));
     }
 }

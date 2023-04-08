@@ -51,6 +51,57 @@ under the schedule preview.
 the saved preferences. The saved schedules load automatically.
 
 
+### Phase 4: Task 2:
+#### Actions performed: (where the "Demo Schedule" is the only saved schedule)
+- open app
+- generate schedule with CPSC 210, CPSC 121, MATH 101
+- delete CPSC 210 from the generated schedule
+- delete CPSC 121 from generated schedule
+- saved the schedule
+- close app
+
+#### Log:
+
+Sat Apr 08 15:28:12 PDT 2023
+Added CPSC 110 to Schedule.
+
+
+Sat Apr 08 15:28:12 PDT 2023
+Added CPSC 121 to Schedule.
+
+
+Sat Apr 08 15:28:12 PDT 2023
+Added PHYS 117 to Schedule.
+
+
+Sat Apr 08 15:28:12 PDT 2023
+Added ENGL 110 to Schedule.
+
+
+Sat Apr 08 15:28:12 PDT 2023
+Added MATH 180 to Schedule.
+
+
+Sat Apr 08 15:30:00 PDT 2023
+Added CPSC 121 to Schedule.
+
+
+Sat Apr 08 15:30:00 PDT 2023
+Added CPSC 210 to Schedule.
+
+
+Sat Apr 08 15:30:00 PDT 2023
+Added MATH 101 to Schedule.
+
+
+Sat Apr 08 15:30:40 PDT 2023
+Removed CPSC 210 from Schedule.
+
+
+Sat Apr 08 15:31:11 PDT 2023
+Removed CPSC 121 from Schedule.
+
+
 ### Phase 4: Task 3: 
 In my UML, everything that has an association arrow pointing to my abstract SchedulerApp class is related to the gui, 
 meaning that all the implementation for the console app is inside either the SchedulerApp class or the 
@@ -68,8 +119,8 @@ store thousands (or more) copies of a Schedule that holds a list of Strings rath
 other more complicated objects (Courses).
 
 One last part that I feel like could be refactored is the very repetitive JsonReader classes. It would be nice to make
-a more general JSON reader class that can be used for all the reader class right now, similar to the JsonWriter, if
-possible.
+a more general JSON reader class that can be used for all the reader class right now, similar to the JsonWriter. 
+However, I can't think of a good way to implement this at the moment.
 
 
 

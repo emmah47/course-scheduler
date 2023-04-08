@@ -463,7 +463,7 @@ public class CalendarCreationPanel extends JPanel implements ActionListener, Cha
         String name = (String) JOptionPane.showInputDialog(
                 this,
                 "Please input a name:\n"
-                        + "(The name need to be unique in saved schedules list)",
+                        + "(The name needs to be unique in saved schedules list)",
                 "Save Schedule...",
                 JOptionPane.PLAIN_MESSAGE,
                 null,
