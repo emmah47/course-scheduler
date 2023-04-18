@@ -5,6 +5,24 @@ import model.Section;
 
 import java.util.*;
 
+// SCHEDULER GUIDE
+// Each course can have one or multiple sections. A root section is any lecture sections, and each root section in the
+// course data holds references to all of its possible antirequisites, such as labs or tutorials etc. If you look in the
+// sections.json file, you can see that the first section is the lecture PHYS 117 101, which has a list of
+// antirequisites which are all the tutroials that correspond to PHYS 117 101.
+
+// This scheduler works by first taking in an empty Schedule, which has a list of courses. Using the courses, it does a
+// backtracking search to find all the possible root section combinations. It then takes in this list of schedules
+// (which at this moment only contains root sections) and then performs another backtracking search to schedule
+// all the antirequisites, and then returns the list of schedules
+
+// The backtracking search algorithm is the one we learned in CPSC 110, except it uses a loop (in the scheduleCourses()
+// method) to simulate the recursion. (I tried using recursion but because Java doesn't have tail recursion
+// optimization, the program kept crashing).
+
+
+
+
 // Contains methods for course scheduling.
 public class Scheduler {
 

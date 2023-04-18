@@ -2,28 +2,29 @@
     "courses": [
         "CPSC 110",
         "CPSC 121",
-        "PHYS 117",
+        "CPSC 210",
         "ENGL 110",
         "MATH 180"
     ],
     "sectionIDs": [
-        "CPSC 110 103",
+        "CPSC 110 101",
         "CPSC 121 102",
-        "PHYS 117 101",
-        "ENGL 110 004",
+        "CPSC 210 101",
+        "ENGL 110 002",
         "MATH 180 101",
-        "CPSC 110 L13",
-        "CPSC 121 L1M",
-        "CPSC 121 T1H",
-        "PHYS 117 T1F",
+        "CPSC 110 L1H",
+        "CPSC 121 L1D",
+        "CPSC 121 T1F",
+        "CPSC 210 L1K",
+        "ENGL 110 LB1",
         "MATH 180 DF2"
     ],
     "name": "Demo Schedule",
     "weight": {
         "compactWeight": 43,
         "preferredStartTime": 540,
-        "preferredEndTime": 900,
-        "balanceWeight": 21
+        "preferredEndTime": 960,
+        "balanceWeight": 66
     },
     "term": 1
 }]

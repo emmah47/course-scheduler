@@ -1,6 +1,4 @@
-# CPSC 210 Personal Project
-
-## UBC Course Scheduler
+# UBC Course Scheduler
 
 This course scheduler will schedule UBC courses according to user preferences, 
 using a rule-based scoring system to generate optimized schedules. Users will be 

@@ -13,7 +13,8 @@ import java.util.*;
 // represents a schedule with a name, list of courses, list of scheduled sections, term, preferred weights, and score.
 public class Schedule implements Writable {
     private String name;                                 // name of schedule
-    private List<Course> courses;                        // list of courses
+    private List<Course> courses;                        // list of courses (will change to courseIDs like sections once
+    //                                                      I have time)
     private List<String> sectionIDs;                     // list of section IDs (ex. "CPSC 210 101", "CPSC 210 L1Y")
     private int term;                                    // the term that the schedule is for
     private Weight weight;                               // a set of weights that will be used to calculate the score
@@ -190,7 +191,7 @@ public class Schedule implements Writable {
 
 
 
-    // SCORE CALCULATION METHODS BELOW HERE
+    // SCORE CALCULATION METHODS BELOW HERE ============================================================
 
     // REQUIRES: this.sectionIDs is not empty
     // MODIFIES: this
@@ -281,7 +282,7 @@ public class Schedule implements Writable {
 
 
 
-    // PERSISTENCE METHODS BELOW HERE
+    // PERSISTENCE METHODS BELOW HERE ============================================================
 
     // This code is based on the JsonSerializationDemo example provided for phase2
     // EFFECTS: converts this to a json object
