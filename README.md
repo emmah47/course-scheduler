@@ -35,7 +35,7 @@ optimize the courses, which would be difficult to do by hand.
 
 
 ## UML Class Diagram
-![](UML_Design_Diagram.pdf)
+![](ClassDiagram.png)
 
 
 
