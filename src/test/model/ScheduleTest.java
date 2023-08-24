@@ -1,6 +1,5 @@
 package model;
 
-import model.util.CourseRealData;
 import model.util.CourseTestData;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -146,7 +145,7 @@ class ScheduleTest {
 
     @Test
     void getCourseTest() {
-        assertEquals(2, defaultSchedule.getCourses().size());
+        assertEquals(2, defaultSchedule.getCourseIDs().size());
     }
 
     @Test

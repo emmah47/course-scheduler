@@ -3,6 +3,7 @@ package model;
 import model.log.Event;
 import model.log.EventLog;
 import model.util.CourseData;
+import model.util.CourseRealData;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import persistence.Writable;
@@ -13,8 +14,7 @@ import java.util.*;
 // represents a schedule with a name, list of courses, list of scheduled sections, term, preferred weights, and score.
 public class Schedule implements Writable {
     private String name;                                 // name of schedule
-    private List<Course> courses;                        // list of courses (will change to courseIDs like sections once
-    //                                                      I have time)
+    private List<String> courseIDs;                        // list of courses
     private List<String> sectionIDs;                     // list of section IDs (ex. "CPSC 210 101", "CPSC 210 L1Y")
     private int term;                                    // the term that the schedule is for
     private Weight weight;                               // a set of weights that will be used to calculate the score
@@ -34,7 +34,7 @@ public class Schedule implements Writable {
                     Weight weight,
                     CourseData courseData) {
         this.name = name;
-        this.courses = new ArrayList<>();
+        this.courseIDs = new ArrayList<>();
         this.sectionIDs = new ArrayList<>();
         this.term = term;
         this.weight = weight;
@@ -64,21 +64,22 @@ public class Schedule implements Writable {
 
     // EFFECTS: returns all the course ids of the courses in the schedule
     public List<String> getCourseIDs() {
-        List<String> courseIDs = new ArrayList<>();
-        for (Course course : courses) {
-            courseIDs.add(course.getCourseID());
-        }
         return courseIDs;
     }
 
     public List<Course> getCourses() {
+        List<Course> courses = new ArrayList<>();
+        for (String c : courseIDs) {
+            Course course = courseData.getCourseByID(c);
+            courses.add(course);
+        }
         return courses;
     }
 
     // MODIFIES: this
     // EFFECTS: given a course id, adds the corresponding course to the schedule
     public void addCoursesByID(String courseID) {
-        this.courses.add(courseData.getCourseByID(courseID));
+        this.courseIDs.add(courseID);
         EventLog.getInstance().logEvent(new Event(String.format("Added %s to Schedule.", courseID)));
     }
 
@@ -86,7 +87,7 @@ public class Schedule implements Writable {
     // EFFECTS: given a list of course ids, adds the corresponding courses to the schedule
     public void addCoursesByIDs(List<String> courseIDs) {
         for (String courseID : courseIDs) {
-            this.courses.add(courseData.getCourseByID(courseID));
+            this.courseIDs.add(courseID);
         }
     }
 
@@ -144,8 +145,8 @@ public class Schedule implements Writable {
                 this.courseData
         );
         newSchedule.setScore(this.score);
-        for (Course course : this.courses) {
-            newSchedule.courses.add(course);
+        for (String course : this.courseIDs) {
+            newSchedule.courseIDs.add(course);
         }
         for (String sectionID : this.sectionIDs) {
             newSchedule.sectionIDs.add(sectionID);
@@ -318,7 +319,7 @@ public class Schedule implements Writable {
     // MODIFIES: this
     // EFFECTS: given a course id, removes the course and its corresponding sections from this
     public void removeCourseById(String courseId) {
-        this.getCourses().removeIf(course -> course.getCourseID().equals(courseId));
+        this.getCourseIDs().remove(courseId);
         this.getSectionIDs().removeIf(cId -> cId.startsWith(courseId));
         this.calculateScore();
         EventLog.getInstance().logEvent(new Event(String.format("Removed %s from Schedule.", courseId)));
